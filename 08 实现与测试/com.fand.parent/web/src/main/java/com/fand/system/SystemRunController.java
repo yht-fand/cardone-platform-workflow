@@ -19,13 +19,13 @@ public class SystemRunController {
 	@Resource(name = SystemRunService._BEAN_ID)
 	private SystemRunService systemRunService;
 
-	@RequestMapping(value = "/partition", method = RequestMethod.GET)
-	public String partition() {
-		return "systemRun/partition/index";
-	}
-
 	@RequestMapping(method = RequestMethod.GET)
 	public String index() {
 		return "systemRun/index";
+	}
+
+	@RequestMapping(value = "/partition", method = RequestMethod.GET)
+	public String partition() {
+		return "systemRun/partition/index";
 	}
 }

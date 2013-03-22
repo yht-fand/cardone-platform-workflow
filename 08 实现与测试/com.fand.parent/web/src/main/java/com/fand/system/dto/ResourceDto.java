@@ -4,7 +4,7 @@ import com.fand.system.po.Resource;
 
 /**
  * 资源
- *
+ * 
  * @author yaoht
  * 
  */

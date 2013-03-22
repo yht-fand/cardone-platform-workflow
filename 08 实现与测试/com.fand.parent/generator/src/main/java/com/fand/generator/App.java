@@ -9,7 +9,9 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.util.CollectionUtils;
 
 /**
- * Hello world!
+ * 主执行端
+ * 
+ * @author yaoht
  */
 public class App {
 	public static void main(final String[] args) throws Exception {

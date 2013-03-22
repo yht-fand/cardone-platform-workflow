@@ -239,8 +239,7 @@ public interface SimpleDao {
 	 * 
 	 * @return 分页对象
 	 */
-	<T> PaginationDto<T> pagination(Class<T> mappedClass, String readSqlPath, String findSqlPath, int paginationNo, int paginationSize,
-			ModelArgs... modelArgss);
+	<T> PaginationDto<T> pagination(Class<T> mappedClass, String readSqlPath, String findSqlPath, int paginationNo, int paginationSize, ModelArgs... modelArgss);
 
 	/**
 	 * 分页
@@ -257,8 +256,7 @@ public interface SimpleDao {
 	 *            model
 	 * @return 分页对象
 	 */
-	PaginationDto<Map<String, Object>> pagination(String readSqlPath, String findSqlPath, int paginationNo, int paginationSize,
-			Map<String, Object> model);
+	PaginationDto<Map<String, Object>> pagination(String readSqlPath, String findSqlPath, int paginationNo, int paginationSize, Map<String, Object> model);
 
 	/**
 	 * 分页
@@ -275,8 +273,7 @@ public interface SimpleDao {
 	 *            model参数
 	 * @return 分页对象
 	 */
-	PaginationDto<Map<String, Object>> pagination(String readSqlPath, String findSqlPath, int paginationNo, int paginationSize,
-			ModelArgs... modelArgss);
+	PaginationDto<Map<String, Object>> pagination(String readSqlPath, String findSqlPath, int paginationNo, int paginationSize, ModelArgs... modelArgss);
 
 	/**
 	 * 读取

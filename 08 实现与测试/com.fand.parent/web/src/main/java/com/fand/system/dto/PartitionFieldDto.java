@@ -4,7 +4,7 @@ import com.fand.system.po.PartitionField;
 
 /**
  * 分区字段
- *
+ * 
  * @author yaoht
  * 
  */
