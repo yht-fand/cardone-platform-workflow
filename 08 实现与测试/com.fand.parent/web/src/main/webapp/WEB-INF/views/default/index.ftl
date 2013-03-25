@@ -42,6 +42,12 @@
           <a class="brand" href="#"><@fand.defaultIfBlank '','fand' /></a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
+<#assign content = "沟通：沟通内容:eeeeeeeeee">
+<#if fand.StringUtils.IfBlank(content)>
+<@fand.defaultIfBlank content, '&nbsp;' />
+<#elseif fand.StringUtils.startsWith(content, "沟通：")> 
+${fand.StringUtils.substring(content, 3)}
+<#else><@fand.defaultIfBlank content, '&nbsp;' /></#if>
               Logged in as <a href="#" class="navbar-link">Username</a>
             </p>
             <ul class="nav">
