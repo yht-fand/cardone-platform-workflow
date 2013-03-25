@@ -46,26 +46,25 @@
 	</bean>
 
 	<!-- 系统运行 -->
-	<bean id="com.fand.system.service.SystemRunService"
-		class="com.fand.system.service.DefaultSystemRunService">
+	<bean id="com.fand.system.service.SystemRunService" class="com.fand.system.service.DefaultSystemRunService">
 		<!-- 分区 -->
 		<property name="partitionDao" ref="com.fand.system.dao.PartitionDao" />
-			
+
 		<!-- 分区字段 -->
 		<property name="partitionFieldDao" ref="com.fand.system.dao.PartitionFieldDao" />
-			
+
 		<!-- 目录 -->
 		<property name="directoryDao" ref="com.fand.system.dao.DirectoryDao" />
-			
+
 		<!-- 目录字段 -->
 		<property name="directoryFieldDao" ref="com.fand.system.dao.DirectoryFieldDao" />
-			
+
 		<!-- 资源 -->
 		<property name="resourceDao" ref="com.fand.system.dao.ResourceDao" />
-			
+
 		<!-- 资源字段 -->
 		<property name="resourceFieldDao" ref="com.fand.system.dao.ResourceFieldDao" />
-			
+
 		<!-- 系统运行 -->
 		<property name="dao" ref="com.fand.system.dao.SystemRunDao" />
 	</bean>

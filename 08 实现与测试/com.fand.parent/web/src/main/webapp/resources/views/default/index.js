@@ -1,3 +1,3 @@
 $(function() {
-			$("#menu1").wijmenu();
+			$("#topMenu").wijmenu();
 		});

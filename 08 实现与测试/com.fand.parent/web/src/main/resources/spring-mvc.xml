@@ -26,21 +26,25 @@
 		<property name="templateLoaderPath" value="/WEB-INF/views" />
 		<property name="freemarkerSettings">
 			<props>
-				<prop key="defaultEncoding">UTF-8</prop>
-				<prop key="output_encoding">UTF-8</prop>
 				<prop key="template_update_delay">5</prop>
+				<prop key="default_encoding">UTF-8</prop>
+				<prop key="output_encoding">UTF-8</prop>
 				<prop key="locale">zh_CN</prop>
-				<prop key="datetime_format">yyyy-MM-dd</prop>
+				<prop key="time_format">HH:mm:ss</prop>
+				<prop key="boolean_format">true,false</prop>
+				<prop key="whitespace_stripping">true</prop>
+				<prop key="tag_syntax">auto_detect</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+				<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
 				<prop key="date_format">yyyy-MM-dd</prop>
 				<prop key="number_format">#.##</prop>
-				<prop key="tag_syntax">auto_detect</prop>
-				<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
-				<prop key="auto_import">spring.ftl as spring</prop>
+				<prop key="auto_import">spring.ftl as spring,fand.ftl as fand</prop>
 			</props>
 		</property>
 		<property name="freemarkerVariables">
 			<map>
-				<entry key="xml_escape" value-ref="fmXmlEscape" />
+				<entry key="xmlEscapeFn" value-ref="xmlEscapeFn" />
+				<entry key="beansWrapperFn" value-ref="beansWrapperFn" />
 			</map>
 		</property>
 	</bean>
@@ -65,13 +69,9 @@
 		<property name="prefix" value="" />
 		<property name="suffix" value=".ftl" />
 		<property name="contentType" value="text/html;charset=utf-8"></property>
-	</bean>
-
-
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/views/" />
-		<property name="suffix" value=".jsp" />
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="exposeSessionAttributes" value="true" />
+		<property name="exposeSpringMacroHelpers" value="true" />
 	</bean>
 
 

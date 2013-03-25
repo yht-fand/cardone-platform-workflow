@@ -22,9 +22,35 @@
 		<property name="minIdle" value="2" />
 	</bean>
 
+	<bean id="xmlEscapeFn" class="freemarker.template.utility.XmlEscape" />
+
+	<bean id="beansWrapperFn" class="freemarker.ext.beans.BeansWrapper" />
+
 	<bean id="com.fand.support.TemplateSupport.configuration.sql.default"
 		class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
 		<property name="templateLoaderPath" value="classpath:/sql/oracle" />
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="xmlEscapeFn" value-ref="xmlEscapeFn" />
+				<entry key="beansWrapperFn" value-ref="beansWrapperFn" />
+			</map>
+		</property>
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="template_update_delay">5</prop>
+				<prop key="default_encoding">UTF-8</prop>
+				<prop key="output_encoding">UTF-8</prop>
+				<prop key="locale">zh_CN</prop>
+				<prop key="time_format">HH:mm:ss</prop>
+				<prop key="boolean_format">true,false</prop>
+				<prop key="whitespace_stripping">true</prop>
+				<prop key="tag_syntax">auto_detect</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+				<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+				<prop key="date_format">yyyy-MM-dd</prop>
+				<prop key="number_format">#.##</prop>
+			</props>
+		</property>
 	</bean>
 
 	<bean name="com.fand.support.templateSupport.sql.default" class="com.fand.support.DefaultTemplateSupport">
