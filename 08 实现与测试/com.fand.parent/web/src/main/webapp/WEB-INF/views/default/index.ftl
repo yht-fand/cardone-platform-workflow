@@ -8,27 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="方道门户系统">
     <meta name="author" content="yaoht">
-
-    <link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/assets/css/bootstrap.min.css"/>
-    <link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/css/custom-theme/jquery-ui-1.10.0.custom.css"/>
-    <link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/assets/css/font-awesome.min.css"/>
-    <!--[if IE 7]>
-    <link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/assets/css/font-awesome-ie7.min.css"/>
-    <![endif]-->
-    <!--[if lt IE 9]>
-    <link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/css/custom-theme/jquery.ui.1.10.0.ie.css"/>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/third-party/wijmo/jquery.wijmo-open.1.5.0.css"/>
-	<link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/views/default/index.css"/>
     
-    <script type="text/javascript" src="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/assets/js/jquery-1.9.0.min.js"></script>
-	<script type="text/javascript" src="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/assets/js/jquery-ui-1.10.0.custom.min.js"></script>
-	<script type="text/javascript" src="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/assets/js/google-code-prettify/prettify.js"></script>
-	<script type="text/javascript" src="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/assets/js/docs.js"></script>
-	<script type="text/javascript" src="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/third-party/wijmo/jquery.mousewheel.min.js"></script>
-	<script type="text/javascript" src="<@spring.url ""/>/resources/widget/jquery-ui-bootstrap/third-party/wijmo/jquery.wijmo-open.1.5.0.min.js"></script>
-	<script type="text/javascript" src="<@spring.url ""/>/resources/views/default/index.js"></script>
+    <link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/widget/bootstrap/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/widget/bootstrap/css/bootstrap-responsive.min.css"/>
+	<link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/css/default/index.css"/>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -39,22 +22,30 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#"><@fand.defaultIfBlank '','fand' /></a>
+          <a class="brand" href="#">Project name</a>
           <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-<#assign content = "沟通：沟通内容:eeeeeeeeee">
-<#if fand.StringUtils.IfBlank(content)>
-<@fand.defaultIfBlank content, '&nbsp;' />
-<#elseif fand.StringUtils.startsWith(content, "沟通：")> 
-${fand.StringUtils.substring(content, 3)}
-<#else><@fand.defaultIfBlank content, '&nbsp;' /></#if>
-              Logged in as <a href="#" class="navbar-link">Username</a>
-            </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
             </ul>
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">Sign in</button>
+            </form>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -87,12 +78,6 @@ ${fand.StringUtils.substring(content, 3)}
         <div class="span9">
           <div class="hero-unit">
             <h1>Hello, world!</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
             <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
             <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
           </div>
@@ -132,13 +117,21 @@ ${fand.StringUtils.substring(content, 3)}
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->
-
+<ul class="nav nav-tabs">
+  <li><a href="#home" data-toggle="tab">首页</a></li>
+  <li><a href="#profile" data-toggle="tab">Profile</a></li>
+  <li><a href="#messages" data-toggle="tab">Messages</a></li>
+  <li><a href="#settings" data-toggle="tab">Settings</a></li>
+</ul><a href="#" data-toggle="tooltip" title="first tooltip">hover over me</a>
       <hr>
 
       <footer>
         <p>&copy; Company 2013</p>
       </footer>
-
     </div><!--/.fluid-container-->
-</body>
+
+	<script type="text/javascript" src="<@spring.url ""/>/resources/widget/jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="<@spring.url ""/>/resources/widget/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<@spring.url ""/>/resources/js/default/index.js"></script>
+  </body>
 </html>
