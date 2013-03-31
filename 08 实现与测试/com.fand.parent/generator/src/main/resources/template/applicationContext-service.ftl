@@ -14,13 +14,13 @@
 <#list poMapperList as poMapper>
 	<!-- <@defaultIfBlank str="${poMapper.remarks!}" defaultSt="${poMapper.code!}"/> -->
 	<bean id="${packageCode}.${moduleMapperKey}.dao.${poMapper.code}Dao" class="${packageCode}.${moduleMapperKey}.dao.Jdbc${poMapper.code}Dao"
-		parent="daoTemplate.default">
+		parent="daoTemplate">
 	</bean>
 
 </#list>
 	<!-- ${businessMapper.name!businessCode} -->
 	<bean id="${packageCode}.${moduleMapperKey}.dao.${businessCode}Dao" class="${packageCode}.${moduleMapperKey}.dao.Jdbc${businessCode}Dao"
-		parent="daoTemplate.default">
+		parent="daoTemplate">
 	</bean>
 
 	<!-- ${businessMapper.name!businessCode} -->

@@ -6,7 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.fand.system.service.SystemRunService;
+import com.fand.configuration.service.DictService;
+
 
 /**
  * 系统运行
@@ -14,18 +15,18 @@ import com.fand.system.service.SystemRunService;
  * @author yaoht
  */
 @Controller
-@RequestMapping("/systemRun")
+@RequestMapping("/dict")
 public class DictController {
-	@Resource(name = SystemRunService._BEAN_ID)
-	private SystemRunService systemRunService;
+	@Resource(name = DictService._BEAN_ID)
+	private DictService dictService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String index() {
-		return "systemRun/index";
+		return "dict/index";
 	}
 
 	@RequestMapping(value = "/partition", method = RequestMethod.GET)
 	public String partition() {
-		return "systemRun/partition/index";
+		return "dict/partition/index";
 	}
 }

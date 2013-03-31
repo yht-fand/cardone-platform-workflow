@@ -12,17 +12,17 @@
 	default-lazy-init="false">
 	<!-- 字典 -->
 	<bean id="com.fand.configuration.dao.DictDao" class="com.fand.configuration.dao.JdbcDictDao"
-		parent="daoTemplate.default">
+		parent="daoTemplate">
 	</bean>
 
 	<!-- 字典分类 -->
 	<bean id="com.fand.configuration.dao.DictSoDao" class="com.fand.configuration.dao.JdbcDictSoDao"
-		parent="daoTemplate.default">
+		parent="daoTemplate">
 	</bean>
 
 	<!-- 字典 -->
 	<bean id="com.fand.configuration.dao.DictDao" class="com.fand.configuration.dao.JdbcDictDao"
-		parent="daoTemplate.default">
+		parent="daoTemplate">
 	</bean>
 
 	<!-- 字典 -->
