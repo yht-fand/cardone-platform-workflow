@@ -99,22 +99,18 @@
 	<bean id="com.fand.ProjectMapper.moduleMapperMap" class="java.util.HashMap">
 		<constructor-arg>
 			<map>
-				<entry key="system">
+				<entry key="configuration">
 					<bean class="com.fand.generator.mapper.ModuleMapper">
-						<property name="name" value="系统管理" />
+						<property name="name" value="配置" />
 						<property name="businessMap">
 							<map>
-								<entry key="SystemRun">
+								<entry key="Dict">
 									<bean class="com.fand.generator.mapper.BusinessMapper">
-										<property name="name" value="系统运行" />
+										<property name="name" value="字典" />
 										<property name="entityList">
 											<list>
-												<value>Partition</value>
-												<value>PartitionField</value>
-												<value>Directory</value>
-												<value>DirectoryField</value>
-												<value>Resource</value>
-												<value>ResourceField</value>
+												<value>Dict</value>
+												<value>DictSo</value>
 											</list>
 										</property>
 									</bean>
@@ -143,19 +139,15 @@
 	<bean id="com.fand.Template" class="com.fand.generator.template.DefaultTemplate"
 		init-method="init">
 		<property name="configuration" ref="com.fand.FreeMarkerConfiguration" />
-		<property name="outputDir" value="E:\workspace\com.fand.parent\web" />
+		<property name="outputDir" value="E:\git\FanD\08 实现与测试\com.fand.parent\web" />
 		<property name="projectMapper" ref="com.fand.ProjectMapper" />
 	</bean>
 
 	<bean id="com.fand.poMap" class="java.util.HashMap">
 		<constructor-arg>
 			<map>
-				<entry key="Partition" value="PARTITION" />
-				<entry key="PartitionField" value="PARTITION_FI" />
-				<entry key="Directory" value="DIRECTORY" />
-				<entry key="DirectoryField" value="DIRECTORY_FI" />
-				<entry key="Resource" value="RESOURCE" />
-				<entry key="ResourceField" value="RESOURCE_FI" />
+				<entry key="DictSo" value="FD_DICT_SO" />
+				<entry key="Dict" value="FD_DICT" />
 			</map>
 		</constructor-arg>
 	</bean>
