@@ -1,7 +1,7 @@
 <#include "macro_.ftl">
 package ${packageCode}.${moduleMapperKey}.bo;
 
-import com.fand.extend.bo.DefaultSimpleBo;
+import com.fand.support.bo.DefaultSimpleBo;
 import ${packageCode}.${moduleMapperKey}.bo.${poMapper.code}Bo;
 import ${packageCode}.${moduleMapperKey}.dao.${poMapper.code}Dao;
 

@@ -104,13 +104,18 @@
 						<property name="name" value="配置" />
 						<property name="businessMap">
 							<map>
-								<entry key="Dict">
+								<entry key="Configuration">
 									<bean class="com.fand.generator.mapper.BusinessMapper">
-										<property name="name" value="字典" />
+										<property name="name" value="配置" />
 										<property name="entityList">
 											<list>
-												<value>Dict</value>
-												<value>DictSo</value>
+												<value>DictionaryTy</value>
+												<value>Dictionary</value>
+												<value>ObjectAt</value>
+												<value>ObjectBlAt</value>
+												<value>ObjectClAt</value>
+												<value>Relationship</value>
+												<value>I18n</value>
 											</list>
 										</property>
 									</bean>
@@ -146,8 +151,13 @@
 	<bean id="com.fand.poMap" class="java.util.HashMap">
 		<constructor-arg>
 			<map>
-				<entry key="DictSo" value="FD_DICT_SO" />
-				<entry key="Dict" value="FD_DICT" />
+				<entry key="DictionaryTy" value="FD_DICTIONARY_TY" />
+				<entry key="Dictionary" value="FD_DICTIONARY" />
+				<entry key="ObjectAt" value="FD_OBJECT_AT" />
+				<entry key="ObjectBlAt" value="FD_OBJECT_BL_AT" />
+				<entry key="ObjectClAt" value="FD_OBJECT_CL_AT" />
+				<entry key="Relationship" value="FD_RELATIONSHIP" />
+				<entry key="I18n" value="FD_I18N" />
 			</map>
 		</constructor-arg>
 	</bean>

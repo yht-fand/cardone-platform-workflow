@@ -1,17 +1,8 @@
+<#assign fandPagePath = '/default/index'>
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8">
-    
-    <title>方道门户系统</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="方道门户系统">
-    <meta name="author" content="yaoht">
-    
-    <link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/widget/bootstrap/css/bootstrap.min.css"/>
-    <link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/widget/bootstrap/css/bootstrap-responsive.min.css"/>
-	<link type="text/css" rel="stylesheet" href="<@spring.url ""/>/resources/css/default/index.css"/>
+<#include "head_.ftl">
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -125,13 +116,9 @@
 </ul><a href="#" data-toggle="tooltip" title="first tooltip">hover over me</a>
       <hr>
 
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
+<#include "footer_.ftl">
     </div><!--/.fluid-container-->
 
-	<script type="text/javascript" src="<@spring.url ""/>/resources/widget/jquery/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="<@spring.url ""/>/resources/widget/bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="<@spring.url ""/>/resources/js/default/index.js"></script>
+<#include "footerJs_.ftl">
   </body>
 </html>

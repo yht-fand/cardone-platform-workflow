@@ -11,13 +11,6 @@
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
 	http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool-3.0.xsd"
 	default-lazy-init="false">
-<#list poMapperList as poMapper>
-	<!-- <@defaultIfBlank str="${poMapper.remarks!}" defaultSt="${poMapper.code!}"/> -->
-	<bean id="${packageCode}.${moduleMapperKey}.dao.${poMapper.code}Dao" class="${packageCode}.${moduleMapperKey}.dao.Jdbc${poMapper.code}Dao"
-		parent="daoTemplate">
-	</bean>
-
-</#list>
 	<!-- ${businessMapper.name!businessCode} -->
 	<bean id="${packageCode}.${moduleMapperKey}.dao.${businessCode}Dao" class="${packageCode}.${moduleMapperKey}.dao.Jdbc${businessCode}Dao"
 		parent="daoTemplate">
@@ -26,11 +19,6 @@
 	<!-- ${businessMapper.name!businessCode} -->
 	<bean id="${packageCode}.${moduleMapperKey}.service.${businessCode}Service"
 		class="${packageCode}.${moduleMapperKey}.service.Default${businessCode}Service">
-<#list poMapperList as poMapper>
-		<!-- <@defaultIfBlank str="${poMapper.remarks!}" defaultSt="${poMapper.code!}"/> -->
-		<property name="${poMapper.code?uncap_first}Dao" ref="${packageCode}.${moduleMapperKey}.dao.${poMapper.code}Dao" />
-			
-</#list>
 		<!-- ${businessMapper.name!businessCode} -->
 		<property name="dao" ref="${packageCode}.${moduleMapperKey}.dao.${businessCode}Dao" />
 	</bean>

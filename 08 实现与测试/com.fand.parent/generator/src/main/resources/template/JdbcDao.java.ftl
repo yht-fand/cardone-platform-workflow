@@ -1,7 +1,7 @@
 <#include "macro_.ftl">
 package ${packageCode}.${moduleMapperKey}.dao;
 
-import com.fand.extend.dao.JdbcSimpleDao;
+import com.fand.persistent.support.JdbcDaoSupport;
 import ${packageCode}.${moduleMapperKey}.dao.${poMapper.code}Dao;
 
 /**
@@ -10,5 +10,5 @@ import ${packageCode}.${moduleMapperKey}.dao.${poMapper.code}Dao;
  * @author ${author!'yaoht'}
  * 
  */
-public class Jdbc${poMapper.code}Dao extends JdbcSimpleDao implements ${poMapper.code}Dao {
+public class Jdbc${poMapper.code}Dao extends JdbcDaoSupport implements ${poMapper.code}Dao {
 }

@@ -10,6 +10,9 @@
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
 	http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool-3.0.xsd"
 	default-lazy-init="false">
+	<context:property-placeholder location="classpath:config.properties"
+		ignore-unresolvable="true" />
+	
 	<bean id="com.fand.dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
@@ -53,12 +56,12 @@
 		</property>
 	</bean>
 
-	<bean name="com.fand.support.templateSupport.sql" class="com.fand.support.DefaultTemplateSupport">
+	<bean name="com.fand.support.templateSupport.sql" class="com.fand.support.FreeMarkerTemplateSupport">
 		<property name="configuration"
 			ref="com.fand.support.TemplateSupport.configuration.sql" />
 	</bean>
 
-	<bean name="daoTemplate" class="com.fand.extend.dao.JdbcSimpleDao"
+	<bean name="daoTemplate" class="com.fand.persistent.support.JdbcDaoSupport"
 		abstract="true">
 		<property name="dataSource" ref="com.fand.dataSource" />
 		<property name="templateSupport" ref="com.fand.support.templateSupport.sql" />

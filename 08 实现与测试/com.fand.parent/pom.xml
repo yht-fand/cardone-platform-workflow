@@ -11,6 +11,7 @@
 		<org.springframework-version>3.2.2.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.1</org.slf4j-version>
+		<sitemesh.version>2.4.2</sitemesh.version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -296,6 +297,14 @@
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2.2</version>
 		</dependency>
+		
+		<!-- sitemesh -->
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>${sitemesh.version}</version>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -479,6 +488,7 @@
 		<module>extension</module>
 		<module>generator</module>
 		<module>web</module>
+		<module>persistent</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>

@@ -23,6 +23,11 @@
 		<artifactId>com.fand.extension</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</dependency>
+	<dependency>
+		<groupId>com.fand</groupId>
+		<artifactId>com.fand.persistent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</dependency>
 	</dependencies>
 	<build>
 		<finalName>web</finalName>

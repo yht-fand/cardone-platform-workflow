@@ -176,18 +176,18 @@ public class DefaultTemplate implements Template {
 										templateName = "Dto.java.ftl";
 
 										this.makeFile(parser, javaExpressionString, context, templateName, model);
-									} else if ("main".equals(rootDirType) && "java".equals(dirType) && "dao".equals(layer)) {
-										context.setVariable("filename", poMapper.getCode() + "Dao");
-
-										templateName = "Dao.java.ftl";
-
-										this.makeFile(parser, javaExpressionString, context, templateName, model);
-
-										context.setVariable("filename", "Jdbc" + poMapper.getCode() + "Dao");
-
-										templateName = "JdbcDao.java.ftl";
-
-										this.makeFile(parser, javaExpressionString, context, templateName, model);
+//									} else if ("main".equals(rootDirType) && "java".equals(dirType) && "dao".equals(layer)) {
+//										context.setVariable("filename", poMapper.getCode() + "Dao");
+//
+//										templateName = "Dao.java.ftl";
+//
+//										this.makeFile(parser, javaExpressionString, context, templateName, model);
+//
+//										context.setVariable("filename", "Jdbc" + poMapper.getCode() + "Dao");
+//
+//										templateName = "JdbcDao.java.ftl";
+//
+//										this.makeFile(parser, javaExpressionString, context, templateName, model);
 									} else if ("main".equals(rootDirType) && "resources".equals(dirType) && "web".equals(layer)) {
 										final String sqlExpressionString = StringUtils
 												.join(new String[] { srcDirName,

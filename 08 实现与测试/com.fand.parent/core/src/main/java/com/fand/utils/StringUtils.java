@@ -47,8 +47,14 @@ public class StringUtils {
 	 *            间隔字符
 	 * @return 转换后字符
 	 */
-	public static String toCamelCase(String str, final char... delimiters) {
-		str = StringUtils.toPascalCase(str, delimiters);
+	public static String toCamelCase(String str, char... delimiters) {
+		if (ArrayUtils.isEmpty(delimiters)) {
+			delimiters = new char[] { '_' };
+		}
+
+		if (org.apache.commons.lang.StringUtils.containsAny(str, delimiters)) {
+			str = StringUtils.toPascalCase(str, delimiters);
+		}
 
 		str = org.apache.commons.lang.StringUtils.uncapitalize(str);
 
@@ -69,12 +75,16 @@ public class StringUtils {
 			delimiters = new char[] { '_' };
 		}
 
-		str = org.apache.commons.lang.StringUtils.lowerCase(str);
+		if (org.apache.commons.lang.StringUtils.containsAny(str, delimiters)) {
+			str = org.apache.commons.lang.StringUtils.lowerCase(str);
 
-		str = WordUtils.capitalizeFully(str, delimiters);
+			str = WordUtils.capitalizeFully(str, delimiters);
 
-		for (final char delimiter : delimiters) {
-			str = org.apache.commons.lang.StringUtils.remove(str, delimiter);
+			for (final char delimiter : delimiters) {
+				str = org.apache.commons.lang.StringUtils.remove(str, delimiter);
+			}
+		} else {
+			str = WordUtils.capitalizeFully(str, delimiters);
 		}
 
 		return str;
