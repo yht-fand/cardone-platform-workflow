@@ -7,14 +7,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * 关联
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class Relationship implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 534297439397189171L;
+	private static final long serialVersionUID = 168762392964596057L;
 
 	/**
     * 对象3标识

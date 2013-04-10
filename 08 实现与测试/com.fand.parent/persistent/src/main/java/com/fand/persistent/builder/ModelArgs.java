@@ -14,7 +14,7 @@ import com.google.common.collect.Maps;
 /**
  * 对象参数
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class ModelArgs implements java.io.Serializable {

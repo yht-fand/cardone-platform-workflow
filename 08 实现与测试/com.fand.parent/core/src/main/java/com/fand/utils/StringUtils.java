@@ -6,7 +6,7 @@ import org.apache.commons.lang.WordUtils;
 /**
  * 字符串工具类
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class StringUtils {

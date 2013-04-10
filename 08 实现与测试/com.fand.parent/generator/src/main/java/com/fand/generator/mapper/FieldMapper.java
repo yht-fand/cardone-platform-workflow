@@ -3,7 +3,7 @@ package com.fand.generator.mapper;
 /**
  * 字段映射
  * 
- * @author yaoht
+ * @author haitao.yao
  */
 public class FieldMapper implements java.io.Serializable {
 	/**

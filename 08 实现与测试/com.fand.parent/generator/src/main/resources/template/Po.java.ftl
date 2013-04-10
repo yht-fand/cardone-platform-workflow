@@ -20,7 +20,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * <@defaultIfBlank str="${poMapper.remarks!}" defaultSt="${poMapper.code!}"/>
  * 
- * @author ${author!'yaoht'}
+ * @author ${author!'haitao.yao'}
  * 
  */
 public class ${poMapper.code} implements java.io.Serializable {

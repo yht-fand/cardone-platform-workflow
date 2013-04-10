@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * bean映射
  * 
- * @author yaoht
+ * @author haitao.yao
  */
 public class PoMapper implements java.io.Serializable {
 	/**

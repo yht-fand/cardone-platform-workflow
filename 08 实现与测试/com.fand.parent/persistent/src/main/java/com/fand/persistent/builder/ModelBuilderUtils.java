@@ -4,6 +4,12 @@ import org.apache.commons.collections.MapUtils;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.StringUtils;
 
+/**
+ * 映射生成器工具
+ * 
+ * @author haitao.yao
+ * 
+ */
 public class ModelBuilderUtils {
 	/**
 	 * 填充

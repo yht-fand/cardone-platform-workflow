@@ -7,14 +7,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * 对象BLob属性
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class ObjectBlAt implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 859988014868373888L;
+	private static final long serialVersionUID = 256720755277120190L;
 
 	/**
     * 标识

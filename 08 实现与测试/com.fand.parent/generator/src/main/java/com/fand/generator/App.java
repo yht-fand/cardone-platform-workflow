@@ -11,7 +11,7 @@ import org.springframework.util.CollectionUtils;
 /**
  * 主执行端
  * 
- * @author yaoht
+ * @author haitao.yao
  */
 public class App {
 	public static void main(final String[] args) throws Exception {

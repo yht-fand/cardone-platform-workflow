@@ -10,7 +10,7 @@ import com.fand.persistent.support.ServiceSupport;
 /**
  * 配置
  *
- * @author yaoht
+ * @author haitao.yao
  */
 public interface ConfigurationService extends ServiceSupport {
 	/**

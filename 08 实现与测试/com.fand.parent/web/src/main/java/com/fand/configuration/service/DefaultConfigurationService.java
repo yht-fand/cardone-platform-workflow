@@ -12,7 +12,7 @@ import com.fand.configuration.dao.ConfigurationDao;
 /**
  * 配置
  *
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class DefaultConfigurationService extends DefaultServiceSupport<ConfigurationDao> implements ConfigurationService {

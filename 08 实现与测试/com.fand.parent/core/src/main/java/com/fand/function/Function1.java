@@ -3,7 +3,7 @@ package com.fand.function;
 /**
  * 方法
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  * @param <R>
  *            输出泛型

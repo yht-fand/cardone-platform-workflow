@@ -21,7 +21,7 @@ import com.fand.support.TemplateSupport;
 /**
  * jdbc dao
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoSupport {

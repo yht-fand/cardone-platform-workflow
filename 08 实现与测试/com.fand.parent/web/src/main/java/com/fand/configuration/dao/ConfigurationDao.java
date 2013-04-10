@@ -3,7 +3,7 @@ package com.fand.configuration.dao;
 /**
  * 配置
  *
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public interface ConfigurationDao {

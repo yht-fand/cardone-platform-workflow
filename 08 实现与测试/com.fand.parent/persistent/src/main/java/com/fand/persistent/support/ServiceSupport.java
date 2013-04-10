@@ -3,7 +3,7 @@ package com.fand.persistent.support;
 /**
  * service
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public interface ServiceSupport {

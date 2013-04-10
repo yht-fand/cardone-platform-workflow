@@ -10,13 +10,13 @@ import com.fand.configuration.dto.I18nDto;
 /**
  * 配置
  *
- * @author yaoht
+ * @author haitao.yao
  */
 public class ConfigurationVo implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 628903729726023150L;
+	private static final long serialVersionUID = 601535500552630604L;
 	
 	/**
 	 * 字典类型

@@ -7,7 +7,7 @@ import javax.persistence.Id;
 /**
  * 流程日志
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class WorkflowLo implements java.io.Serializable {

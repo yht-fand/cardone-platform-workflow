@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * 模块映射
  * 
- * @author yaoht
+ * @author haitao.yao
  */
 public class ModuleMapper implements java.io.Serializable {
 	/**

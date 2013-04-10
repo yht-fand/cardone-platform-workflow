@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * 对象映射生成器
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public interface ModelBuilder {

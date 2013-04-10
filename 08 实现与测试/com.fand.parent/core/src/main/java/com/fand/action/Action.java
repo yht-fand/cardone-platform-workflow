@@ -3,7 +3,7 @@ package com.fand.action;
 /**
  * 动作
  * 
- * @author yaoht
+ * @author haitao.yao
  */
 public interface Action {
 	/**

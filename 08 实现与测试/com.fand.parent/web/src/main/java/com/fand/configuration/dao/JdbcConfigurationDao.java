@@ -6,7 +6,7 @@ import com.fand.configuration.dao.ConfigurationDao;
 /**
  * 配置
  *
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class JdbcConfigurationDao extends JdbcDaoSupport implements ConfigurationDao {

@@ -3,7 +3,7 @@ package com.fand.support;
 /**
  * 模板支持
  * 
- * @author yaoht
+ * @author haitao.yao
  */
 public interface TemplateSupport {
 	/**

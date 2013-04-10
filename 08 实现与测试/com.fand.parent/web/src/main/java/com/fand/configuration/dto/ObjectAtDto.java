@@ -5,12 +5,12 @@ import com.fand.configuration.po.ObjectAt;
 /**
  * 对象属性
  *
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class ObjectAtDto extends ObjectAt {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 510789699270145073L;
+	private static final long serialVersionUID = 250403533377194814L;
 }

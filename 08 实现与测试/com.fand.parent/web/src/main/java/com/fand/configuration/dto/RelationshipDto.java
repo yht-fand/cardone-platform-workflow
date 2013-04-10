@@ -5,12 +5,12 @@ import com.fand.configuration.po.Relationship;
 /**
  * 关联
  *
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class RelationshipDto extends Relationship {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 839329569289141393L;
+	private static final long serialVersionUID = 560049587731266647L;
 }

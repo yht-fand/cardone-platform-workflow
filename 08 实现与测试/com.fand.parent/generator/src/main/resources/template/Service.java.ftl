@@ -11,7 +11,7 @@ import com.fand.persistent.support.ServiceSupport;
 /**
  * ${businessMapper.name!businessCode}
  *
- * @author ${author!'yaoht'}
+ * @author ${author!'haitao.yao'}
  */
 public interface ${businessCode}Service extends ServiceSupport {
 	/**

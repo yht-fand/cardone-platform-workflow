@@ -17,6 +17,12 @@ import org.springframework.util.ReflectionUtils.FieldFilter;
 
 import com.google.common.collect.Maps;
 
+/**
+ * 默认映射生成器
+ * 
+ * @author haitao.yao
+ * 
+ */
 public class DefaultModelBuilder implements ModelBuilder {
 	/**
 	 * 默认键值前缀名称

@@ -5,12 +5,12 @@ import com.fand.configuration.po.Dictionary;
 /**
  * 字典
  *
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class DictionaryDto extends Dictionary {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 622021864793984354L;
+	private static final long serialVersionUID = 566780409370830063L;
 }

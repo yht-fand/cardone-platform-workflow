@@ -6,7 +6,7 @@ import com.fand.ext.bo.SimpleBo;
 /**
  * <@defaultIfBlank str="${poMapper.remarks!}" defaultSt="${poMapper.code!}"/>
  *
- * @author ${author!'yaoht'}
+ * @author ${author!'haitao.yao'}
  * 
  */
 public interface ${poMapper.code}Bo extends SimpleBo {

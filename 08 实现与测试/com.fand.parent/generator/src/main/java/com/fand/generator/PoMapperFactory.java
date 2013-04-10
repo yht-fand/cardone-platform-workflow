@@ -25,7 +25,7 @@ import com.fand.generator.template.Template;
 /**
  * PO对象映射工厂
  * 
- * @author yaoht
+ * @author haitao.yao
  */
 public class PoMapperFactory {
 	private String defaultFieldType;

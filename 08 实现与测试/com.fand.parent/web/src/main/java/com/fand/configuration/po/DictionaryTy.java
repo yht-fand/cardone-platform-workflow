@@ -7,14 +7,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * 字典类型
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class DictionaryTy implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 680753539681199417L;
+	private static final long serialVersionUID = 551932158002531684L;
 
 	/**
     * 标识

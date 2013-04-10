@@ -7,7 +7,7 @@ import ${packageCode}.${moduleMapperKey}.dao.${poMapper.code}Dao;
 /**
  * <@defaultIfBlank str="${poMapper.remarks!}" defaultSt="${poMapper.code!}"/>
  *
- * @author ${author!'yaoht'}
+ * @author ${author!'haitao.yao'}
  * 
  */
 public class Jdbc${poMapper.code}Dao extends JdbcDaoSupport implements ${poMapper.code}Dao {

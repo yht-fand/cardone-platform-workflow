@@ -4,7 +4,7 @@ package ${packageCode}.${moduleMapperKey}.dao;
 /**
  * <@defaultIfBlank str="${poMapper.remarks!}" defaultSt="${poMapper.code!}"/>
  *
- * @author ${author!'yaoht'}
+ * @author ${author!'haitao.yao'}
  * 
  */
 public interface ${poMapper.code}Dao {

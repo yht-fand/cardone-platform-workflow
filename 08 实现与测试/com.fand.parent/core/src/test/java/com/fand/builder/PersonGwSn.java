@@ -3,7 +3,7 @@ package com.fand.builder;
 /**
  * 
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class PersonGwSn implements java.io.Serializable {

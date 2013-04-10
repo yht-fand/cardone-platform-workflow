@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * 项目映射
  * 
- * @author yaoht
+ * @author haitao.yao
  */
 public class ProjectMapper implements java.io.Serializable {
 	/**

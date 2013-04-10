@@ -13,7 +13,7 @@ import ${packageCode}.${moduleMapperKey}.dao.${businessCode}Dao;
 /**
  * ${businessMapper.name!businessCode}
  *
- * @author ${author!'yaoht'}
+ * @author ${author!'haitao.yao'}
  * 
  */
 public class Default${businessCode}Service extends DefaultServiceSupport<${businessCode}Dao> implements ${businessCode}Service {

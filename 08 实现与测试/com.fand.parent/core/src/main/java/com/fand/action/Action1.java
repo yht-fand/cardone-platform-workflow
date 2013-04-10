@@ -3,7 +3,7 @@ package com.fand.action;
 /**
  * 动作
  * 
- * @author yaoht
+ * @author haitao.yao
  * @param <T1>
  *            输入泛型1
  */

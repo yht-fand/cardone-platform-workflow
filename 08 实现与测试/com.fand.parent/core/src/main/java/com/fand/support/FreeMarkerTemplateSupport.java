@@ -13,9 +13,9 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
 /**
- * 模板支持
+ * FreeMarkerTemplate支持
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class FreeMarkerTemplateSupport implements TemplateSupport {

@@ -9,7 +9,7 @@ import com.fand.persistent.dto.PaginationDto;
 /**
  * 简易dao接口
  * 
- * @author yaoht
+ * @author haitao.yao
  */
 public interface DaoSupport {
 	/**

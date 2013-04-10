@@ -7,14 +7,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * 对象CLob属性
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class ObjectClAt implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 884652965886008916L;
+	private static final long serialVersionUID = 654777725891507586L;
 
 	/**
     * 标识

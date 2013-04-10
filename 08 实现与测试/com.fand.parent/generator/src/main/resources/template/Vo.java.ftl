@@ -7,7 +7,7 @@ import ${packageCode}.${moduleMapperKey}.dto.${entity}Dto;
 /**
  * ${businessMapper.name!businessCode}
  *
- * @author ${author!'yaoht'}
+ * @author ${author!'haitao.yao'}
  */
 public class ${businessCode!}Vo implements java.io.Serializable {
 	/**

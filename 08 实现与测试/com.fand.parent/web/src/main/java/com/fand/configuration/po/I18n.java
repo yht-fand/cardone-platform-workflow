@@ -7,14 +7,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * 多国语言
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class I18n implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 870803427704211887L;
+	private static final long serialVersionUID = 841946302936043002L;
 
 	/**
     * 标识

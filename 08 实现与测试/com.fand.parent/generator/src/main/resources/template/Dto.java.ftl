@@ -6,7 +6,7 @@ import ${packageCode}.${moduleMapperKey}.po.${poMapper.code};
 /**
  * <@defaultIfBlank str="${poMapper.remarks!}" defaultSt="${poMapper.code!}"/>
  *
- * @author ${author!'yaoht'}
+ * @author ${author!'haitao.yao'}
  * 
  */
 public class ${poMapper.code}Dto extends ${poMapper.code} {

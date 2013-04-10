@@ -9,14 +9,14 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 /**
  * 对象属性
  * 
- * @author yaoht
+ * @author haitao.yao
  * 
  */
 public class ObjectAt implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 687281149185341313L;
+	private static final long serialVersionUID = 752926256220440458L;
 
 	/**
     * 标识
