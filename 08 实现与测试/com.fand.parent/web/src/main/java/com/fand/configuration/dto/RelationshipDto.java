@@ -12,5 +12,5 @@ public class RelationshipDto extends Relationship {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 560049587731266647L;
+	private static final long serialVersionUID = 857540885783549514L;
 }

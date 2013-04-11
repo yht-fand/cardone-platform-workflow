@@ -14,102 +14,102 @@ public class Relationship implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 168762392964596057L;
+	private static final long serialVersionUID = 897392903831769271L;
 
 	/**
     * 对象3标识
 	 */
-	public static final String _OBJECT_3_ID_ = "object3Id";
+	public static final String OBJECT_3_ID_ = "object3Id";
 
 	/**
     * 对象6类型标识
 	 */
-	public static final String _OBJECT_6_TY_ID_ = "object6TyId";
+	public static final String OBJECT_6_TY_ID_ = "object6TyId";
 
 	/**
     * 对象1类型标识
 	 */
-	public static final String _OBJECT_1_TY_ID_ = "object1TyId";
+	public static final String OBJECT_1_TY_ID_ = "object1TyId";
 
 	/**
     * 对象4类型标识
 	 */
-	public static final String _OBJECT_4_TY_ID_ = "object4TyId";
+	public static final String OBJECT_4_TY_ID_ = "object4TyId";
 
 	/**
     * 对象7类型标识
 	 */
-	public static final String _OBJECT_7_TY_ID_ = "object7TyId";
+	public static final String OBJECT_7_TY_ID_ = "object7TyId";
 
 	/**
     * 对象4标识
 	 */
-	public static final String _OBJECT_4_ID_ = "object4Id";
+	public static final String OBJECT_4_ID_ = "object4Id";
 
 	/**
     * 对象7标识
 	 */
-	public static final String _OBJECT_7_ID_ = "object7Id";
+	public static final String OBJECT_7_ID_ = "object7Id";
 
 	/**
     * 标识
 	 */
-	public static final String _ID_ = "id";
+	public static final String ID_ = "id";
 
 	/**
     * 对象2类型标识
 	 */
-	public static final String _OBJECT_2_TY_ID_ = "object2TyId";
+	public static final String OBJECT_2_TY_ID_ = "object2TyId";
 
 	/**
     * 对象8类型标识
 	 */
-	public static final String _OBJECT_8_TY_ID_ = "object8TyId";
+	public static final String OBJECT_8_TY_ID_ = "object8TyId";
 
 	/**
     * 对象8标识
 	 */
-	public static final String _OBJECT_8_ID_ = "object8Id";
+	public static final String OBJECT_8_ID_ = "object8Id";
 
 	/**
     * 对象6标识
 	 */
-	public static final String _OBJECT_6_ID_ = "object6Id";
+	public static final String OBJECT_6_ID_ = "object6Id";
 
 	/**
     * 对象5标识
 	 */
-	public static final String _OBJECT_5_ID_ = "object5Id";
+	public static final String OBJECT_5_ID_ = "object5Id";
 
 	/**
     * 对象5类型标识
 	 */
-	public static final String _OBJECT_5_TY_ID_ = "object5TyId";
+	public static final String OBJECT_5_TY_ID_ = "object5TyId";
 
 	/**
     * 对象3类型标识
 	 */
-	public static final String _OBJECT_3_TY_ID_ = "object3TyId";
+	public static final String OBJECT_3_TY_ID_ = "object3TyId";
 
 	/**
     * 对象1标识
 	 */
-	public static final String _OBJECT_1_ID_ = "object1Id";
+	public static final String OBJECT_1_ID_ = "object1Id";
 
 	/**
     * 对象2标识
 	 */
-	public static final String _OBJECT_2_ID_ = "object2Id";
+	public static final String OBJECT_2_ID_ = "object2Id";
 
 	/**
     * 对象9类型标识
 	 */
-	public static final String _OBJECT_9_TY_ID_ = "object9TyId";
+	public static final String OBJECT_9_TY_ID_ = "object9TyId";
 
 	/**
     * 对象9标识
 	 */
-	public static final String _OBJECT_9_ID_ = "object9Id";
+	public static final String OBJECT_9_ID_ = "object9Id";
 
 	/**
     * 对象3标识

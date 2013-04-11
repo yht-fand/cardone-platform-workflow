@@ -12,5 +12,5 @@ public class ObjectAtDto extends ObjectAt {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 250403533377194814L;
+	private static final long serialVersionUID = 478938491920942921L;
 }

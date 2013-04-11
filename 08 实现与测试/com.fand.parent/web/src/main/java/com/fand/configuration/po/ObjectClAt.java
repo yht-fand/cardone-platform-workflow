@@ -14,17 +14,17 @@ public class ObjectClAt implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 654777725891507586L;
+	private static final long serialVersionUID = 496817635283722174L;
 
 	/**
     * 标识
 	 */
-	public static final String _ID_ = "id";
+	public static final String ID_ = "id";
 
 	/**
     * clob值
 	 */
-	public static final String _CLOB_VA_ = "clobVa";
+	public static final String CLOB_VA_ = "clobVa";
 
 	/**
     * 标识

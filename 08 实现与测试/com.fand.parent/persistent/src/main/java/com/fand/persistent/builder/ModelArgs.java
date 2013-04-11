@@ -21,87 +21,87 @@ public class ModelArgs implements java.io.Serializable {
 	/**
 	 * 全部
 	 */
-	public final static String _ALL = "all";
+	public final static String ALL = "all";
 
 	/**
 	 * 总合
 	 */
-	public final static String _COUNT = "count";
+	public final static String COUNT = "count";
 
 	/**
 	 * 创建
 	 */
-	public final static String _CREATE = "create";
+	public final static String CREATE = "create";
 
 	/**
 	 * 默认忽略属性数组
 	 */
-	public static final String[] _DEFAULT_IGNORE_PROPERTIES = new String[] { "serialVersionUID" };
+	public static final String[] DEFAULT_IGNORE_PROPERTIES = new String[] { "serialVersionUID" };
 
 	/**
 	 * 默认键值前缀名称
 	 */
-	public static final String _DEFAULT_KEY_PREFIX_NAME = "where__and__eq";
+	public static final String DEFAULT_KEY_PREFIX_NAME = "where__and__eq";
 
 	/**
 	 * 默认键值后缀名称
 	 */
-	public static final String _DEFAULT_KEY_SUFFIX_NAME = "value";
+	public static final String DEFAULT_KEY_SUFFIX_NAME = "value";
 
 	/**
 	 * 默认间隔
 	 */
-	public static final String _DEFAULT_SIMPLEPARATOR = "__";
+	public static final String DEFAULT_SIMPLEPARATOR = "__";
 
 	/**
 	 * 字段
 	 */
-	public final static String _FIELD = "field";
+	public final static String FIELD = "field";
 
 	/**
 	 * 查询
 	 */
-	public final static String _FIND = "find";
+	public final static String FIND = "find";
 
 	/**
 	 * 获取
 	 */
-	public final static String _GET = "get";
+	public final static String GET = "get";
 
 	/**
 	 * 标识
 	 */
-	public final static String _ID = "id";
+	public final static String ID = "id";
 
 	/**
 	 * 最大
 	 */
-	public final static String _MAX = "max";
+	public final static String MAX = "max";
 
 	/**
 	 * 最小
 	 */
-	public final static String _MIN = "min";
+	public final static String MIN = "min";
 
 	/**
 	 * 读取
 	 */
-	public final static String _READ = "read";
+	public final static String READ = "read";
 
 	/**
 	 * 读取字段标识
 	 */
-	public final static String _READ_FIELD_ID = "read__field__id";
+	public final static String READ_FIELD_ID = "read__field__id";
 
 	/**
 	 * 移除
 	 */
-	public final static String _REMOVE = "remove";
+	public final static String REMOVE = "remove";
 
 	/**
 	 * 保存
 	 */
-	public final static String _SAVE = "save";
+	public final static String SAVE = "save";
 
 	/**
 	 * 序列号
@@ -292,7 +292,7 @@ public class ModelArgs implements java.io.Serializable {
 	 */
 	public String[] getIgnoreProperties() {
 		if (ArrayUtils.isEmpty(this.ignoreProperties)) {
-			return ModelArgs._DEFAULT_IGNORE_PROPERTIES;
+			return ModelArgs.DEFAULT_IGNORE_PROPERTIES;
 		}
 
 		return this.ignoreProperties;

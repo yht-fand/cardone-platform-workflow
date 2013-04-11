@@ -32,12 +32,12 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 	@Override
 	public int create(final String sqlPath, final List<Map<String, Object>> modelList) {
-		return this.update(sqlPath, ModelArgs._CREATE, modelList);
+		return this.update(sqlPath, ModelArgs.CREATE, modelList);
 	}
 
 	@Override
 	public int create(final String sqlPath, final Map<String, Object> model) {
-		return this.update(sqlPath, ModelArgs._CREATE, model);
+		return this.update(sqlPath, ModelArgs.CREATE, model);
 	}
 
 	@Override
@@ -50,11 +50,11 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 		sqlPathSuffixName = StringUtils.defaultIfBlank(sqlPathSuffixName, StringUtils.EMPTY);
 
-		final String readSqlPath = sqlPathPrefixName + ModelArgs._READ + sqlPathSuffixName;
+		final String readSqlPath = sqlPathPrefixName + ModelArgs.READ + sqlPathSuffixName;
 
-		final String createSqlPath = sqlPathPrefixName + ModelArgs._CREATE + sqlPathSuffixName;
+		final String createSqlPath = sqlPathPrefixName + ModelArgs.CREATE + sqlPathSuffixName;
 
-		final String saveSqlPath = sqlPathPrefixName + ModelArgs._SAVE + sqlPathSuffixName;
+		final String saveSqlPath = sqlPathPrefixName + ModelArgs.SAVE + sqlPathSuffixName;
 
 		return this.create(readSqlPath, createSqlPath, isSave, saveSqlPath, modelArgss);
 	}
@@ -69,11 +69,11 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 		sqlPathSuffixName = StringUtils.defaultIfBlank(sqlPathSuffixName, StringUtils.EMPTY);
 
-		final String readSqlPath = sqlPathPrefixName + ModelArgs._READ + sqlPathSuffixName;
+		final String readSqlPath = sqlPathPrefixName + ModelArgs.READ + sqlPathSuffixName;
 
-		final String createSqlPath = sqlPathPrefixName + ModelArgs._CREATE + sqlPathSuffixName;
+		final String createSqlPath = sqlPathPrefixName + ModelArgs.CREATE + sqlPathSuffixName;
 
-		final String saveSqlPath = sqlPathPrefixName + ModelArgs._SAVE + sqlPathSuffixName;
+		final String saveSqlPath = sqlPathPrefixName + ModelArgs.SAVE + sqlPathSuffixName;
 
 		return this.create(readSqlPath, createSqlPath, isSave, saveSqlPath, objects);
 	}
@@ -86,7 +86,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 		final ModelBuilder modelBuilder = new DefaultModelBuilder();
 
-		ModelBuilderUtils.putByFilters(modelBuilder, modelArgss, ModelArgs._CREATE, ModelArgs._SAVE);
+		ModelBuilderUtils.putByFilters(modelBuilder, modelArgss, ModelArgs.CREATE, ModelArgs.SAVE);
 
 		final int count = this.read(readSqlPath, null, modelBuilder.build());
 
@@ -95,12 +95,12 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 				return 0;
 			}
 
-			ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelArgs._SAVE);
+			ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelArgs.SAVE);
 
 			return this.save(saveSqlPath, modelBuilder.build());
 		}
 
-		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelArgs._CREATE);
+		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelArgs.CREATE);
 
 		return this.create(createSqlPath, modelBuilder.build());
 	}
@@ -114,12 +114,12 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 		int rowCount = 0;
 
 		for (final Object object : objects) {
-			final ModelArgs modelArgs1 = new ModelArgs(ModelArgs._CREATE, object).setSkipNullValue(true);
+			final ModelArgs modelArgs1 = new ModelArgs(ModelArgs.CREATE, object).setSkipNullValue(true);
 
 			final ModelArgs modelArgs2 = new ModelArgs(object).addUseAnnotationClassList(javax.persistence.Id.class);
 
 			if (isSave) {
-				final ModelArgs modelArgs3 = new ModelArgs(ModelArgs._SAVE, object).addIgnoreAnnotationClassList(javax.persistence.Id.class);
+				final ModelArgs modelArgs3 = new ModelArgs(ModelArgs.SAVE, object).addIgnoreAnnotationClassList(javax.persistence.Id.class);
 
 				rowCount += this.create(readSqlPath, createSqlPath, isSave, saveSqlPath, modelArgs1, modelArgs2, modelArgs3);
 			} else {
@@ -132,7 +132,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 	@Override
 	public <T> List<T> find(final Class<T> mappedClass, String sqlPath, final Map<String, Object> model) {
-		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs._FIND);
+		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.FIND);
 
 		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
 
@@ -154,7 +154,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 	@Override
 	public List<Map<String, Object>> find(String sqlPath, final Map<String, Object> model) {
-		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs._FIND);
+		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.FIND);
 
 		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
 
@@ -176,7 +176,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 	@Override
 	public <T> T get(final Class<T> mappedClass, String sqlPath, final Map<String, Object> model) {
-		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs._GET);
+		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.GET);
 
 		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
 
@@ -206,7 +206,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 	@Override
 	public Map<String, Object> get(String sqlPath, final Map<String, Object> model) {
-		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs._GET);
+		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.GET);
 
 		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
 
@@ -320,14 +320,14 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 	@Override
 	public <T> T read(final Class<T> requiredType, String sqlPath, final String readFieldId, Map<String, Object> model) {
-		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs._READ);
+		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.READ);
 
 		if (StringUtils.isNotBlank(readFieldId)) {
 			if (model == null) {
 				model = new HashMap<String, Object>();
 			}
 
-			model.put(ModelArgs._READ_FIELD_ID, readFieldId);
+			model.put(ModelArgs.READ_FIELD_ID, readFieldId);
 		}
 
 		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
@@ -356,14 +356,14 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 	@Override
 	public int read(String sqlPath, final String readFieldId, Map<String, Object> model) {
-		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs._READ);
+		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.READ);
 
 		if (StringUtils.isNotBlank(readFieldId)) {
 			if (model == null) {
 				model = new HashMap<String, Object>();
 			}
 
-			model.put(ModelArgs._READ_FIELD_ID, readFieldId);
+			model.put(ModelArgs.READ_FIELD_ID, readFieldId);
 		}
 
 		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
@@ -387,14 +387,14 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 	@Override
 	public <T> List<T> readList(final Class<T> elementType, String sqlPath, final String readFieldId, Map<String, Object> model) {
-		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs._READ);
+		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.READ);
 
 		if (StringUtils.isNotBlank(readFieldId)) {
 			if (model == null) {
 				model = new HashMap<String, Object>();
 			}
 
-			model.put(ModelArgs._READ_FIELD_ID, readFieldId);
+			model.put(ModelArgs.READ_FIELD_ID, readFieldId);
 		}
 
 		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
@@ -417,12 +417,12 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 	@Override
 	public int remove(final String sqlPath, final List<Map<String, Object>> modelList) {
-		return this.update(sqlPath, ModelArgs._REMOVE, modelList);
+		return this.update(sqlPath, ModelArgs.REMOVE, modelList);
 	}
 
 	@Override
 	public int remove(final String sqlPath, final Map<String, Object> model) {
-		return this.update(sqlPath, ModelArgs._REMOVE, model);
+		return this.update(sqlPath, ModelArgs.REMOVE, model);
 	}
 
 	@Override
@@ -463,19 +463,19 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 		final ModelBuilder modelBuilder = new DefaultModelBuilder();
 
-		ModelBuilderUtils.putByFilters(modelBuilder, modelArgss, ModelArgs._CREATE, ModelArgs._SAVE);
+		ModelBuilderUtils.putByFilters(modelBuilder, modelArgss, ModelArgs.CREATE, ModelArgs.SAVE);
 
 		if (isCreate) {
 			final int count = this.read(readSqlPath, null, modelBuilder.build());
 
 			if (count < 1) {
-				ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelArgs._CREATE);
+				ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelArgs.CREATE);
 
 				return this.create(createSqlPath, modelBuilder.build());
 			}
 		}
 
-		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelArgs._SAVE);
+		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelArgs.SAVE);
 
 		return this.save(saveSqlPath, modelBuilder.build());
 	}
@@ -489,12 +489,12 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 		int rowCount = 0;
 
 		for (final Object object : objects) {
-			final ModelArgs saveModelArgs = new ModelArgs(ModelArgs._SAVE, object).addIgnoreAnnotationClassList(javax.persistence.Id.class);
+			final ModelArgs saveModelArgs = new ModelArgs(ModelArgs.SAVE, object).addIgnoreAnnotationClassList(javax.persistence.Id.class);
 
 			final ModelArgs whereAndEqModelArgs = new ModelArgs(object).addUseAnnotationClassList(javax.persistence.Id.class);
 
 			if (isCreate) {
-				final ModelArgs createModelArgs = new ModelArgs(ModelArgs._CREATE, object).setSkipNullValue(true);
+				final ModelArgs createModelArgs = new ModelArgs(ModelArgs.CREATE, object).setSkipNullValue(true);
 
 				rowCount += this.save(saveSqlPath, isCreate, readSqlPath, createSqlPath, saveModelArgs, whereAndEqModelArgs, createModelArgs);
 			} else {
@@ -507,12 +507,12 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 	@Override
 	public int save(final String sqlPath, final List<Map<String, Object>> modelList) {
-		return this.update(sqlPath, ModelArgs._SAVE, modelList);
+		return this.update(sqlPath, ModelArgs.SAVE, modelList);
 	}
 
 	@Override
 	public int save(final String sqlPath, final Map<String, Object> model) {
-		return this.update(sqlPath, ModelArgs._SAVE, model);
+		return this.update(sqlPath, ModelArgs.SAVE, model);
 	}
 
 	@Override
@@ -525,11 +525,11 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 		sqlPathSuffixName = StringUtils.defaultIfBlank(sqlPathSuffixName, StringUtils.EMPTY);
 
-		final String readSqlPath = sqlPathPrefixName + ModelArgs._READ + sqlPathSuffixName;
+		final String readSqlPath = sqlPathPrefixName + ModelArgs.READ + sqlPathSuffixName;
 
-		final String createSqlPath = sqlPathPrefixName + ModelArgs._CREATE + sqlPathSuffixName;
+		final String createSqlPath = sqlPathPrefixName + ModelArgs.CREATE + sqlPathSuffixName;
 
-		final String saveSqlPath = sqlPathPrefixName + ModelArgs._SAVE + sqlPathSuffixName;
+		final String saveSqlPath = sqlPathPrefixName + ModelArgs.SAVE + sqlPathSuffixName;
 
 		return this.save(saveSqlPath, isCreate, readSqlPath, createSqlPath, modelArgss);
 	}
@@ -544,11 +544,11 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 		sqlPathSuffixName = StringUtils.defaultIfBlank(sqlPathSuffixName, StringUtils.EMPTY);
 
-		final String readSqlPath = sqlPathPrefixName + ModelArgs._READ + sqlPathSuffixName;
+		final String readSqlPath = sqlPathPrefixName + ModelArgs.READ + sqlPathSuffixName;
 
-		final String createSqlPath = sqlPathPrefixName + ModelArgs._CREATE + sqlPathSuffixName;
+		final String createSqlPath = sqlPathPrefixName + ModelArgs.CREATE + sqlPathSuffixName;
 
-		final String saveSqlPath = sqlPathPrefixName + ModelArgs._SAVE + sqlPathSuffixName;
+		final String saveSqlPath = sqlPathPrefixName + ModelArgs.SAVE + sqlPathSuffixName;
 
 		return this.save(saveSqlPath, isCreate, readSqlPath, createSqlPath, objects);
 	}

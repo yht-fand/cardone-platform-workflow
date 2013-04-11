@@ -62,7 +62,7 @@ public class DefaultModelBuilder implements ModelBuilder {
 			return this;
 		}
 
-		final String key = StringUtils.join(keys, StringUtils.defaultIfBlank(this.defaultSimpleparator, ModelArgs._DEFAULT_SIMPLEPARATOR));
+		final String key = StringUtils.join(keys, StringUtils.defaultIfBlank(this.defaultSimpleparator, ModelArgs.DEFAULT_SIMPLEPARATOR));
 
 		this.model.put(key, value);
 
@@ -93,9 +93,9 @@ public class DefaultModelBuilder implements ModelBuilder {
 			return this;
 		}
 
-		keyPrefixName = com.fand.utils.StringUtils.defaultIfBlank(keyPrefixName, this.defaultKeyPrefixName, ModelArgs._DEFAULT_KEY_PREFIX_NAME);
+		keyPrefixName = com.fand.utils.StringUtils.defaultIfBlank(keyPrefixName, this.defaultKeyPrefixName, ModelArgs.DEFAULT_KEY_PREFIX_NAME);
 
-		keySuffixName = com.fand.utils.StringUtils.defaultIfBlank(keySuffixName, this.defaultKeySuffixName, ModelArgs._DEFAULT_KEY_SUFFIX_NAME);
+		keySuffixName = com.fand.utils.StringUtils.defaultIfBlank(keySuffixName, this.defaultKeySuffixName, ModelArgs.DEFAULT_KEY_SUFFIX_NAME);
 
 		for (final String keyBaseName : keyBaseNames) {
 			this.putTrue(keyPrefixName, keyBaseName);
@@ -200,7 +200,7 @@ public class DefaultModelBuilder implements ModelBuilder {
 			return this;
 		}
 
-		keyPrefixName = com.fand.utils.StringUtils.defaultIfBlank(keyPrefixName, this.defaultKeyPrefixName, ModelArgs._DEFAULT_KEY_PREFIX_NAME);
+		keyPrefixName = com.fand.utils.StringUtils.defaultIfBlank(keyPrefixName, this.defaultKeyPrefixName, ModelArgs.DEFAULT_KEY_PREFIX_NAME);
 
 		for (final String keyBaseName : keyBaseNames) {
 			this.putTrue(keyPrefixName, keyBaseName);
@@ -215,7 +215,7 @@ public class DefaultModelBuilder implements ModelBuilder {
 			return this;
 		}
 
-		final String key = StringUtils.join(keys, StringUtils.defaultIfBlank(this.defaultSimpleparator, ModelArgs._DEFAULT_SIMPLEPARATOR));
+		final String key = StringUtils.join(keys, StringUtils.defaultIfBlank(this.defaultSimpleparator, ModelArgs.DEFAULT_SIMPLEPARATOR));
 
 		this.model.remove(key);
 
@@ -233,9 +233,9 @@ public class DefaultModelBuilder implements ModelBuilder {
 			return this;
 		}
 
-		keyPrefixName = com.fand.utils.StringUtils.defaultIfBlank(keyPrefixName, this.defaultKeyPrefixName, ModelArgs._DEFAULT_KEY_PREFIX_NAME);
+		keyPrefixName = com.fand.utils.StringUtils.defaultIfBlank(keyPrefixName, this.defaultKeyPrefixName, ModelArgs.DEFAULT_KEY_PREFIX_NAME);
 
-		keySuffixName = com.fand.utils.StringUtils.defaultIfBlank(keySuffixName, this.defaultKeySuffixName, ModelArgs._DEFAULT_KEY_SUFFIX_NAME);
+		keySuffixName = com.fand.utils.StringUtils.defaultIfBlank(keySuffixName, this.defaultKeySuffixName, ModelArgs.DEFAULT_KEY_SUFFIX_NAME);
 
 		for (final String keyBaseName : keyBaseNames) {
 			this.remove(keyPrefixName, keyBaseName);

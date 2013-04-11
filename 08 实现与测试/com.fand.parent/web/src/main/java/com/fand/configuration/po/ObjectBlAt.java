@@ -14,17 +14,17 @@ public class ObjectBlAt implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 256720755277120190L;
+	private static final long serialVersionUID = 742775782627447394L;
 
 	/**
     * 标识
 	 */
-	public static final String _ID_ = "id";
+	public static final String ID_ = "id";
 
 	/**
     * blob值
 	 */
-	public static final String _BYTE_VA_ = "byteVa";
+	public static final String BYTE_VA_ = "byteVa";
 
 	/**
     * 标识

@@ -14,32 +14,32 @@ public class Dictionary implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 752480696574705140L;
+	private static final long serialVersionUID = 457078699604087408L;
 
 	/**
     * 标识
 	 */
-	public static final String _ID_ = "id";
+	public static final String ID_ = "id";
 
 	/**
     * 字典类型标识
 	 */
-	public static final String _DICTIONARY_TY_ID_ = "dictionaryTyId";
+	public static final String DICTIONARY_TY_ID_ = "dictionaryTyId";
 
 	/**
     * 名称
 	 */
-	public static final String _NAME_ = "name";
+	public static final String NAME_ = "name";
 
 	/**
     * 排序号
 	 */
-	public static final String _ORDER_NU_ = "orderNu";
+	public static final String ORDER_NU_ = "orderNu";
 
 	/**
     * 编号
 	 */
-	public static final String _CODE_ = "code";
+	public static final String CODE_ = "code";
 
 	/**
     * 标识

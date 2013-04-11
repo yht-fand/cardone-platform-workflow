@@ -16,5 +16,5 @@ public interface ConfigurationService extends ServiceSupport {
 	/**
 	 * 配置 beanId
 	 */
-	public static final String _BEAN_ID = "com.fand.configuration.service.ConfigurationService";
+	public static final String BEAN_ID = "com.fand.configuration.service.ConfigurationService";
 }

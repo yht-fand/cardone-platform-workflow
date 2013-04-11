@@ -14,17 +14,17 @@ public class I18n implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 841946302936043002L;
+	private static final long serialVersionUID = 607297812484035755L;
 
 	/**
     * 标识
 	 */
-	public static final String _ID_ = "id";
+	public static final String ID_ = "id";
 
 	/**
     * 编号
 	 */
-	public static final String _CODE_ = "code";
+	public static final String CODE_ = "code";
 
 	/**
     * 标识

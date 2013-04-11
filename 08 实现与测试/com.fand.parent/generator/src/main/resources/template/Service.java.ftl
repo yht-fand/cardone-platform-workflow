@@ -17,5 +17,5 @@ public interface ${businessCode}Service extends ServiceSupport {
 	/**
 	 * ${businessMapper.name!businessCode} beanId
 	 */
-	public static final String _BEAN_ID = "${packageCode}.${moduleMapperKey}.service.${businessCode}Service";
+	public static final String BEAN_ID = "${packageCode}.${moduleMapperKey}.service.${businessCode}Service";
 }

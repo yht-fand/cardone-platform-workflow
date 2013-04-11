@@ -16,57 +16,57 @@ public class ObjectAt implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 752926256220440458L;
+	private static final long serialVersionUID = 462517105715405804L;
 
 	/**
     * 标识
 	 */
-	public static final String _ID_ = "id";
+	public static final String ID_ = "id";
 
 	/**
     * string值
 	 */
-	public static final String _STRING_VA_ = "stringVa";
+	public static final String STRING_VA_ = "stringVa";
 
 	/**
     * double值
 	 */
-	public static final String _DOUBLE_VA_ = "doubleVa";
+	public static final String DOUBLE_VA_ = "doubleVa";
 
 	/**
     * 对象类型标识
 	 */
-	public static final String _OBJECT_TY_ID_ = "objectTyId";
+	public static final String OBJECT_TY_ID_ = "objectTyId";
 
 	/**
     * date值
 	 */
-	public static final String _DATE_VA_ = "dateVa";
+	public static final String DATE_VA_ = "dateVa";
 
 	/**
     * 对象标识
 	 */
-	public static final String _OBJECT_ID_ = "objectId";
+	public static final String OBJECT_ID_ = "objectId";
 
 	/**
     * 编号
 	 */
-	public static final String _CODE_ = "code";
+	public static final String CODE_ = "code";
 
 	/**
     * 类型标识
 	 */
-	public static final String _TYPE_ID_ = "typeId";
+	public static final String TYPE_ID_ = "typeId";
 
 	/**
     * long值
 	 */
-	public static final String _LONG_VA_ = "longVa";
+	public static final String LONG_VA_ = "longVa";
 
 	/**
     * text值
 	 */
-	public static final String _TEXT_VA_ = "textVa";
+	public static final String TEXT_VA_ = "textVa";
 
 	/**
     * 标识
