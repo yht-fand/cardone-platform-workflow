@@ -84,7 +84,7 @@ public class StringUtils {
 				str = org.apache.commons.lang.StringUtils.remove(str, delimiter);
 			}
 		} else {
-			str = WordUtils.capitalizeFully(str, delimiters);
+			str = WordUtils.capitalizeFully(str);
 		}
 
 		return str;
