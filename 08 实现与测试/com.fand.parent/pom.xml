@@ -485,7 +485,6 @@
 	</build>
 	<modules>
 		<module>core</module>
-		<module>extension</module>
 		<module>generator</module>
 		<module>web</module>
 		<module>persistent</module>
