@@ -1,6 +1,5 @@
 package com.fand.persistent.support;
 
-
 /**
  * service
  * 

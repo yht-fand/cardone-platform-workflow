@@ -30,6 +30,21 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	 */
 	private TemplateSupport templateSupport;
 
+	/**
+	 * 生成sql
+	 * 
+	 * @param sqlPath
+	 *            sql路径
+	 * @param model
+	 *            model
+	 * @return sql
+	 */
+	private String builderSql(final String sqlPath, final Map<String, Object> model) {
+		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
+
+		return sql;
+	}
+
 	@Override
 	public int create(final String sqlPath, final List<Map<String, Object>> modelList) {
 		return this.update(sqlPath, ModelArgs.CREATE, modelList);
@@ -134,7 +149,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	public <T> List<T> find(final Class<T> mappedClass, String sqlPath, final Map<String, Object> model) {
 		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.FIND);
 
-		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
+		final String sql = this.builderSql(sqlPath, model);
 
 		return this.getNamedParameterJdbcTemplate().query(sql, model, ParameterizedBeanPropertyRowMapper.newInstance(mappedClass));
 	}
@@ -156,7 +171,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	public List<Map<String, Object>> find(String sqlPath, final Map<String, Object> model) {
 		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.FIND);
 
-		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
+		final String sql = this.builderSql(sqlPath, model);
 
 		return this.getNamedParameterJdbcTemplate().queryForList(sql, model);
 	}
@@ -178,7 +193,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	public <T> T get(final Class<T> mappedClass, String sqlPath, final Map<String, Object> model) {
 		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.GET);
 
-		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
+		final String sql = this.builderSql(sqlPath, model);
 
 		return this.getNamedParameterJdbcTemplate().queryForObject(sql, model, ParameterizedBeanPropertyRowMapper.newInstance(mappedClass));
 	}
@@ -208,7 +223,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	public Map<String, Object> get(String sqlPath, final Map<String, Object> model) {
 		sqlPath = StringUtils.defaultIfBlank(sqlPath, ModelArgs.GET);
 
-		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
+		final String sql = this.builderSql(sqlPath, model);
 
 		return this.getNamedParameterJdbcTemplate().queryForMap(sql, model);
 	}
@@ -330,7 +345,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 			model.put(ModelArgs.READ_FIELD_ID, readFieldId);
 		}
 
-		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
+		final String sql = this.builderSql(sqlPath, model);
 
 		return this.getNamedParameterJdbcTemplate().queryForObject(sql, model, requiredType);
 	}
@@ -366,7 +381,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 			model.put(ModelArgs.READ_FIELD_ID, readFieldId);
 		}
 
-		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
+		final String sql = this.builderSql(sqlPath, model);
 
 		return this.getNamedParameterJdbcTemplate().queryForObject(sql, model, Integer.class);
 	}
@@ -397,7 +412,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 			model.put(ModelArgs.READ_FIELD_ID, readFieldId);
 		}
 
-		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
+		final String sql = this.builderSql(sqlPath, model);
 
 		return this.getNamedParameterJdbcTemplate().queryForList(sql, model, elementType);
 	}
@@ -576,7 +591,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	public int update(String sqlPath, final String defaultSqlPath, final Map<String, Object> model) {
 		sqlPath = StringUtils.defaultIfBlank(sqlPath, defaultSqlPath);
 
-		final String sql = this.templateSupport.processTemplateIntoString(sqlPath, model);
+		final String sql = this.builderSql(sqlPath, model);
 
 		return this.getNamedParameterJdbcTemplate().update(sql, model);
 	}
