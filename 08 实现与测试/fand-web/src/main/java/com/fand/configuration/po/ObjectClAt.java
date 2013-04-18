@@ -1,5 +1,7 @@
 package com.fand.configuration.po;
 
+import java.util.Date;
+
 import javax.persistence.Id;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -14,7 +16,7 @@ public class ObjectClAt implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 692725539829732312L;
+	private static final long serialVersionUID = 467257634982816320L;
 
 	/**
     * 标识
@@ -27,6 +29,16 @@ public class ObjectClAt implements java.io.Serializable {
 	public static final String CLOB_VA_ = "clobVa";
 
 	/**
+    * 结束时间
+	 */
+	public static final String END_TI_ = "endTi";
+
+	/**
+    * 开始时间
+	 */
+	public static final String BEGIN_TI_ = "beginTi";
+
+	/**
     * 标识
     */
 	@Id
@@ -36,6 +48,16 @@ public class ObjectClAt implements java.io.Serializable {
     * clob值
     */
 	String clobVa;
+
+	/**
+    * 结束时间
+    */
+	Date endTi;
+
+	/**
+    * 开始时间
+    */
+	Date beginTi;
 
 	/**
      * 获取
@@ -53,6 +75,24 @@ public class ObjectClAt implements java.io.Serializable {
 	 */
 	public String getClobVa() {
 		return this.clobVa;
+	}
+
+	/**
+     * 获取
+     *
+	 * @return 结束时间
+	 */
+	public Date getEndTi() {
+		return this.endTi;
+	}
+
+	/**
+     * 获取
+     *
+	 * @return 开始时间
+	 */
+	public Date getBeginTi() {
+		return this.beginTi;
 	}
 
 	/**
@@ -75,6 +115,30 @@ public class ObjectClAt implements java.io.Serializable {
 	 */
 	public ObjectClAt setClobVa(String clobVa) {
 		this.clobVa = clobVa;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
+	 * @param endTi
+	 *            结束时间
+	 */
+	public ObjectClAt setEndTi(Date endTi) {
+		this.endTi = endTi;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
+	 * @param beginTi
+	 *            开始时间
+	 */
+	public ObjectClAt setBeginTi(Date beginTi) {
+		this.beginTi = beginTi;
 		
 		return this;
 	}

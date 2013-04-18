@@ -5,12 +5,10 @@
   <parent>
     <groupId>com.fand</groupId>
     <artifactId>fand-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 	<relativePath>../fand-parent/</relativePath>
   </parent>
-  <groupId>com.fand</groupId>
   <artifactId>fand-context</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>fand-context</name>
   <url>http://maven.apache.org</url>
   <properties>

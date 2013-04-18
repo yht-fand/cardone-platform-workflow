@@ -13,10 +13,6 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.Validate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.expression.EvaluationContext;
-import org.springframework.expression.ExpressionParser;
-import org.springframework.expression.spel.standard.SpelExpressionParser;
-import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
 import com.fand.generator.mapper.BusinessMapper;
@@ -44,13 +40,13 @@ public class DefaultTemplate implements Template {
 		Validate.notNull(this.outputDir);
 	}
 
-	private void makeFile(final ExpressionParser parser, final String expressionString, final EvaluationContext context, final String templateName,
-			final Map<String, Object> model) throws Exception {
+	private void makeFile(final String templateString, final Map<String, ?> contextMap, final String templateName, final Map<String, Object> model)
+			throws Exception {
 		DefaultTemplate.log.info(templateName);
 
-		DefaultTemplate.log.info(expressionString);
+		DefaultTemplate.log.info(templateString);
 
-		final String filePathName = parser.parseExpression(expressionString).getValue(context, String.class);
+		final String filePathName = com.fand.template.utils.FreemarkerTemplateUtils.processString(templateString, contextMap);
 
 		DefaultTemplate.log.info(filePathName);
 
@@ -87,17 +83,17 @@ public class DefaultTemplate implements Template {
 
 	@Override
 	public void run(final Map<String, PoMapper> poMapperMap) throws Exception {
-		final String srcDirName = "#outputDir+#separator+#rootDir+#separator+#rootDirType+#separator+#dirType+#separator+";
+		final String srcDirFormat = "${outputDir!}${separator!}${rootDir!}${separator!}${rootDirType!}${separator!}${dirType!}${separator!}";
 
-		final EvaluationContext context = new StandardEvaluationContext();
+		final Map<String, Object> contextMap = new HashMap<String, Object>();
 
-		context.setVariable("outputDir", this.outputDir);
+		contextMap.put("outputDir", this.outputDir);
 
-		context.setVariable("separator", File.separator);
+		contextMap.put("separator", File.separator);
 
 		final String[] layers = new String[] { "po", "dto", "vo", "dao", "service", "webService", "web" };
 
-		context.setVariable("rootDir", "src");
+		contextMap.put("rootDir", "src");
 
 		final String[] rootDirTypes = new String[] { "main", "test" };
 
@@ -109,22 +105,20 @@ public class DefaultTemplate implements Template {
 
 		final String packageDir = StringUtils.replace(this.projectMapper.getPackageCode(), ".", File.separator);
 
-		context.setVariable("rootDirType", "main");
+		contextMap.put("rootDirType", "main");
 
-		context.setVariable("packageDir", packageDir);
-
-		final ExpressionParser parser = new SpelExpressionParser();
+		contextMap.put("packageDir", packageDir);
 
 		final List<String> serialVersionUIDList = new ArrayList<String>();
 
 		for (final String layer : layers) {
-			context.setVariable("layer", layer);
+			contextMap.put("layer", layer);
 			for (final String rootDirType : rootDirTypes) {
-				context.setVariable("rootDirType", rootDirType);
+				contextMap.put("rootDirType", rootDirType);
 				for (final String dirType : dirTypes) {
-					context.setVariable("dirType", dirType);
+					contextMap.put("dirType", dirType);
 					for (final String moduleMapperKey : this.projectMapper.getModuleMapperMap().keySet()) {
-						context.setVariable("moduleMapperKey", moduleMapperKey);
+						contextMap.put("moduleMapperKey", moduleMapperKey);
 
 						final ModuleMapper moduleMapper = this.projectMapper.getModuleMapperMap().get(moduleMapperKey);
 
@@ -142,8 +136,8 @@ public class DefaultTemplate implements Template {
 
 						model.put("moduleMapperKey", moduleMapperKey);
 
-						final String javaExpressionString = StringUtils.join(new String[] { srcDirName,
-								"#packageDir+#separator+#moduleMapperKey+#separator+#layer+#separator+#filename+'.java'" });
+						final String javaTemplateString = StringUtils.join(new String[] { srcDirFormat,
+								"${packageDir!}${separator!}${moduleMapperKey!}${separator!}${layer!}${separator!}${filename!}.java" });
 
 						String templateName;
 
@@ -165,46 +159,34 @@ public class DefaultTemplate implements Template {
 									if ("main".equals(rootDirType) && "java".equals(dirType) && "po".equals(layer)) {
 										poMapper.setModuleCode(moduleMapperKey);
 
-										context.setVariable("filename", poMapper.getCode());
+										contextMap.put("filename", poMapper.getCode());
 
 										templateName = "Po.java.ftl";
 
-										this.makeFile(parser, javaExpressionString, context, templateName, model);
+										this.makeFile(javaTemplateString, contextMap, templateName, model);
 									} else if ("main".equals(rootDirType) && "java".equals(dirType) && "dto".equals(layer)) {
-										context.setVariable("filename", poMapper.getCode() + "Dto");
+										contextMap.put("filename", poMapper.getCode() + "Dto");
 
 										templateName = "Dto.java.ftl";
 
-										this.makeFile(parser, javaExpressionString, context, templateName, model);
-//									} else if ("main".equals(rootDirType) && "java".equals(dirType) && "dao".equals(layer)) {
-//										context.setVariable("filename", poMapper.getCode() + "Dao");
-//
-//										templateName = "Dao.java.ftl";
-//
-//										this.makeFile(parser, javaExpressionString, context, templateName, model);
-//
-//										context.setVariable("filename", "Jdbc" + poMapper.getCode() + "Dao");
-//
-//										templateName = "JdbcDao.java.ftl";
-//
-//										this.makeFile(parser, javaExpressionString, context, templateName, model);
+										this.makeFile(javaTemplateString, contextMap, templateName, model);
 									} else if ("main".equals(rootDirType) && "resources".equals(dirType) && "web".equals(layer)) {
-										final String sqlExpressionString = StringUtils
-												.join(new String[] { srcDirName,
-														"'sql'+#separator+'oracle'+#separator+#moduleMapperKey+#separator+#camelCasePoCo+#separator+#filename+'.ftl'" });
+										final String sqlExpressionString = StringUtils.join(new String[] { srcDirFormat,
+												"sql${separator!}oracle${separator!}${moduleMapperKey!}${separator!}${filename!}${poCo!}By1.ftl" });
 
-										context.setVariable("poCo", poMapper.getCode());
+										contextMap.put("poCo", poMapper.getCode());
 
-										context.setVariable("camelCasePoCo", com.fand.utils.StringUtils.toCamelCase(poMapper.getCode()));
+										contextMap.put("camelCasePoCo", com.fand.utils.StringUtils.toCamelCase(poMapper.getCode()));
 
-										final String[] sqlFileNames = new String[] { "create", "where_", "save", "find", "get", "read", "remove" };
+										final String[] sqlFileNames = new String[] { "where", "insert", "delete", "update", "selectForMappedObjectList",
+												"selectForObject" };
 
 										for (final String sqlFileName : sqlFileNames) {
-											context.setVariable("filename", sqlFileName);
+											contextMap.put("filename", sqlFileName);
 
 											templateName = sqlFileName + ".ftl";
 
-											this.makeFile(parser, sqlExpressionString, context, templateName, model);
+											this.makeFile(sqlExpressionString, contextMap, templateName, model);
 										}
 									}
 								}
@@ -228,46 +210,46 @@ public class DefaultTemplate implements Template {
 
 									model.put("poMapper", poMapper);
 
-									context.setVariable("filename", businessCode + "Dao");
+									contextMap.put("filename", businessCode + "Dao");
 
 									templateName = "Dao.java.ftl";
 
-									this.makeFile(parser, javaExpressionString, context, templateName, model);
+									this.makeFile(javaTemplateString, contextMap, templateName, model);
 
-									context.setVariable("filename", "Jdbc" + businessCode + "Dao");
+									contextMap.put("filename", "Jdbc" + businessCode + "Dao");
 
 									templateName = "JdbcDao.java.ftl";
 
-									this.makeFile(parser, javaExpressionString, context, templateName, model);
+									this.makeFile(javaTemplateString, contextMap, templateName, model);
 								} else if ("main".equals(rootDirType) && "java".equals(dirType) && "vo".equals(layer)) {
-									context.setVariable("filename", businessCode + "Vo");
+									contextMap.put("filename", businessCode + "Vo");
 
 									templateName = "Vo.java.ftl";
 
-									this.makeFile(parser, javaExpressionString, context, templateName, model);
+									this.makeFile(javaTemplateString, contextMap, templateName, model);
 								} else if ("main".equals(rootDirType) && "java".equals(dirType) && "service".equals(layer)) {
-									context.setVariable("filename", businessCode + "Service");
+									contextMap.put("filename", businessCode + "Service");
 
 									templateName = "Service.java.ftl";
 
-									this.makeFile(parser, javaExpressionString, context, templateName, model);
+									this.makeFile(javaTemplateString, contextMap, templateName, model);
 
-									context.setVariable("filename", "Default" + businessCode + "Service");
+									contextMap.put("filename", "Default" + businessCode + "Service");
 
 									templateName = "DefaultService.java.ftl";
 
-									this.makeFile(parser, javaExpressionString, context, templateName, model);
+									this.makeFile(javaTemplateString, contextMap, templateName, model);
 								} else if ("main".equals(rootDirType) && "resources".equals(dirType) && "web".equals(layer)) {
-									final String applicationContextXmlExpressionString = StringUtils.join(new String[] { srcDirName,
-											"#moduleMapperKey+#separator+#filename" });
+									final String applicationContextXmlExpressionString = StringUtils.join(new String[] { srcDirFormat,
+											"${moduleMapperKey!}${separator!}${filename!}" });
 
 									this.setBusiness(poMapperMap, moduleMapper, model, businessCode);
 
-									context.setVariable("filename", "applicationContext-" + businessCode + ".xml");
+									contextMap.put("filename", "applicationContext-" + businessCode + ".xml");
 
 									templateName = "applicationContext-service.ftl";
 
-									this.makeFile(parser, applicationContextXmlExpressionString, context, templateName, model);
+									this.makeFile(applicationContextXmlExpressionString, contextMap, templateName, model);
 								}
 							}
 						}

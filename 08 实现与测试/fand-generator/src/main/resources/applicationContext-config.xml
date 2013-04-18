@@ -145,7 +145,7 @@
 	<bean id="com.fand.Template" class="com.fand.generator.template.DefaultTemplate"
 		init-method="init">
 		<property name="configuration" ref="com.fand.FreeMarkerConfiguration" />
-		<property name="outputDir" value="E:\git\FanD\08 实现与测试\com.fand.parent\web" />
+		<property name="outputDir" value="E:\git\FanD\08 实现与测试\fand-web" />
 		<property name="projectMapper" ref="com.fand.ProjectMapper" />
 	</bean>
 
@@ -169,7 +169,7 @@
 		destroy-method="close">
 		<!-- 引入jdbc属性文件，之后通过占位符(类似于EL表达式)读取信息 -->
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@192.168.168.201:1521:ORCL" />
+		<property name="url" value="jdbc:oracle:thin:@192.168.100.101:1521:FAND" />
 		<property name="username" value="FAND" />
 		<property name="password" value="FAND" />
 		<!-- 连接池启动时的初始值 -->

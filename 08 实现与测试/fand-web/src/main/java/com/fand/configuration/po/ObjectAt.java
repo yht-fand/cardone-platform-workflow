@@ -16,7 +16,7 @@ public class ObjectAt implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 305999590054680362L;
+	private static final long serialVersionUID = 180763600414214694L;
 
 	/**
     * 标识
@@ -44,6 +44,11 @@ public class ObjectAt implements java.io.Serializable {
 	public static final String DATE_VA_ = "dateVa";
 
 	/**
+    * 结束时间
+	 */
+	public static final String END_TI_ = "endTi";
+
+	/**
     * 对象标识
 	 */
 	public static final String OBJECT_ID_ = "objectId";
@@ -62,6 +67,11 @@ public class ObjectAt implements java.io.Serializable {
     * long值
 	 */
 	public static final String LONG_VA_ = "longVa";
+
+	/**
+    * 开始时间
+	 */
+	public static final String BEGIN_TI_ = "beginTi";
 
 	/**
     * text值
@@ -95,6 +105,11 @@ public class ObjectAt implements java.io.Serializable {
 	Date dateVa;
 
 	/**
+    * 结束时间
+    */
+	Date endTi;
+
+	/**
     * 对象标识
     */
 	String objectId;
@@ -113,6 +128,11 @@ public class ObjectAt implements java.io.Serializable {
     * long值
     */
 	Double longVa;
+
+	/**
+    * 开始时间
+    */
+	Date beginTi;
 
 	/**
     * text值
@@ -167,6 +187,15 @@ public class ObjectAt implements java.io.Serializable {
 	/**
      * 获取
      *
+	 * @return 结束时间
+	 */
+	public Date getEndTi() {
+		return this.endTi;
+	}
+
+	/**
+     * 获取
+     *
 	 * @return 对象标识
 	 */
 	public String getObjectId() {
@@ -198,6 +227,15 @@ public class ObjectAt implements java.io.Serializable {
 	 */
 	public Double getLongVa() {
 		return this.longVa;
+	}
+
+	/**
+     * 获取
+     *
+	 * @return 开始时间
+	 */
+	public Date getBeginTi() {
+		return this.beginTi;
 	}
 
 	/**
@@ -272,6 +310,18 @@ public class ObjectAt implements java.io.Serializable {
 	/**
 	 * 设置
      *
+	 * @param endTi
+	 *            结束时间
+	 */
+	public ObjectAt setEndTi(Date endTi) {
+		this.endTi = endTi;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
 	 * @param objectId
 	 *            对象标识
 	 */
@@ -313,6 +363,18 @@ public class ObjectAt implements java.io.Serializable {
 	 */
 	public ObjectAt setLongVa(Double longVa) {
 		this.longVa = longVa;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
+	 * @param beginTi
+	 *            开始时间
+	 */
+	public ObjectAt setBeginTi(Date beginTi) {
+		this.beginTi = beginTi;
 		
 		return this;
 	}

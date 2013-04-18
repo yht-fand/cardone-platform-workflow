@@ -1,5 +1,7 @@
 package com.fand.configuration.po;
 
+import java.util.Date;
+
 import javax.persistence.Id;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -14,7 +16,7 @@ public class Locale implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 189219871317575073L;
+	private static final long serialVersionUID = 803609266724444378L;
 
 	/**
     * 标识
@@ -24,12 +26,22 @@ public class Locale implements java.io.Serializable {
 	/**
     * 排序号
 	 */
-	public static final String ORDER_NU_ = "orderNu";
+	public static final String ORDER_ = "order";
+
+	/**
+    * 结束时间
+	 */
+	public static final String END_TI_ = "endTi";
 
 	/**
     * 编号
 	 */
 	public static final String CODE_ = "code";
+
+	/**
+    * 开始时间
+	 */
+	public static final String BEGIN_TI_ = "beginTi";
 
 	/**
     * 标识
@@ -40,12 +52,22 @@ public class Locale implements java.io.Serializable {
 	/**
     * 排序号
     */
-	Double orderNu;
+	Double order;
+
+	/**
+    * 结束时间
+    */
+	Date endTi;
 
 	/**
     * 编号
     */
 	String code;
+
+	/**
+    * 开始时间
+    */
+	Date beginTi;
 
 	/**
      * 获取
@@ -61,8 +83,17 @@ public class Locale implements java.io.Serializable {
      *
 	 * @return 排序号
 	 */
-	public Double getOrderNu() {
-		return this.orderNu;
+	public Double getOrder() {
+		return this.order;
+	}
+
+	/**
+     * 获取
+     *
+	 * @return 结束时间
+	 */
+	public Date getEndTi() {
+		return this.endTi;
 	}
 
 	/**
@@ -72,6 +103,15 @@ public class Locale implements java.io.Serializable {
 	 */
 	public String getCode() {
 		return this.code;
+	}
+
+	/**
+     * 获取
+     *
+	 * @return 开始时间
+	 */
+	public Date getBeginTi() {
+		return this.beginTi;
 	}
 
 	/**
@@ -89,11 +129,23 @@ public class Locale implements java.io.Serializable {
 	/**
 	 * 设置
      *
-	 * @param orderNu
+	 * @param order
 	 *            排序号
 	 */
-	public Locale setOrderNu(Double orderNu) {
-		this.orderNu = orderNu;
+	public Locale setOrder(Double order) {
+		this.order = order;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
+	 * @param endTi
+	 *            结束时间
+	 */
+	public Locale setEndTi(Date endTi) {
+		this.endTi = endTi;
 		
 		return this;
 	}
@@ -106,6 +158,18 @@ public class Locale implements java.io.Serializable {
 	 */
 	public Locale setCode(String code) {
 		this.code = code;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
+	 * @param beginTi
+	 *            开始时间
+	 */
+	public Locale setBeginTi(Date beginTi) {
+		this.beginTi = beginTi;
 		
 		return this;
 	}

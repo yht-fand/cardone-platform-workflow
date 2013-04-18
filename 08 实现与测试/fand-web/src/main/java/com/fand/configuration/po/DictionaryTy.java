@@ -1,5 +1,7 @@
 package com.fand.configuration.po;
 
+import java.util.Date;
+
 import javax.persistence.Id;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -14,7 +16,7 @@ public class DictionaryTy implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 479082961062645108L;
+	private static final long serialVersionUID = 539999874630642879L;
 
 	/**
     * 标识
@@ -27,19 +29,29 @@ public class DictionaryTy implements java.io.Serializable {
 	public static final String PARENT_ID_ = "parentId";
 
 	/**
+    * 排序号
+	 */
+	public static final String ORDER_ = "order";
+
+	/**
+    * 结束时间
+	 */
+	public static final String END_TI_ = "endTi";
+
+	/**
     * 名称
 	 */
 	public static final String NAME_ = "name";
 
 	/**
-    * 排序号
-	 */
-	public static final String ORDER_NU_ = "orderNu";
-
-	/**
     * 编号
 	 */
 	public static final String CODE_ = "code";
+
+	/**
+    * 开始时间
+	 */
+	public static final String BEGIN_TI_ = "beginTi";
 
 	/**
     * 标识
@@ -53,19 +65,29 @@ public class DictionaryTy implements java.io.Serializable {
 	String parentId;
 
 	/**
+    * 排序号
+    */
+	Double order;
+
+	/**
+    * 结束时间
+    */
+	Date endTi;
+
+	/**
     * 名称
     */
 	String name;
 
 	/**
-    * 排序号
-    */
-	Double orderNu;
-
-	/**
     * 编号
     */
 	String code;
+
+	/**
+    * 开始时间
+    */
+	Date beginTi;
 
 	/**
      * 获取
@@ -88,6 +110,24 @@ public class DictionaryTy implements java.io.Serializable {
 	/**
      * 获取
      *
+	 * @return 排序号
+	 */
+	public Double getOrder() {
+		return this.order;
+	}
+
+	/**
+     * 获取
+     *
+	 * @return 结束时间
+	 */
+	public Date getEndTi() {
+		return this.endTi;
+	}
+
+	/**
+     * 获取
+     *
 	 * @return 名称
 	 */
 	public String getName() {
@@ -97,19 +137,19 @@ public class DictionaryTy implements java.io.Serializable {
 	/**
      * 获取
      *
-	 * @return 排序号
+	 * @return 编号
 	 */
-	public Double getOrderNu() {
-		return this.orderNu;
+	public String getCode() {
+		return this.code;
 	}
 
 	/**
      * 获取
      *
-	 * @return 编号
+	 * @return 开始时间
 	 */
-	public String getCode() {
-		return this.code;
+	public Date getBeginTi() {
+		return this.beginTi;
 	}
 
 	/**
@@ -139,6 +179,30 @@ public class DictionaryTy implements java.io.Serializable {
 	/**
 	 * 设置
      *
+	 * @param order
+	 *            排序号
+	 */
+	public DictionaryTy setOrder(Double order) {
+		this.order = order;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
+	 * @param endTi
+	 *            结束时间
+	 */
+	public DictionaryTy setEndTi(Date endTi) {
+		this.endTi = endTi;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
 	 * @param name
 	 *            名称
 	 */
@@ -151,11 +215,11 @@ public class DictionaryTy implements java.io.Serializable {
 	/**
 	 * 设置
      *
-	 * @param orderNu
-	 *            排序号
+	 * @param code
+	 *            编号
 	 */
-	public DictionaryTy setOrderNu(Double orderNu) {
-		this.orderNu = orderNu;
+	public DictionaryTy setCode(String code) {
+		this.code = code;
 		
 		return this;
 	}
@@ -163,11 +227,11 @@ public class DictionaryTy implements java.io.Serializable {
 	/**
 	 * 设置
      *
-	 * @param code
-	 *            编号
+	 * @param beginTi
+	 *            开始时间
 	 */
-	public DictionaryTy setCode(String code) {
-		this.code = code;
+	public DictionaryTy setBeginTi(Date beginTi) {
+		this.beginTi = beginTi;
 		
 		return this;
 	}

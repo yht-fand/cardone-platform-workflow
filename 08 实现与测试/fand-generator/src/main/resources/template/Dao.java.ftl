@@ -8,8 +8,4 @@ package ${packageCode}.${moduleMapperKey}.dao;
  * 
  */
 public interface ${poMapper.code}Dao {
-	/**
-	 * <@defaultIfBlank str="${poMapper.remarks!}" defaultSt="${poMapper.code!}"/> beanId
-	 */
-	public static final String BEAN_ID = "${packageCode}.${moduleMapperKey}.dao.${poMapper.code}Dao";
 }

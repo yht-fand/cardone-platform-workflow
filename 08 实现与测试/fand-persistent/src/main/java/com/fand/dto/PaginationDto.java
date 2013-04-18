@@ -22,6 +22,16 @@ public class PaginationDto<T> implements java.io.Serializable {
 	private List<T> dataList;
 
 	/**
+	 * 分页号
+	 */
+	private int no;
+
+	/**
+	 * 分页大小
+	 */
+	private int size;
+
+	/**
 	 * 统计大小
 	 */
 	private int totalSize;
@@ -33,6 +43,14 @@ public class PaginationDto<T> implements java.io.Serializable {
 	 */
 	public List<T> getDataList() {
 		return this.dataList;
+	}
+
+	public int getNo() {
+		return this.no;
+	}
+
+	public int getSize() {
+		return this.size;
 	}
 
 	/**
@@ -52,6 +70,14 @@ public class PaginationDto<T> implements java.io.Serializable {
 	 */
 	public void setDataList(final List<T> dataList) {
 		this.dataList = dataList;
+	}
+
+	public void setNo(final int no) {
+		this.no = no;
+	}
+
+	public void setSize(final int size) {
+		this.size = size;
 	}
 
 	/**

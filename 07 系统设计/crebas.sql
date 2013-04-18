@@ -1,6 +1,6 @@
-Ôªø/*==============================================================*/
+/*==============================================================*/
 /* DBMS name:      ORACLE Version 11g                           */
-/* Created on:     2013/4/12 0:41:31                            */
+/* Created on:     2013/5/4 –«∆⁄¡˘ …œŒÁ 9:53:48                      */
 /*==============================================================*/
 
 
@@ -59,7 +59,7 @@ DROP TABLE "FD_DOMAIN_NA" CASCADE CONSTRAINTS;
 
 DROP INDEX "FD_NAVIGATION_SITE_ID__FK";
 
-DROP INDEX "FD_NAVIGAT";
+DROP INDEX "FD_NAVIGATION_N";
 
 DROP INDEX "FD_NAVIGATION_PARENT_ID__FK";
 
@@ -77,7 +77,7 @@ DROP INDEX "FD_DEPARTMENT_PARENT_ID__FK";
 
 DROP TABLE "FD_DEPARTMENT" CASCADE CONSTRAINTS;
 
-DROP INDEX "FD_DICTION";
+DROP INDEX "FD_DICTIONARY_D";
 
 DROP TABLE "FD_DICTIONARY" CASCADE CONSTRAINTS;
 
@@ -126,66 +126,82 @@ DROP TABLE "FD_USER" CASCADE CONSTRAINTS;
 /*==============================================================*/
 CREATE TABLE "FD_DOMAIN_NA" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID(),
-   "NAME_"              VARCHAR2(256),
-   "ORDER_NU_"          INTEGER              DEFAULT 0,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAME_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "ORDER_"             INTEGER              DEFAULT 0 NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_DOMAIN_NA PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_DOMAIN_NA" IS
-'ÂüüÂêç';
+'”Ú√˚';
 
 COMMENT ON COLUMN "FD_DOMAIN_NA"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_DOMAIN_NA"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_DOMAIN_NA"."NAME_" IS
-'ÂêçÁß∞';
+'√˚≥∆';
 
-COMMENT ON COLUMN "FD_DOMAIN_NA"."ORDER_NU_" IS
-'ÊéíÂ∫èÂè∑';
+COMMENT ON COLUMN "FD_DOMAIN_NA"."ORDER_" IS
+'≈≈–Ú∫≈';
+
+COMMENT ON COLUMN "FD_DOMAIN_NA"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_DOMAIN_NA"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Table: "FD_NAVIGATION"                                       */
 /*==============================================================*/
 CREATE TABLE "FD_NAVIGATION" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "SITE_ID_"           VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "NAVIGATION_TY_ID_"  VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "PARENT_ID_"         VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID() NOT NULL,
-   "NAME_"              VARCHAR2(256)        NOT NULL,
-   "ORDER_NU_"          INTEGER              DEFAULT 0 NOT NULL,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "SITE_ID_"           VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAVIGATION_TY_ID_"  VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "PARENT_ID_"         VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAME_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "ORDER_"             INTEGER              DEFAULT 0 NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_NAVIGATION PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_NAVIGATION" IS
-'ÂØºËà™';
+'µº∫Ω';
 
 COMMENT ON COLUMN "FD_NAVIGATION"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_NAVIGATION"."SITE_ID_" IS
-'Á´ôÊ†áËØÜ';
+'’æ±Í ∂';
 
 COMMENT ON COLUMN "FD_NAVIGATION"."NAVIGATION_TY_ID_" IS
-'ÂØºËà™Á±ªÂûãÊ†áËØÜ';
+'µº∫Ω¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_NAVIGATION"."PARENT_ID_" IS
-'Áà∂Ê†áËØÜ';
+'∏∏±Í ∂';
 
 COMMENT ON COLUMN "FD_NAVIGATION"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_NAVIGATION"."NAME_" IS
-'ÂêçÁß∞';
+'√˚≥∆';
 
-COMMENT ON COLUMN "FD_NAVIGATION"."ORDER_NU_" IS
-'ÊéíÂ∫èÂè∑';
+COMMENT ON COLUMN "FD_NAVIGATION"."ORDER_" IS
+'≈≈–Ú∫≈';
+
+COMMENT ON COLUMN "FD_NAVIGATION"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_NAVIGATION"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Index: "FD_NAVIGATION_PARENT_ID__FK"                         */
@@ -195,9 +211,9 @@ CREATE INDEX "FD_NAVIGATION_PARENT_ID__FK" ON "FD_NAVIGATION" (
 );
 
 /*==============================================================*/
-/* Index: "FD_NAVIGAT"                                          */
+/* Index: "FD_NAVIGATION_N"                                     */
 /*==============================================================*/
-CREATE INDEX "FD_NAVIGAT" ON "FD_NAVIGATION" (
+CREATE INDEX "FD_NAVIGATION_N" ON "FD_NAVIGATION" (
    "NAVIGATION_TY_ID_" ASC
 );
 
@@ -213,66 +229,78 @@ CREATE INDEX "FD_NAVIGATION_SITE_ID__FK" ON "FD_NAVIGATION" (
 /*==============================================================*/
 CREATE TABLE "FD_NAVIGATION_TY" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID() NOT NULL,
-   "NAME_"              VARCHAR2(256)        NOT NULL,
-   "ORDER_NU_"          INTEGER              DEFAULT 0 NOT NULL,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAME_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "ORDER_"             INTEGER              DEFAULT 0 NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_NAVIGATION_TY PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_NAVIGATION_TY" IS
-'ÂØºËà™Á±ªÂûã';
+'µº∫Ω¿‡–Õ';
 
 COMMENT ON COLUMN "FD_NAVIGATION_TY"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_NAVIGATION_TY"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_NAVIGATION_TY"."NAME_" IS
-'ÂêçÁß∞';
+'√˚≥∆';
 
-COMMENT ON COLUMN "FD_NAVIGATION_TY"."ORDER_NU_" IS
-'ÊéíÂ∫èÂè∑';
+COMMENT ON COLUMN "FD_NAVIGATION_TY"."ORDER_" IS
+'≈≈–Ú∫≈';
+
+COMMENT ON COLUMN "FD_NAVIGATION_TY"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_NAVIGATION_TY"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Table: "FD_OPERATING_LO"                                     */
 /*==============================================================*/
 CREATE TABLE "FD_OPERATING_LO" 
 (
-   "OBJECT_TY_ID_"      VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_ID_"         VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "TYPE_ID_"           VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "USER_ID_"           VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID() NOT NULL,
-   "TIME_"              DATE,
+   "OBJECT_TY_ID_"      VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "OBJECT_ID_"         VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "TYPE_ID_"           VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "USER_ID_"           VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_OPERATING_LO PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_OPERATING_LO" IS
-'Êìç‰ΩúÊó•Âøó';
+'≤Ÿ◊˜»’÷æ';
 
 COMMENT ON COLUMN "FD_OPERATING_LO"."OBJECT_TY_ID_" IS
-'ÂØπË±°Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_OPERATING_LO"."OBJECT_ID_" IS
-'ÂØπË±°Ê†áËØÜ';
+'∂‘œÛ±Í ∂';
 
 COMMENT ON COLUMN "FD_OPERATING_LO"."TYPE_ID_" IS
-'Á±ªÂûãÊ†áËØÜ';
+'¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_OPERATING_LO"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_OPERATING_LO"."USER_ID_" IS
-'Áî®Êà∑Ê†áËØÜ';
+'”√ªß±Í ∂';
 
 COMMENT ON COLUMN "FD_OPERATING_LO"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
-COMMENT ON COLUMN "FD_OPERATING_LO"."TIME_" IS
-'Êó∂Èó¥';
+COMMENT ON COLUMN "FD_OPERATING_LO"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_OPERATING_LO"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Index: "FD_OPERATING_LO_USER_ID__FK"                         */
@@ -286,114 +314,130 @@ CREATE INDEX "FD_OPERATING_LO_USER_ID__FK" ON "FD_OPERATING_LO" (
 /*==============================================================*/
 CREATE TABLE "FD_RELATIONSHIP" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "OBJECT_1_TY_ID_"    VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "OBJECT_1_ID_"       VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "OBJECT_2_TY_ID_"    VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_2_ID_"       VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_3_TY_ID_"    VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_3_ID_"       VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_4_TY_ID_"    VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_4_ID_"       VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_5_TY_ID_"    VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_5_ID_"       VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_6_TY_ID_"    VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_6_ID_"       VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_7_TY_ID_"    VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_7_ID_"       VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_8_TY_ID_"    VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_8_ID_"       VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_9_TY_ID_"    VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "OBJECT_9_ID_"       VARCHAR2(36)         DEFAULT SYS_GUID(),
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "OBJECT_1_TY_ID_"    VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "OBJECT_1_ID_"       VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "OBJECT_2_TY_ID_"    VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_2_ID_"       VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_3_TY_ID_"    VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_3_ID_"       VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_4_TY_ID_"    VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_4_ID_"       VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_5_TY_ID_"    VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_5_ID_"       VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_6_TY_ID_"    VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_6_ID_"       VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_7_TY_ID_"    VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_7_ID_"       VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_8_TY_ID_"    VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_8_ID_"       VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_9_TY_ID_"    VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "OBJECT_9_ID_"       VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_RELATIONSHIP PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_RELATIONSHIP" IS
-'ÂÖ≥ËÅî';
+'πÿ¡™';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_1_TY_ID_" IS
-'ÂØπË±°1Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ1¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_1_ID_" IS
-'ÂØπË±°1Ê†áËØÜ';
+'∂‘œÛ1±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_2_TY_ID_" IS
-'ÂØπË±°2Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ2¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_2_ID_" IS
-'ÂØπË±°2Ê†áËØÜ';
+'∂‘œÛ2±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_3_TY_ID_" IS
-'ÂØπË±°3Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ3¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_3_ID_" IS
-'ÂØπË±°3Ê†áËØÜ';
+'∂‘œÛ3±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_4_TY_ID_" IS
-'ÂØπË±°4Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ4¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_4_ID_" IS
-'ÂØπË±°4Ê†áËØÜ';
+'∂‘œÛ4±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_5_TY_ID_" IS
-'ÂØπË±°5Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ5¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_5_ID_" IS
-'ÂØπË±°5Ê†áËØÜ';
+'∂‘œÛ5±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_6_TY_ID_" IS
-'ÂØπË±°6Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ6¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_6_ID_" IS
-'ÂØπË±°6Ê†áËØÜ';
+'∂‘œÛ6±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_7_TY_ID_" IS
-'ÂØπË±°7Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ7¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_7_ID_" IS
-'ÂØπË±°7Ê†áËØÜ';
+'∂‘œÛ7±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_8_TY_ID_" IS
-'ÂØπË±°8Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ8¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_8_ID_" IS
-'ÂØπË±°8Ê†áËØÜ';
+'∂‘œÛ8±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_9_TY_ID_" IS
-'ÂØπË±°9Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ9¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_RELATIONSHIP"."OBJECT_9_ID_" IS
-'ÂØπË±°9Ê†áËØÜ';
+'∂‘œÛ9±Í ∂';
+
+COMMENT ON COLUMN "FD_RELATIONSHIP"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_RELATIONSHIP"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Table: "FD_DEPARTMENT"                                       */
 /*==============================================================*/
 CREATE TABLE "FD_DEPARTMENT" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "PARENT_ID_"         VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID(),
-   "NAME_"              VARCHAR2(256),
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "PARENT_ID_"         VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAME_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_DEPARTMENT PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_DEPARTMENT" IS
-'ÈÉ®Èó®';
+'≤ø√≈';
 
 COMMENT ON COLUMN "FD_DEPARTMENT"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_DEPARTMENT"."PARENT_ID_" IS
-'Áà∂Ê†áËØÜ';
+'∏∏±Í ∂';
 
 COMMENT ON COLUMN "FD_DEPARTMENT"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_DEPARTMENT"."NAME_" IS
-'ÂêçÁß∞';
+'√˚≥∆';
+
+COMMENT ON COLUMN "FD_DEPARTMENT"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_DEPARTMENT"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Index: "FD_DEPARTMENT_PARENT_ID__FK"                         */
@@ -407,36 +451,44 @@ CREATE INDEX "FD_DEPARTMENT_PARENT_ID__FK" ON "FD_DEPARTMENT" (
 /*==============================================================*/
 CREATE TABLE "FD_DICTIONARY" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "DICTIONARY_TY_ID_"  VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID() NOT NULL,
-   "NAME_"              VARCHAR2(256)        NOT NULL,
-   "ORDER_NU_"          INTEGER              DEFAULT 0,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "DICTIONARY_TY_ID_"  VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAME_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "ORDER_"             INTEGER              DEFAULT 0 NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_DICTIONARY PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_DICTIONARY" IS
-'Â≠óÂÖ∏';
+'◊÷µ‰';
 
 COMMENT ON COLUMN "FD_DICTIONARY"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_DICTIONARY"."DICTIONARY_TY_ID_" IS
-'Â≠óÂÖ∏Á±ªÂûãÊ†áËØÜ';
+'◊÷µ‰¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_DICTIONARY"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_DICTIONARY"."NAME_" IS
-'ÂêçÁß∞';
+'√˚≥∆';
 
-COMMENT ON COLUMN "FD_DICTIONARY"."ORDER_NU_" IS
-'ÊéíÂ∫èÂè∑';
+COMMENT ON COLUMN "FD_DICTIONARY"."ORDER_" IS
+'≈≈–Ú∫≈';
+
+COMMENT ON COLUMN "FD_DICTIONARY"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_DICTIONARY"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
-/* Index: "FD_DICTION"                                          */
+/* Index: "FD_DICTIONARY_D"                                     */
 /*==============================================================*/
-CREATE INDEX "FD_DICTION" ON "FD_DICTIONARY" (
+CREATE INDEX "FD_DICTIONARY_D" ON "FD_DICTIONARY" (
    "DICTIONARY_TY_ID_" ASC
 );
 
@@ -445,31 +497,39 @@ CREATE INDEX "FD_DICTION" ON "FD_DICTIONARY" (
 /*==============================================================*/
 CREATE TABLE "FD_DICTIONARY_TY" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "PARENT_ID_"         VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID() NOT NULL,
-   "NAME_"              VARCHAR2(256)        NOT NULL,
-   "ORDER_NU_"          INTEGER              DEFAULT 0,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "PARENT_ID_"         VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAME_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "ORDER_"             INTEGER              DEFAULT 0 NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_DICTIONARY_TY PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_DICTIONARY_TY" IS
-'Â≠óÂÖ∏Á±ªÂûã';
+'◊÷µ‰¿‡–Õ';
 
 COMMENT ON COLUMN "FD_DICTIONARY_TY"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_DICTIONARY_TY"."PARENT_ID_" IS
-'Áà∂Ê†áËØÜ';
+'∏∏±Í ∂';
 
 COMMENT ON COLUMN "FD_DICTIONARY_TY"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_DICTIONARY_TY"."NAME_" IS
-'ÂêçÁß∞';
+'√˚≥∆';
 
-COMMENT ON COLUMN "FD_DICTIONARY_TY"."ORDER_NU_" IS
-'ÊéíÂ∫èÂè∑';
+COMMENT ON COLUMN "FD_DICTIONARY_TY"."ORDER_" IS
+'≈≈–Ú∫≈';
+
+COMMENT ON COLUMN "FD_DICTIONARY_TY"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_DICTIONARY_TY"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Index: "FD_DICTIONARY_TY_PARENT_ID__FK"                      */
@@ -483,50 +543,66 @@ CREATE INDEX "FD_DICTIONARY_TY_PARENT_ID__FK" ON "FD_DICTIONARY_TY" (
 /*==============================================================*/
 CREATE TABLE "FD_LOCALE" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID(),
-   "ORDER_NU_"          INTEGER              DEFAULT 0,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "ORDER_"             INTEGER              DEFAULT 0 NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_LOCALE PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_LOCALE" IS
-'Âú∞ÁÇπ';
+'µÿµ„';
 
 COMMENT ON COLUMN "FD_LOCALE"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_LOCALE"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
-COMMENT ON COLUMN "FD_LOCALE"."ORDER_NU_" IS
-'ÊéíÂ∫èÂè∑';
+COMMENT ON COLUMN "FD_LOCALE"."ORDER_" IS
+'≈≈–Ú∫≈';
+
+COMMENT ON COLUMN "FD_LOCALE"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_LOCALE"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Table: "FD_MESSAGE"                                          */
 /*==============================================================*/
 CREATE TABLE "FD_MESSAGE" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "LOCALE_ID_"         VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID() NOT NULL,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "LOCALE_ID_"         VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
    "CONTENT_"           VARCHAR2(2048),
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_MESSAGE PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_MESSAGE" IS
-'Ê∂àÊÅØ';
+'œ˚œ¢';
 
 COMMENT ON COLUMN "FD_MESSAGE"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_MESSAGE"."LOCALE_ID_" IS
-'Âú∞ÁÇπÊ†áËØÜ';
+'µÿµ„±Í ∂';
 
 COMMENT ON COLUMN "FD_MESSAGE"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_MESSAGE"."CONTENT_" IS
-'ÂÜÖÂÆπ';
+'ƒ⁄»›';
+
+COMMENT ON COLUMN "FD_MESSAGE"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_MESSAGE"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Index: "FD_MESSAGE_LOCALE_ID__FK"                            */
@@ -540,128 +616,160 @@ CREATE INDEX "FD_MESSAGE_LOCALE_ID__FK" ON "FD_MESSAGE" (
 /*==============================================================*/
 CREATE TABLE "FD_OBJECT_AT" 
 (
-   "OBJECT_TY_ID_"      VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "OBJECT_ID_"         VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "TYPE_ID_"           VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID() NOT NULL,
+   "OBJECT_TY_ID_"      VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "OBJECT_ID_"         VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "TYPE_ID_"           VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
    "LONG_VA_"           INTEGER,
    "DOUBLE_VA_"         FLOAT,
    "DATE_VA_"           DATE,
    "STRING_VA_"         VARCHAR2(1024),
    "TEXT_VA_"           VARCHAR2(4000),
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_OBJECT_AT PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_OBJECT_AT" IS
-'ÂØπË±°Â±ûÊÄß';
+'∂‘œÛ Ù–‘';
 
 COMMENT ON COLUMN "FD_OBJECT_AT"."OBJECT_TY_ID_" IS
-'ÂØπË±°Á±ªÂûãÊ†áËØÜ';
+'∂‘œÛ¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_OBJECT_AT"."OBJECT_ID_" IS
-'ÂØπË±°Ê†áËØÜ';
+'∂‘œÛ±Í ∂';
 
 COMMENT ON COLUMN "FD_OBJECT_AT"."TYPE_ID_" IS
-'Á±ªÂûãÊ†áËØÜ';
+'¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_OBJECT_AT"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_OBJECT_AT"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_OBJECT_AT"."LONG_VA_" IS
-'longÂÄº';
+'long÷µ';
 
 COMMENT ON COLUMN "FD_OBJECT_AT"."DOUBLE_VA_" IS
-'doubleÂÄº';
+'double÷µ';
 
 COMMENT ON COLUMN "FD_OBJECT_AT"."DATE_VA_" IS
-'dateÂÄº';
+'date÷µ';
 
 COMMENT ON COLUMN "FD_OBJECT_AT"."STRING_VA_" IS
-'stringÂÄº';
+'string÷µ';
 
 COMMENT ON COLUMN "FD_OBJECT_AT"."TEXT_VA_" IS
-'textÂÄº';
+'text÷µ';
+
+COMMENT ON COLUMN "FD_OBJECT_AT"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_OBJECT_AT"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Table: "FD_OBJECT_BL_AT"                                     */
 /*==============================================================*/
 CREATE TABLE "FD_OBJECT_BL_AT" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
    "BYTE_VA_"           BLOB,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_OBJECT_BL_AT PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_OBJECT_BL_AT" IS
-'ÂØπË±°BLobÂ±ûÊÄß';
+'∂‘œÛBLob Ù–‘';
 
 COMMENT ON COLUMN "FD_OBJECT_BL_AT"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_OBJECT_BL_AT"."BYTE_VA_" IS
-'blobÂÄº';
+'blob÷µ';
+
+COMMENT ON COLUMN "FD_OBJECT_BL_AT"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_OBJECT_BL_AT"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Table: "FD_OBJECT_CL_AT"                                     */
 /*==============================================================*/
 CREATE TABLE "FD_OBJECT_CL_AT" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
    "CLOB_VA_"           CLOB,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_OBJECT_CL_AT PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_OBJECT_CL_AT" IS
-'ÂØπË±°CLobÂ±ûÊÄß';
+'∂‘œÛCLob Ù–‘';
 
 COMMENT ON COLUMN "FD_OBJECT_CL_AT"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_OBJECT_CL_AT"."CLOB_VA_" IS
-'clobÂÄº';
+'clob÷µ';
+
+COMMENT ON COLUMN "FD_OBJECT_CL_AT"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_OBJECT_CL_AT"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Table: "FD_RESOURCE"                                         */
 /*==============================================================*/
 CREATE TABLE "FD_RESOURCE" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "RESOURCE_TY_ID_"    VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "PARENT_ID_"         VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "SITE_ID_"           VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID() NOT NULL,
-   "NAME_"              VARCHAR2(256)        NOT NULL,
-   "ORDER_NU_"          INTEGER              DEFAULT 0 NOT NULL,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "RESOURCE_TY_ID_"    VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "PARENT_ID_"         VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "SITE_ID_"           VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAME_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "ORDER_"             INTEGER              DEFAULT 0 NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_RESOURCE PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_RESOURCE" IS
-'ËµÑÊ∫ê';
+'◊ ‘¥';
 
 COMMENT ON COLUMN "FD_RESOURCE"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_RESOURCE"."RESOURCE_TY_ID_" IS
-'ËµÑÊ∫êÁ±ªÂûãÊ†áËØÜ';
+'◊ ‘¥¿‡–Õ±Í ∂';
 
 COMMENT ON COLUMN "FD_RESOURCE"."PARENT_ID_" IS
-'Áà∂Ê†áËØÜ';
+'∏∏±Í ∂';
 
 COMMENT ON COLUMN "FD_RESOURCE"."SITE_ID_" IS
-'Á´ôÊ†áËØÜ';
+'’æ±Í ∂';
 
 COMMENT ON COLUMN "FD_RESOURCE"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_RESOURCE"."NAME_" IS
-'ÂêçÁß∞';
+'√˚≥∆';
 
-COMMENT ON COLUMN "FD_RESOURCE"."ORDER_NU_" IS
-'ÊéíÂ∫èÂè∑';
+COMMENT ON COLUMN "FD_RESOURCE"."ORDER_" IS
+'≈≈–Ú∫≈';
+
+COMMENT ON COLUMN "FD_RESOURCE"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_RESOURCE"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Index: "FD_RESOURCE_PARENT_ID__FK"                           */
@@ -689,31 +797,39 @@ CREATE INDEX "FD_RESOURCE_SITE_ID__FK" ON "FD_RESOURCE" (
 /*==============================================================*/
 CREATE TABLE "FD_RESOURCE_TY" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "PARENT_ID_"         VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID() NOT NULL,
-   "NAME_"              VARCHAR2(256)        NOT NULL,
-   "ORDER_NU_"          INTEGER              DEFAULT 0 NOT NULL,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "PARENT_ID_"         VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAME_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "ORDER_"             INTEGER              DEFAULT 0 NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_RESOURCE_TY PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_RESOURCE_TY" IS
-'ËµÑÊ∫êÁ±ªÂûã';
+'◊ ‘¥¿‡–Õ';
 
 COMMENT ON COLUMN "FD_RESOURCE_TY"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_RESOURCE_TY"."PARENT_ID_" IS
-'Áà∂Ê†áËØÜ';
+'∏∏±Í ∂';
 
 COMMENT ON COLUMN "FD_RESOURCE_TY"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_RESOURCE_TY"."NAME_" IS
-'ÂêçÁß∞';
+'√˚≥∆';
 
-COMMENT ON COLUMN "FD_RESOURCE_TY"."ORDER_NU_" IS
-'ÊéíÂ∫èÂè∑';
+COMMENT ON COLUMN "FD_RESOURCE_TY"."ORDER_" IS
+'≈≈–Ú∫≈';
+
+COMMENT ON COLUMN "FD_RESOURCE_TY"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_RESOURCE_TY"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Index: "FD_RESOURCE_TY_PARENT_ID__FK"                        */
@@ -727,46 +843,62 @@ CREATE INDEX "FD_RESOURCE_TY_PARENT_ID__FK" ON "FD_RESOURCE_TY" (
 /*==============================================================*/
 CREATE TABLE "FD_SITE" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID(),
-   "NAME_"              VARCHAR2(256),
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAME_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_SITE PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_SITE" IS
-'Á´ô';
+'’æ';
 
 COMMENT ON COLUMN "FD_SITE"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_SITE"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_SITE"."NAME_" IS
-'ÂêçÁß∞';
+'√˚≥∆';
+
+COMMENT ON COLUMN "FD_SITE"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_SITE"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Table: "FD_SITE_DO_NA"                                       */
 /*==============================================================*/
 CREATE TABLE "FD_SITE_DO_NA" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "SITE_ID_"           VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "DOMAIN_NA_ID_"      VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "SITE_ID_"           VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "DOMAIN_NA_ID_"      VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_SITE_DO_NA PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_SITE_DO_NA" IS
-'Á´ô‰∏éÂüüÂêç';
+'’æ”Î”Ú√˚';
 
 COMMENT ON COLUMN "FD_SITE_DO_NA"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_SITE_DO_NA"."SITE_ID_" IS
-'Á´ôÊ†áËØÜ';
+'’æ±Í ∂';
 
 COMMENT ON COLUMN "FD_SITE_DO_NA"."DOMAIN_NA_ID_" IS
-'ÂüüÂêçÊ†áËØÜ';
+'”Ú√˚±Í ∂';
+
+COMMENT ON COLUMN "FD_SITE_DO_NA"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_SITE_DO_NA"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Index: "FD_SITE_DO_NA_DOMAIN_NA_ID__FK"                      */
@@ -787,27 +919,35 @@ CREATE INDEX "FD_SITE_DO_NA_SITE_ID__FK" ON "FD_SITE_DO_NA" (
 /*==============================================================*/
 CREATE TABLE "FD_USER" 
 (
-   "ID_"                VARCHAR2(36)         DEFAULT SYS_GUID() NOT NULL,
-   "DEPARTMENT_ID_"     VARCHAR2(36)         DEFAULT SYS_GUID(),
-   "CODE_"              VARCHAR2(256)        DEFAULT SYS_GUID(),
-   "NAME_"              VARCHAR2(256),
+   "ID_"                VARCHAR2(36)         DEFAULT 'SYS_GUID()' NOT NULL,
+   "DEPARTMENT_ID_"     VARCHAR2(36)         DEFAULT 'SYS_GUID()',
+   "CODE_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "NAME_"              VARCHAR2(256)        DEFAULT 'SYS_GUID()' NOT NULL,
+   "BEGIN_TI_"          DATE                 DEFAULT SYSDATE NOT NULL,
+   "END_TI_"            DATE                 DEFAULT 'TO_DATE(''31-12-9999'',''dd-mm-yyyy'')' NOT NULL,
    CONSTRAINT PK_FD_USER PRIMARY KEY ("ID_")
 );
 
 COMMENT ON TABLE "FD_USER" IS
-'Áî®Êà∑';
+'”√ªß';
 
 COMMENT ON COLUMN "FD_USER"."ID_" IS
-'Ê†áËØÜ';
+'±Í ∂';
 
 COMMENT ON COLUMN "FD_USER"."DEPARTMENT_ID_" IS
-'ÈÉ®Èó®Ê†áËØÜ';
+'≤ø√≈±Í ∂';
 
 COMMENT ON COLUMN "FD_USER"."CODE_" IS
-'ÁºñÂè∑';
+'±‡∫≈';
 
 COMMENT ON COLUMN "FD_USER"."NAME_" IS
-'ÂêçÁß∞';
+'√˚≥∆';
+
+COMMENT ON COLUMN "FD_USER"."BEGIN_TI_" IS
+'ø™ º ±º‰';
+
+COMMENT ON COLUMN "FD_USER"."END_TI_" IS
+'Ω· ¯ ±º‰';
 
 /*==============================================================*/
 /* Index: "FD_USER_DEPARTMENT_ID__FK"                           */

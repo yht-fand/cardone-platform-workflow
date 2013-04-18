@@ -17,7 +17,7 @@ public class ConfigurationVo implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 615992437402295361L;
+	private static final long serialVersionUID = 408186728736170599L;
 	
 	/**
 	 * 字典类型

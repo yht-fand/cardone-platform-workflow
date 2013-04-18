@@ -1,5 +1,7 @@
 package com.fand.configuration.po;
 
+import java.util.Date;
+
 import javax.persistence.Id;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -14,7 +16,7 @@ public class Relationship implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 161102106917336768L;
+	private static final long serialVersionUID = 196366499403162281L;
 
 	/**
     * 对象3标识
@@ -35,6 +37,11 @@ public class Relationship implements java.io.Serializable {
     * 对象4类型标识
 	 */
 	public static final String OBJECT_4_TY_ID_ = "object4TyId";
+
+	/**
+    * 结束时间
+	 */
+	public static final String END_TI_ = "endTi";
 
 	/**
     * 对象7类型标识
@@ -102,6 +109,11 @@ public class Relationship implements java.io.Serializable {
 	public static final String OBJECT_2_ID_ = "object2Id";
 
 	/**
+    * 开始时间
+	 */
+	public static final String BEGIN_TI_ = "beginTi";
+
+	/**
     * 对象9类型标识
 	 */
 	public static final String OBJECT_9_TY_ID_ = "object9TyId";
@@ -130,6 +142,11 @@ public class Relationship implements java.io.Serializable {
     * 对象4类型标识
     */
 	String object4TyId;
+
+	/**
+    * 结束时间
+    */
+	Date endTi;
 
 	/**
     * 对象7类型标识
@@ -198,6 +215,11 @@ public class Relationship implements java.io.Serializable {
 	String object2Id;
 
 	/**
+    * 开始时间
+    */
+	Date beginTi;
+
+	/**
     * 对象9类型标识
     */
 	String object9TyId;
@@ -241,6 +263,15 @@ public class Relationship implements java.io.Serializable {
 	 */
 	public String getObject4TyId() {
 		return this.object4TyId;
+	}
+
+	/**
+     * 获取
+     *
+	 * @return 结束时间
+	 */
+	public Date getEndTi() {
+		return this.endTi;
 	}
 
 	/**
@@ -363,6 +394,15 @@ public class Relationship implements java.io.Serializable {
 	/**
      * 获取
      *
+	 * @return 开始时间
+	 */
+	public Date getBeginTi() {
+		return this.beginTi;
+	}
+
+	/**
+     * 获取
+     *
 	 * @return 对象9类型标识
 	 */
 	public String getObject9TyId() {
@@ -422,6 +462,18 @@ public class Relationship implements java.io.Serializable {
 	 */
 	public Relationship setObject4TyId(String object4TyId) {
 		this.object4TyId = object4TyId;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
+	 * @param endTi
+	 *            结束时间
+	 */
+	public Relationship setEndTi(Date endTi) {
+		this.endTi = endTi;
 		
 		return this;
 	}
@@ -578,6 +630,18 @@ public class Relationship implements java.io.Serializable {
 	 */
 	public Relationship setObject2Id(String object2Id) {
 		this.object2Id = object2Id;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
+	 * @param beginTi
+	 *            开始时间
+	 */
+	public Relationship setBeginTi(Date beginTi) {
+		this.beginTi = beginTi;
 		
 		return this;
 	}

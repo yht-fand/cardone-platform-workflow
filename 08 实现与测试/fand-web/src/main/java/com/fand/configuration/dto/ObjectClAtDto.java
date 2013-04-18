@@ -12,5 +12,5 @@ public class ObjectClAtDto extends ObjectClAt {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 801257639270911184L;
+	private static final long serialVersionUID = 443529260454752119L;
 }

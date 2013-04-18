@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>fand-parent</artifactId>
 		<groupId>com.fand</groupId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 		<relativePath>../fand-parent/</relativePath>
 	</parent>
 	<artifactId>fand-web</artifactId>
@@ -17,17 +17,17 @@
 	<dependency>
 		<groupId>com.fand</groupId>
 		<artifactId>fand-core</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</dependency>
 	<dependency>
 		<groupId>com.fand</groupId>
 		<artifactId>fand-persistent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</dependency>
 	<dependency>
 		<groupId>com.fand</groupId>
 		<artifactId>fand-context</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.1</version>
 	</dependency>
 	</dependencies>
 	<build>

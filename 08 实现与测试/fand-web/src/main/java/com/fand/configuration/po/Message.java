@@ -1,5 +1,7 @@
 package com.fand.configuration.po;
 
+import java.util.Date;
+
 import javax.persistence.Id;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -14,7 +16,7 @@ public class Message implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 578906415003023754L;
+	private static final long serialVersionUID = 880934412826069412L;
 
 	/**
     * 标识
@@ -32,9 +34,19 @@ public class Message implements java.io.Serializable {
 	public static final String LOCALE_ID_ = "localeId";
 
 	/**
+    * 结束时间
+	 */
+	public static final String END_TI_ = "endTi";
+
+	/**
     * 编号
 	 */
 	public static final String CODE_ = "code";
+
+	/**
+    * 开始时间
+	 */
+	public static final String BEGIN_TI_ = "beginTi";
 
 	/**
     * 标识
@@ -53,9 +65,19 @@ public class Message implements java.io.Serializable {
 	String localeId;
 
 	/**
+    * 结束时间
+    */
+	Date endTi;
+
+	/**
     * 编号
     */
 	String code;
+
+	/**
+    * 开始时间
+    */
+	Date beginTi;
 
 	/**
      * 获取
@@ -87,10 +109,28 @@ public class Message implements java.io.Serializable {
 	/**
      * 获取
      *
+	 * @return 结束时间
+	 */
+	public Date getEndTi() {
+		return this.endTi;
+	}
+
+	/**
+     * 获取
+     *
 	 * @return 编号
 	 */
 	public String getCode() {
 		return this.code;
+	}
+
+	/**
+     * 获取
+     *
+	 * @return 开始时间
+	 */
+	public Date getBeginTi() {
+		return this.beginTi;
 	}
 
 	/**
@@ -132,11 +172,35 @@ public class Message implements java.io.Serializable {
 	/**
 	 * 设置
      *
+	 * @param endTi
+	 *            结束时间
+	 */
+	public Message setEndTi(Date endTi) {
+		this.endTi = endTi;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
 	 * @param code
 	 *            编号
 	 */
 	public Message setCode(String code) {
 		this.code = code;
+		
+		return this;
+	}
+
+	/**
+	 * 设置
+     *
+	 * @param beginTi
+	 *            开始时间
+	 */
+	public Message setBeginTi(Date beginTi) {
+		this.beginTi = beginTi;
 		
 		return this;
 	}
