@@ -12,6 +12,15 @@ import org.apache.commons.lang.StringUtils;
  */
 public class ModelBuilderUtils {
 	/**
+	 * 实例化对象映射生成器
+	 * 
+	 * @return 对象映射生成器实例
+	 */
+	public static ModelBuilder newModelBuilder() {
+		return new DefaultModelBuilder();
+	}
+
+	/**
 	 * 填充
 	 * 
 	 * @param modelBuilder

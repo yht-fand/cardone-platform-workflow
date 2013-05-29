@@ -1,7 +1,5 @@
 package com.fand.persistent.support;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -12,11 +10,12 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 import org.springframework.jdbc.core.simple.ParameterizedBeanPropertyRowMapper;
 
 import com.fand.dto.PaginationDto;
-import com.fand.persistent.builder.DefaultModelBuilder;
 import com.fand.persistent.builder.ModelArgs;
 import com.fand.persistent.builder.ModelBuilder;
 import com.fand.persistent.builder.ModelBuilderUtils;
 import com.fand.template.support.TemplateSupport;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 /**
  * jdbc dao
@@ -44,6 +43,8 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 
 		final int totalSize = this.selectForObject(Integer.class, selectForObjectSqlId, null, model);
 
+		List<Map<String, Object>> dataList;
+
 		if (totalSize > 0) {
 			if (model != null) {
 				paginationNo = (paginationNo > 0) ? paginationNo : 1;
@@ -59,12 +60,12 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 				model.put("end__row__num", endRowNum);
 			}
 
-			final List<Map<String, Object>> dataList = this.selectForMapList(selectForMapListSqlId, model);
-
-			paginationDto.setDataList(dataList);
+			dataList = this.selectForMapList(selectForMapListSqlId, model);
 		} else {
-			paginationDto.setDataList(new ArrayList<Map<String, Object>>());
+			dataList = Lists.newArrayList();
 		}
+
+		paginationDto.setDataList(dataList);
 
 		paginationDto.setNo(paginationNo);
 
@@ -80,7 +81,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 			return new PaginationDto<Map<String, Object>>();
 		}
 
-		final ModelBuilder modelBuilder = new DefaultModelBuilder();
+		final ModelBuilder modelBuilder = ModelBuilderUtils.newModelBuilder();
 
 		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss);
 
@@ -93,6 +94,8 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 		final PaginationDto<T> paginationDto = new PaginationDto<T>();
 
 		final int totalSize = this.selectForObject(Integer.class, selectForObjectSqlId, null, model);
+
+		List<T> dataList;
 
 		if (totalSize > 0) {
 			if (model != null) {
@@ -109,12 +112,12 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 				model.put("end__row__num", endRowNum);
 			}
 
-			final List<T> dataList = this.selectForMappedObjectList(mappedClass, selectForMappedObjectListSqlId, model);
-
-			paginationDto.setDataList(dataList);
+			dataList = this.selectForMappedObjectList(mappedClass, selectForMappedObjectListSqlId, model);
 		} else {
-			paginationDto.setDataList(new ArrayList<T>());
+			dataList = Lists.newArrayList();
 		}
+
+		paginationDto.setDataList(dataList);
 
 		paginationDto.setNo(paginationNo);
 
@@ -130,7 +133,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 			return new PaginationDto<T>();
 		}
 
-		final ModelBuilder modelBuilder = new DefaultModelBuilder();
+		final ModelBuilder modelBuilder = ModelBuilderUtils.newModelBuilder();
 
 		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss);
 
@@ -144,14 +147,14 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 			return 0;
 		}
 
-		final ModelBuilder modelBuilder = new DefaultModelBuilder();
+		final ModelBuilder modelBuilder = ModelBuilderUtils.newModelBuilder();
 
-		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelArgs.UPDATE);
+		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelBuilder.UPDATE);
 
 		int rowCount = this.update(updateSqlId, modelBuilder.build());
 
 		if (rowCount < 1) {
-			ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelArgs.INSERT);
+			ModelBuilderUtils.putByHandle(modelBuilder, modelArgss, ModelBuilder.INSERT);
 
 			rowCount = this.update(insertSqlId, modelBuilder.build());
 		}
@@ -168,9 +171,9 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 		int rowCount = 0;
 
 		for (final Object object : objects) {
-			final ModelArgs updateModelArgs = new ModelArgs(ModelArgs.UPDATE, object).addIgnoreAnnotationClassList(javax.persistence.Id.class);
+			final ModelArgs updateModelArgs = new ModelArgs(ModelBuilder.UPDATE, object).addIgnoreAnnotationClassList(javax.persistence.Id.class);
 
-			final ModelArgs insertModelArgs = new ModelArgs(ModelArgs.INSERT, object).setSkipNullValue(true);
+			final ModelArgs insertModelArgs = new ModelArgs(ModelBuilder.INSERT, object).setSkipNullValue(true);
 
 			rowCount += this.save(updateSqlId, insertSqlId, updateModelArgs, insertModelArgs);
 		}
@@ -188,10 +191,10 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	@Override
 	public Map<String, Object> selectForMap(final String sqlId, final ModelArgs... modelArgss) {
 		if (ArrayUtils.isEmpty(modelArgss)) {
-			return new HashMap<String, Object>();
+			return Maps.newHashMap();
 		}
 
-		final ModelBuilder modelBuilder = new DefaultModelBuilder();
+		final ModelBuilder modelBuilder = ModelBuilderUtils.newModelBuilder();
 
 		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss);
 
@@ -208,10 +211,10 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	@Override
 	public List<Map<String, Object>> selectForMapList(final String sqlId, final ModelArgs... modelArgss) {
 		if (ArrayUtils.isEmpty(modelArgss)) {
-			return new ArrayList<Map<String, Object>>();
+			return Lists.newArrayList();
 		}
 
-		final ModelBuilder modelBuilder = new DefaultModelBuilder();
+		final ModelBuilder modelBuilder = ModelBuilderUtils.newModelBuilder();
 
 		ModelBuilderUtils.putByFilters(modelBuilder, modelArgss);
 
@@ -239,7 +242,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 			return null;
 		}
 
-		final ModelBuilder modelBuilder = new DefaultModelBuilder();
+		final ModelBuilder modelBuilder = ModelBuilderUtils.newModelBuilder();
 
 		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss);
 
@@ -256,10 +259,10 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	@Override
 	public <T> List<T> selectForMappedObjectList(final Class<T> mappedClass, final String sqlId, final ModelArgs... modelArgss) {
 		if (ArrayUtils.isEmpty(modelArgss)) {
-			return new ArrayList<T>();
+			return Lists.newArrayList();
 		}
 
-		final ModelBuilder modelBuilder = new DefaultModelBuilder();
+		final ModelBuilder modelBuilder = ModelBuilderUtils.newModelBuilder();
 
 		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss);
 
@@ -270,10 +273,10 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	public <T> T selectForObject(final Class<T> requiredType, final String sqlId, final String objectId, Map<String, Object> model) {
 		if (StringUtils.isNotBlank(objectId)) {
 			if (model == null) {
-				model = new HashMap<String, Object>();
+				model = Maps.newHashMap();
 			}
 
-			model.put(ModelArgs.OBJECT_ID, objectId);
+			model.put(ModelBuilder.OBJECT_ID, objectId);
 		}
 
 		final String sql = this.builderSql(sqlId, model);
@@ -287,7 +290,7 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 			return null;
 		}
 
-		final ModelBuilder modelBuilder = new DefaultModelBuilder();
+		final ModelBuilder modelBuilder = ModelBuilderUtils.newModelBuilder();
 
 		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss);
 
@@ -298,10 +301,10 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	public <T> List<T> selectForObjectList(final Class<T> elementType, final String sqlId, final String objectId, Map<String, Object> model) {
 		if (StringUtils.isNotBlank(objectId)) {
 			if (model == null) {
-				model = new HashMap<String, Object>();
+				model = Maps.newHashMap();
 			}
 
-			model.put(ModelArgs.OBJECT_ID, objectId);
+			model.put(ModelBuilder.OBJECT_ID, objectId);
 		}
 
 		final String sql = this.builderSql(sqlId, model);
@@ -312,10 +315,10 @@ public class JdbcDaoSupport extends NamedParameterJdbcDaoSupport implements DaoS
 	@Override
 	public <T> List<T> selectForObjectList(final Class<T> elementType, final String sqlId, final String objectId, final ModelArgs... modelArgss) {
 		if (ArrayUtils.isEmpty(modelArgss)) {
-			return new ArrayList<T>();
+			return Lists.newArrayList();
 		}
 
-		final ModelBuilder modelBuilder = new DefaultModelBuilder();
+		final ModelBuilder modelBuilder = ModelBuilderUtils.newModelBuilder();
 
 		ModelBuilderUtils.putByHandle(modelBuilder, modelArgss);
 

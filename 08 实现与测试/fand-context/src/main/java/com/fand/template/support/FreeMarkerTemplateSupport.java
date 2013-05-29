@@ -19,15 +19,6 @@ import freemarker.template.TemplateException;
  * 
  */
 public class FreeMarkerTemplateSupport implements TemplateSupport {
-	/**
-	 * 文件名解析格式
-	 */
-	public static String _FILE_PATH_FORMATE = "${filePath}.ftl";
-
-	/**
-	 * 文件名变量名称
-	 */
-	public static String _FILE_PATH_VARIABLE_NAME = "${filePath}";
 
 	/**
 	 * 日志
@@ -102,7 +93,7 @@ public class FreeMarkerTemplateSupport implements TemplateSupport {
 	 *            文件名解析格式
 	 */
 	public void setFilePathFormate(final String filePathFormate) {
-		this.filePathFormate = StringUtils.defaultIfBlank(filePathFormate, FreeMarkerTemplateSupport._FILE_PATH_FORMATE);
+		this.filePathFormate = StringUtils.defaultIfBlank(filePathFormate, TemplateSupport.DEFAULT_FILE_PATH_FORMATE);
 	}
 
 	/**
@@ -112,6 +103,6 @@ public class FreeMarkerTemplateSupport implements TemplateSupport {
 	 *            文件名变量名称
 	 */
 	public void setFilePathVariableName(final String filePathVariableName) {
-		this.filePathVariableName = StringUtils.defaultIfBlank(filePathVariableName, FreeMarkerTemplateSupport._FILE_PATH_VARIABLE_NAME);
+		this.filePathVariableName = StringUtils.defaultIfBlank(filePathVariableName, TemplateSupport.DEFAULT_FILE_PATH_VARIABLE_NAME);
 	}
 }

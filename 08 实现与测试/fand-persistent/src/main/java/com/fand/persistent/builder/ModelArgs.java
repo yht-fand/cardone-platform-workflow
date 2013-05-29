@@ -19,94 +19,9 @@ import com.google.common.collect.Maps;
  */
 public class ModelArgs implements java.io.Serializable {
 	/**
-	 * 全部
-	 */
-	public final static String ALL = "all";
-
-	/**
-	 * 总合
-	 */
-	public final static String COUNT = "count";
-
-	/**
-	 * 默认忽略属性数组
-	 */
-	public static final String[] DEFAULT_IGNORE_PROPERTIES = new String[] { "serialVersionUID" };
-
-	/**
-	 * 默认键值前缀名称
-	 */
-	public static final String DEFAULT_KEY_PREFIX = "where__and__eq";
-
-	/**
-	 * 默认键值后缀名称
-	 */
-	public static final String DEFAULT_KEY_SUFFIX = "value";
-
-	/**
-	 * 默认间隔
-	 */
-	public static final String DEFAULT_SIMPLEPARATOR = "__";
-
-	/**
-	 * 删除
-	 */
-	public final static String DELETE = "delete";
-
-	/**
-	 * 字段
-	 */
-	public final static String FIELD = "field";
-
-	/**
-	 * 查询
-	 */
-	public final static String FIND = "find";
-
-	/**
-	 * 获取
-	 */
-	public final static String GET = "get";
-
-	/**
-	 * 标识
-	 */
-	public final static String ID = "id";
-
-	/**
-	 * 创建
-	 */
-	public final static String INSERT = "insert";
-
-	/**
-	 * 最大
-	 */
-	public final static String MAX = "max";
-
-	/**
-	 * 最小
-	 */
-	public final static String MIN = "min";
-
-	/**
-	 * 读取字段标识
-	 */
-	public final static String OBJECT_ID = "object__id";
-
-	/**
-	 * 读取
-	 */
-	public final static String READ = "read";
-
-	/**
 	 * 序列号
 	 */
 	private static final long serialVersionUID = -6258631484971104514L;
-
-	/**
-	 * 更新
-	 */
-	public final static String UPDATE = "update";
 
 	/**
 	 * 类型
@@ -292,7 +207,7 @@ public class ModelArgs implements java.io.Serializable {
 	 */
 	public String[] getIgnoreProperties() {
 		if (ArrayUtils.isEmpty(this.ignoreProperties)) {
-			return ModelArgs.DEFAULT_IGNORE_PROPERTIES;
+			return ModelBuilder.DEFAULT_IGNORE_PROPERTIES;
 		}
 
 		return this.ignoreProperties;

@@ -32,13 +32,6 @@ public class ${poMapper.code} implements java.io.Serializable {
 
 	/**
     * <@defaultIfBlank str="${fieldMapper.remarks!}" defaultSt="${fieldMapper.code!}"/>
-	 */
-	public static final String ${fieldMapper.columnName} = "${fieldMapper.code}";
-</#list>
-<#list poMapper.fieldMapperMap?values as fieldMapper>
-
-	/**
-    * <@defaultIfBlank str="${fieldMapper.remarks!}" defaultSt="${fieldMapper.code!}"/>
     */
 <#if fieldMapper.pkName! != ''>
 	@Id

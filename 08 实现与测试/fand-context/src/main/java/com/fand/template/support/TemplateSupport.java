@@ -7,6 +7,16 @@ package com.fand.template.support;
  */
 public interface TemplateSupport {
 	/**
+	 * 默认文件名解析格式
+	 */
+	String DEFAULT_FILE_PATH_FORMATE = "${filePath}.ftl";
+
+	/**
+	 * 默认文件名变量名称
+	 */
+	String DEFAULT_FILE_PATH_VARIABLE_NAME = "${filePath}";
+
+	/**
 	 * 默认解析模板
 	 * 
 	 * @param filePath

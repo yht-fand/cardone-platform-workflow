@@ -1,8 +1,6 @@
 package com.fand.generator.template;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +17,8 @@ import com.fand.generator.mapper.BusinessMapper;
 import com.fand.generator.mapper.ModuleMapper;
 import com.fand.generator.mapper.PoMapper;
 import com.fand.generator.mapper.ProjectMapper;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 
 import freemarker.ext.beans.BeansWrapper;
 import freemarker.template.Configuration;
@@ -85,7 +85,7 @@ public class DefaultTemplate implements Template {
 	public void run(final Map<String, PoMapper> poMapperMap) throws Exception {
 		final String srcDirFormat = "${outputDir!}${separator!}${rootDir!}${separator!}${rootDirType!}${separator!}${dirType!}${separator!}";
 
-		final Map<String, Object> contextMap = new HashMap<String, Object>();
+		final Map<String, Object> contextMap = Maps.newHashMap();
 
 		contextMap.put("outputDir", this.outputDir);
 
@@ -109,7 +109,7 @@ public class DefaultTemplate implements Template {
 
 		contextMap.put("packageDir", packageDir);
 
-		final List<String> serialVersionUIDList = new ArrayList<String>();
+		final List<String> serialVersionUIDList = Lists.newArrayList();
 
 		for (final String layer : layers) {
 			contextMap.put("layer", layer);
@@ -124,7 +124,7 @@ public class DefaultTemplate implements Template {
 
 						moduleMapper.setCode(moduleMapperKey);
 
-						final Map<String, Object> model = new HashMap<String, Object>();
+						final Map<String, Object> model = Maps.newHashMap();
 
 						model.put("statics", BeansWrapper.getDefaultInstance().getStaticModels());
 
@@ -269,7 +269,7 @@ public class DefaultTemplate implements Template {
 
 		model.put("businessCode", businessCode);
 
-		final List<PoMapper> poMapperList = new ArrayList<PoMapper>();
+		final List<PoMapper> poMapperList = Lists.newArrayList();
 
 		for (final String entityKey : businessMapper.getEntityList()) {
 			final PoMapper poMapper = poMapperMap.get(entityKey);

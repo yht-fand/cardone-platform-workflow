@@ -3,7 +3,6 @@ package com.fand.generator;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +20,7 @@ import org.springframework.jdbc.support.MetaDataAccessException;
 import com.fand.generator.mapper.FieldMapper;
 import com.fand.generator.mapper.PoMapper;
 import com.fand.generator.template.Template;
+import com.google.common.collect.Maps;
 
 /**
  * PO对象映射工厂
@@ -72,7 +72,7 @@ public class PoMapperFactory {
 			poMapper.setRemarks(remarks);
 		}
 
-		Map<String, FieldMapper> fieldMapperMap = new HashMap<String, FieldMapper>();
+		Map<String, FieldMapper> fieldMapperMap = Maps.newHashMap();
 
 		List<FieldMapper> fieldMapperList;
 
@@ -97,7 +97,7 @@ public class PoMapperFactory {
 			fieldMapper.setNamePascalCase(namePascalCase);
 
 			if (fieldMapperMap == null) {
-				fieldMapperMap = new HashMap<String, FieldMapper>();
+				fieldMapperMap = Maps.newHashMap();
 			}
 
 			String typeCode = this.typeMap.get(fieldMapper.getDataType());
@@ -167,7 +167,7 @@ public class PoMapperFactory {
 			poMapper.setCode(key);
 
 			if (this.poMapperMap == null) {
-				this.poMapperMap = new HashMap<String, PoMapper>();
+				this.poMapperMap = Maps.newHashMap();
 			}
 
 			this.poMapperMap.put(key, poMapper);
