@@ -16,37 +16,7 @@ public class Message implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 880934412826069412L;
-
-	/**
-    * 标识
-	 */
-	public static final String ID_ = "id";
-
-	/**
-    * 内容
-	 */
-	public static final String CONTENT_ = "content";
-
-	/**
-    * 地点标识
-	 */
-	public static final String LOCALE_ID_ = "localeId";
-
-	/**
-    * 结束时间
-	 */
-	public static final String END_TI_ = "endTi";
-
-	/**
-    * 编号
-	 */
-	public static final String CODE_ = "code";
-
-	/**
-    * 开始时间
-	 */
-	public static final String BEGIN_TI_ = "beginTi";
+	private static final long serialVersionUID = 222495598756018323L;
 
 	/**
     * 标识

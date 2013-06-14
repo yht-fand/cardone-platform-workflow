@@ -12,5 +12,5 @@ public class ObjectBlAtDto extends ObjectBlAt {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 792420910999798401L;
+	private static final long serialVersionUID = 400636720059981205L;
 }

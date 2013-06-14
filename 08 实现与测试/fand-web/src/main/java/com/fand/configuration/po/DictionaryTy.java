@@ -16,42 +16,7 @@ public class DictionaryTy implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 539999874630642879L;
-
-	/**
-    * 标识
-	 */
-	public static final String ID_ = "id";
-
-	/**
-    * 父标识
-	 */
-	public static final String PARENT_ID_ = "parentId";
-
-	/**
-    * 排序号
-	 */
-	public static final String ORDER_ = "order";
-
-	/**
-    * 结束时间
-	 */
-	public static final String END_TI_ = "endTi";
-
-	/**
-    * 名称
-	 */
-	public static final String NAME_ = "name";
-
-	/**
-    * 编号
-	 */
-	public static final String CODE_ = "code";
-
-	/**
-    * 开始时间
-	 */
-	public static final String BEGIN_TI_ = "beginTi";
+	private static final long serialVersionUID = 595844501458233247L;
 
 	/**
     * 标识

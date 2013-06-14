@@ -16,27 +16,7 @@ public class ObjectBlAt implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 326568914397960245L;
-
-	/**
-    * 标识
-	 */
-	public static final String ID_ = "id";
-
-	/**
-    * 结束时间
-	 */
-	public static final String END_TI_ = "endTi";
-
-	/**
-    * blob值
-	 */
-	public static final String BYTE_VA_ = "byteVa";
-
-	/**
-    * 开始时间
-	 */
-	public static final String BEGIN_TI_ = "beginTi";
+	private static final long serialVersionUID = 870253847921184501L;
 
 	/**
     * 标识

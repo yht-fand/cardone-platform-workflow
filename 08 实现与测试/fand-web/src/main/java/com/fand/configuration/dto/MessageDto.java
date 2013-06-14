@@ -12,5 +12,5 @@ public class MessageDto extends Message {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 168333265965887423L;
+	private static final long serialVersionUID = 321080853768246381L;
 }

@@ -12,5 +12,5 @@ public class DictionaryDto extends Dictionary {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 659626579101348715L;
+	private static final long serialVersionUID = 486531770992979357L;
 }

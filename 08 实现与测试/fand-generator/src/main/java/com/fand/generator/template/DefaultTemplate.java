@@ -1,6 +1,7 @@
 package com.fand.generator.template;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -172,19 +173,19 @@ public class DefaultTemplate implements Template {
 										this.makeFile(javaTemplateString, contextMap, templateName, model);
 									} else if ("main".equals(rootDirType) && "resources".equals(dirType) && "web".equals(layer)) {
 										final String sqlExpressionString = StringUtils.join(new String[] { srcDirFormat,
-												"sql${separator!}oracle${separator!}${moduleMapperKey!}${separator!}${filename!}${poCo!}By1.ftl" });
+												"sql${separator!}oracle${separator!}${moduleMapperKey!}${separator!}${filename!}.ftl" });
 
 										contextMap.put("poCo", poMapper.getCode());
 
 										contextMap.put("camelCasePoCo", com.fand.utils.StringUtils.toCamelCase(poMapper.getCode()));
 
-										final String[] sqlFileNames = new String[] { "where", "insert", "delete", "update", "selectForMappedObjectList",
-												"selectForObject" };
+										final String[] sqlFileNames = new String[] { "where${poCo!}By1", "insert${poCo!}By1", "delete${poCo!}By1",
+												"update${poCo!}By1", "select${poCo!}By1ForMappedObjectList", "select${poCo!}By1ForObject" };
 
 										for (final String sqlFileName : sqlFileNames) {
-											contextMap.put("filename", sqlFileName);
+											contextMap.put("filename", StringUtils.replace(sqlFileName, "${poCo!}", poMapper.getCode()));
 
-											templateName = sqlFileName + ".ftl";
+											templateName = StringUtils.remove(sqlFileName, "${poCo!}") + ".ftl";
 
 											this.makeFile(sqlExpressionString, contextMap, templateName, model);
 										}

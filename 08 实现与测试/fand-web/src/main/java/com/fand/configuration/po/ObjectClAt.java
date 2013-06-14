@@ -16,27 +16,7 @@ public class ObjectClAt implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 467257634982816320L;
-
-	/**
-    * 标识
-	 */
-	public static final String ID_ = "id";
-
-	/**
-    * clob值
-	 */
-	public static final String CLOB_VA_ = "clobVa";
-
-	/**
-    * 结束时间
-	 */
-	public static final String END_TI_ = "endTi";
-
-	/**
-    * 开始时间
-	 */
-	public static final String BEGIN_TI_ = "beginTi";
+	private static final long serialVersionUID = 794980764429704059L;
 
 	/**
     * 标识

@@ -16,42 +16,7 @@ public class Dictionary implements java.io.Serializable {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 640874184932612592L;
-
-	/**
-    * 标识
-	 */
-	public static final String ID_ = "id";
-
-	/**
-    * 字典类型标识
-	 */
-	public static final String DICTIONARY_TY_ID_ = "dictionaryTyId";
-
-	/**
-    * 排序号
-	 */
-	public static final String ORDER_ = "order";
-
-	/**
-    * 结束时间
-	 */
-	public static final String END_TI_ = "endTi";
-
-	/**
-    * 名称
-	 */
-	public static final String NAME_ = "name";
-
-	/**
-    * 编号
-	 */
-	public static final String CODE_ = "code";
-
-	/**
-    * 开始时间
-	 */
-	public static final String BEGIN_TI_ = "beginTi";
+	private static final long serialVersionUID = 517861666906716762L;
 
 	/**
     * 标识

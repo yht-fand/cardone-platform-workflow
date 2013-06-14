@@ -12,5 +12,5 @@ public class LocaleDto extends Locale {
 	/**
 	 * 版本号
 	 */
-	private static final long serialVersionUID = 785276798171257301L;
+	private static final long serialVersionUID = 489038551961207837L;
 }
