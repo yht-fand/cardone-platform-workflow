@@ -1,0 +1,1 @@
+DELETE FROM t_wf_variable WHERE INSTR(:ids, ID) > 0
