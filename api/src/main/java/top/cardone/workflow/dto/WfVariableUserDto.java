@@ -12,5 +12,5 @@ public class WfVariableUserDto extends WfVariableUser {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 588653454310849773L;
+    private static final long serialVersionUID = 379026900907878168L;
 }
