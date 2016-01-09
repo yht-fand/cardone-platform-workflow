@@ -12,7 +12,7 @@ public class WfVariableUser implements java.io.Serializable {
     /**
      * 版本号
      */
-    private static final long serialVersionUID = 866987697157209989L;
+    private static final long serialVersionUID = 390423073535870214L;
 
     /**
      * 开始时间

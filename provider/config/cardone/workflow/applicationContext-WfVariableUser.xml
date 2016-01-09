@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <!-- 工作流变量与用户 -->
+    <bean id="top.cardone.workflow.dao.WfVariableUserDao"
+          class="top.cardone.workflow.dao.impl.WfVariableUserDaoImpl">
+        <property name="configTable">
+            <map>
+                <entry key="config">
+                    <map>
+                        <entry key="sqlFileRoot" value="/cardone/workflow/wfVariableUser/"/>
+                        <entry key="pks" value="wfVariableUserId"/>
+                        <entry key="codes" value="wfVariableUserId"/>
+                    </map>
+                </entry>
+                <entry key="insert">
+                    <map>
+                        <entry key="wfVariableUserId" value="getRandomUUIDFunc"/>
+                        <entry key="createdByCode" value="readCreatedByCodeFunc"/>
+                        <entry key="createdDate" value="readCreatedDateFunc"/>
+                    </map>
+                </entry>
+                <entry key="update">
+                    <map>
+                        <entry key="lastModifiedByCode" value="readLastModifiedByCodeFunc"/>
+                        <entry key="lastModifiedDate" value="readLastModifiedDateFunc"/>
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 工作流变量与用户 -->
+    <bean id="top.cardone.workflow.service.WfVariableUserService"
+          class="top.cardone.workflow.service.impl.WfVariableUserServiceImpl">
+        <property name="dao" ref="top.cardone.workflow.dao.WfVariableUserDao"/>
+    </bean>
+
+    <bean parent="messageListenerContainerParnet">
+        <property name="messageListener">
+            <bean  parent="exceptionParnet">
+                <property name="serviceInterface" value="top.cardone.workflow.service.WfVariableUserService"/>
+                <property name="service" ref="top.cardone.workflow.service.WfVariableUserService"/>
+            </bean>
+        </property>
+        <property name="destination">
+            <bean class="org.apache.activemq.command.ActiveMQQueue">
+                <constructor-arg value="top.cardone.workflow.service.WfVariableUserService"/>
+            </bean>
+        </property>
+    </bean>
+</beans>

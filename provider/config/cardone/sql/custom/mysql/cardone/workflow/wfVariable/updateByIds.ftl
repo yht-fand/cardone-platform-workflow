@@ -1,0 +1,1 @@
+UPDATE t_wf_variable SET END_DATE = NOW() WHERE INSTR(:ids, wfVariableId) > 0
