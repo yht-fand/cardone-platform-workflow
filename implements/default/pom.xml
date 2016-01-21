@@ -13,7 +13,7 @@
     <groupId>top.cardone.workflow</groupId>
     <artifactId>cardone-workflow-implements-default</artifactId>
     <version>${project.parent.version}</version>
-    <name>cardone workflow implements default</name>
+    <name>${project.artifactId}</name>
     <description>cardone workflow implements default</description>
     <packaging>jar</packaging>
 

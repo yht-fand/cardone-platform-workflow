@@ -1,33 +1,24 @@
-package top.cardone.workflow.func.wfVariable.webapi.vi;
+package top.cardone.workflow.func.wfVariable.webapi.v1;
 
+import com.google.common.collect.Maps;
 import org.springframework.stereotype.Component;
+import top.cardone.workflow.dto.WfVariableDto;
+import top.cardone.workflow.service.WfVariableService;
+import top.cardone.context.ApplicationContextHolder;
 import top.cardone.core.util.func.Func1;
 
-import top.cardone.workflow.dto.WfVariableDto;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-
-import java.util.List;
 import java.util.Map;
 
 /**
  * 工作流变量 - 查询
  */
-@Component("/web-api/v1/workflow/wfVariable/r0001.json")
-public class R0001Func implements Func1<Map<String, Object>, Map<String, Object>> {
+@Component("/web-api/v1/configuration/wfVariable/r0001.json")
+public class R0001Func implements Func1<Object, Map<String, Object>> {
     @Override
-    public Map<String, Object> func(Map<String, Object> map) {
-        return null;
-    }
+    public Object func(Map<String, Object> map) {
+        WfVariableDto wfVariableDto = ApplicationContextHolder.getBean(WfVariableService.class).findOne(WfVariableDto.class, map);
 
-    private List<Map<String, Object>> toMapList(List<WfVariableDto> wfVariableDtoList) {
-        List<Map<String, Object>> mapList = Lists.newArrayList();
-
-        for (WfVariableDto wfVariableDto : wfVariableDtoList) {
-            mapList.add(this.toMap(wfVariableDto));
-        }
-
-        return mapList;
+        return this.toMap(wfVariableDto);
     }
 
     private Map<String, Object> toMap(WfVariableDto wfVariableDto) {

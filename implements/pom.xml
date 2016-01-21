@@ -13,7 +13,7 @@
     <groupId>top.cardone.workflow</groupId>
     <artifactId>cardone-workflow-implements</artifactId>
     <version>${project.parent.version}</version>
-    <name>cardone workflow implements</name>
+    <name>${project.artifactId}</name>
     <description>cardone workflow implements</description>
     <packaging>pom</packaging>
 
