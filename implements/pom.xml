@@ -14,7 +14,7 @@
     <artifactId>cardone-workflow-implements</artifactId>
     <version>${project.parent.version}</version>
     <name>${project.artifactId}</name>
-    <description>cardone workflow implements</description>
+    <description>top.cardone.workflow cardone-workflow-implements</description>
     <packaging>pom</packaging>
 
     <modules>

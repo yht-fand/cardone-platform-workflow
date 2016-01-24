@@ -48,7 +48,9 @@ public class R0002Func implements Func1<Object, Map<String, Object>> {
         map.put("orgCode", wfVariableDto.getOrgCode());
         map.put("permissionCodes", wfVariableDto.getPermissionCodes());
         map.put("roleCodes", wfVariableDto.getRoleCodes());
+        map.put("siteCode", wfVariableDto.getSiteCode());
         map.put("stateCode", wfVariableDto.getStateCode());
+        map.put("systemInfoCode", wfVariableDto.getSystemInfoCode());
         map.put("version", wfVariableDto.getVersion());
         map.put("wfId", wfVariableDto.getWfId());
         map.put("wfKey", wfVariableDto.getWfKey());

@@ -8,7 +8,7 @@
         <property name="serviceInterface" value="top.cardone.workflow.service.WfVariableUserService"/>
         <property name="queue">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="top.cardone.workflow.service.WfVariableUserService"/>
+                <constructor-arg value="cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService"/>
             </bean>
         </property>
     </bean>

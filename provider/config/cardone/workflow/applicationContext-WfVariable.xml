@@ -47,7 +47,7 @@
         </property>
         <property name="destination">
             <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="top.cardone.workflow.service.WfVariableService"/>
+                <constructor-arg value="cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableService"/>
             </bean>
         </property>
     </bean>

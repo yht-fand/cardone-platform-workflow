@@ -9,10 +9,6 @@ import java.util.Date;
  */
 @lombok.ToString(callSuper = true)
 public class WfVariable implements java.io.Serializable {
-    /**
-     * 版本号
-     */
-    private static final long serialVersionUID = 231677748621630240L;
 
     /**
      * 开始时间
