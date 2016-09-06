@@ -17,7 +17,7 @@
                 </entry>
                 <entry key="insert">
                     <map>
-                        <entry key="wfVariableId" value="getRandomUUIDFunc"/>
+                        <entry key="wfVariableId" value="readRandomUUIDFunc"/>
                         <entry key="createdByCode" value="readCreatedByCodeFunc"/>
                         <entry key="createdDate" value="readCreatedDateFunc"/>
                     </map>
@@ -31,24 +31,9 @@
             </map>
         </property>
     </bean>
-
-    <!-- 工作流变量 -->
+	
     <bean id="top.cardone.workflow.service.WfVariableService"
           class="top.cardone.workflow.service.impl.WfVariableServiceImpl">
-        <property name="dao" ref="top.cardone.workflow.dao.WfVariableDao"/>
-    </bean>
-
-    <bean parent="messageListenerContainerParnet">
-        <property name="messageListener">
-            <bean  parent="exceptionParnet">
-                <property name="serviceInterface" value="top.cardone.workflow.service.WfVariableService"/>
-                <property name="service" ref="top.cardone.workflow.service.WfVariableService"/>
-            </bean>
-        </property>
-        <property name="destination">
-            <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableService"/>
-            </bean>
-        </property>
-    </bean>
+		<property name="dao" ref="top.cardone.workflow.dao.WfVariableDao"/>
+	</bean>
 </beans>

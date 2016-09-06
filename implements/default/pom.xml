@@ -4,22 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
 	
     <parent>
-		<groupId>top.cardone.workflow</groupId>
+		<groupId>top.cardone</groupId>
         <artifactId>cardone-workflow-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../../parent</relativePath>
     </parent>
 
-    <groupId>top.cardone.workflow</groupId>
+    <groupId>top.cardone</groupId>
     <artifactId>cardone-workflow-implements-default</artifactId>
     <version>${project.parent.version}</version>
     <name>${project.artifactId}</name>
-    <description>top.cardone.workflow cardone-workflow-implements default</description>
+    <description>top.cardone cardone-workflow-implements default</description>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-			<groupId>top.cardone.workflow</groupId>
+			<groupId>top.cardone</groupId>
 			<artifactId>cardone-workflow-api</artifactId>
         </dependency>
 
@@ -31,6 +31,16 @@
         <dependency>
             <groupId>top.cardone</groupId>
             <artifactId>cardone-data-jdbc-implements-default</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>top.cardone</groupId>
+            <artifactId>cardone-security-implements-shiro-oauth2-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
         </dependency>
     </dependencies>
 </project>

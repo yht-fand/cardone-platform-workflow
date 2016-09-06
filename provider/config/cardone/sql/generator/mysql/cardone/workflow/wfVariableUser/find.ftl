@@ -102,7 +102,7 @@ ${prefixName} `WF_VARIABLE_USER_ID`
 , `WF_KEY`
 , `WF_VARIABLE_USER_ID`
 </#if>
-FROM t_wf_variable_user
+FROM c1_wf_variable_user
 <#include "where.ftl">
 <#assign prefixName = 'ORDER BY'>
 <#if (order_by_beginDate??)>

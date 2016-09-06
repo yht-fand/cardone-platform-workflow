@@ -63,5 +63,5 @@ WF_VARIABLE_USER_ID AS wfVariableUserId
 <#default>
 COUNT(1) AS COUNT_
 </#switch>
-FROM t_wf_variable_user
+FROM c1_wf_variable_user
 <#include "where.ftl">

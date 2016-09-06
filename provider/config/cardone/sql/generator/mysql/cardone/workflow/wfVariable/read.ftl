@@ -60,5 +60,5 @@ WF_VARIABLE_ID AS wfVariableId
 <#default>
 COUNT(1) AS COUNT_
 </#switch>
-FROM t_wf_variable
+FROM c1_wf_variable
 <#include "where.ftl">

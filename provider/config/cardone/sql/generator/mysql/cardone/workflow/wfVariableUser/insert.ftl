@@ -1,5 +1,5 @@
 INSERT
-INTO t_wf_variable_user
+INTO c1_wf_variable_user
 (<#assign prefixName = ' '>
 <#if (insert_beginDate??) && (insert_beginDate_value??)>
 ${prefixName} `BEGIN_DATE`

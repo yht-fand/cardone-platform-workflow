@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
     <!-- 工作流变量 -->
-    <bean name="top.cardone.workflow.service.WfVariableService" parent="consumerParent">
+    <bean name="top.cardone.workflow.service.WfVariableService" parent="invokerProxyFactoryParnet">
         <property name="serviceInterface" value="top.cardone.workflow.service.WfVariableService"/>
         <property name="queue">
             <bean class="org.apache.activemq.command.ActiveMQQueue">

@@ -9,4 +9,8 @@ import top.cardone.workflow.po.WfVariable;
  */
 @lombok.ToString(callSuper = true)
 public class WfVariableDto extends WfVariable {
+    /**
+     * 版本号
+     */
+    private static final long serialVersionUID = 419038798682021338L;
 }

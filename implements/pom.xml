@@ -4,17 +4,17 @@
     <modelVersion>4.0.0</modelVersion>
 	
     <parent>
-		<groupId>top.cardone.workflow</groupId>
+		<groupId>top.cardone</groupId>
         <artifactId>cardone-workflow-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../parent</relativePath>
     </parent>
 
-    <groupId>top.cardone.workflow</groupId>
+    <groupId>top.cardone</groupId>
     <artifactId>cardone-workflow-implements</artifactId>
     <version>${project.parent.version}</version>
     <name>${project.artifactId}</name>
-    <description>top.cardone.workflow cardone-workflow-implements</description>
+    <description>top.cardone cardone-workflow-implements</description>
     <packaging>pom</packaging>
 
     <modules>

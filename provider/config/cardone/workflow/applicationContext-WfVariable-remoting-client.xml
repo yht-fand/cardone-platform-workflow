@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <!-- 工作流变量 -->
+    <bean name="top.cardone.workflow.service.WfVariableService.mq" parent="invokerProxyFactoryParnet">
+        <property name="serviceInterface" value="top.cardone.workflow.service.WfVariableService"/>
+        <property name="queue">
+            <bean class="org.apache.activemq.command.ActiveMQQueue">
+                <constructor-arg value="cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableService"/>
+            </bean>
+        </property>
+    </bean>
+</beans>
