@@ -45,9 +45,13 @@
         <property name="maxOpenPreparedStatements" value="${dataSource.master_1.maxOpenPreparedStatements}"/>
     </bean>
 
+    <alias name="top.cardone.dataSource.master_1" alias="activitiDataSource"/>
+
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="top.cardone.dataSource.master_1"/>
     </bean>
+
+    <alias name="transactionManager" alias="activitiTransactionManager"/>
 
     <!-- 使用annotation定义事务 -->
     <tx:annotation-driven order="9999" proxy-target-class="true" transaction-manager="transactionManager"/>
