@@ -1,1 +1,1 @@
-UPDATE t_wf_variable SET END_DATE = NOW() WHERE INSTR(:ids, wfVariableId) > 0
+UPDATE c1_wf_variable SET END_DATE = NOW(), DATA_STATE_CODE = '0' WHERE INSTR(:wfVariableIds, WF_VARIABLE_ID) > 0

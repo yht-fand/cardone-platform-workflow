@@ -1,1 +1,1 @@
-DELETE FROM t_wf_variable_user WHERE INSTR(:ids, wfVariableUserId) > 0
+DELETE FROM c1_wf_variable_user WHERE INSTR(:wfVariableUserIds, WF_VARIABLE_USER_ID) > 0

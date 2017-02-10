@@ -1,4 +1,4 @@
 SELECT
-COUNT(1) AS COUNT_
-FROM c1_wf_variable_user
+COUNT(1)
+FROM c1_wf_variable_user t
 <#include "page.where.ftl">
