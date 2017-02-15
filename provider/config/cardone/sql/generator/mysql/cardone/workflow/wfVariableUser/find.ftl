@@ -4,10 +4,6 @@ SELECT
 ${prefixName} `BEGIN_DATE`
 <#assign prefixName = ','>
 </#if>
-<#if (select_content??)>
-${prefixName} `CONTENT`
-<#assign prefixName = ','>
-</#if>
 <#if (select_createdByCode??)>
 ${prefixName} `CREATED_BY_CODE`
 <#assign prefixName = ','>
@@ -28,6 +24,18 @@ ${prefixName} `DEPARTMENT_CODE`
 ${prefixName} `END_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_flagCode??)>
+${prefixName} `FLAG_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE`
+<#assign prefixName = ','>
+</#if>
+<#if (select_jsonData??)>
+${prefixName} `JSON_DATA`
+<#assign prefixName = ','>
+</#if>
 <#if (select_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE`
 <#assign prefixName = ','>
@@ -36,16 +44,12 @@ ${prefixName} `LAST_MODIFIED_BY_CODE`
 ${prefixName} `LAST_MODIFIED_DATE`
 <#assign prefixName = ','>
 </#if>
+<#if (select_order??)>
+${prefixName} `ORDER_`
+<#assign prefixName = ','>
+</#if>
 <#if (select_orgCode??)>
 ${prefixName} `ORG_CODE`
-<#assign prefixName = ','>
-</#if>
-<#if (select_permissionCodes??)>
-${prefixName} `PERMISSION_CODES`
-<#assign prefixName = ','>
-</#if>
-<#if (select_roleCodes??)>
-${prefixName} `ROLE_CODES`
 <#assign prefixName = ','>
 </#if>
 <#if (select_siteCode??)>
@@ -68,10 +72,6 @@ ${prefixName} `USER_CODE`
 ${prefixName} `VERSION_`
 <#assign prefixName = ','>
 </#if>
-<#if (select_wfId??)>
-${prefixName} `WF_ID`
-<#assign prefixName = ','>
-</#if>
 <#if (select_wfKey??)>
 ${prefixName} `WF_KEY`
 <#assign prefixName = ','>
@@ -81,36 +81,13 @@ ${prefixName} `WF_VARIABLE_USER_ID`
 <#assign prefixName = ','>
 </#if>
 <#if prefixName ==  ' '>
-  `BEGIN_DATE`
-, `CONTENT`
-, `CREATED_BY_CODE`
-, `CREATED_DATE`
-, `DATA_STATE_CODE`
-, `DEPARTMENT_CODE`
-, `END_DATE`
-, `LAST_MODIFIED_BY_CODE`
-, `LAST_MODIFIED_DATE`
-, `ORG_CODE`
-, `PERMISSION_CODES`
-, `ROLE_CODES`
-, `SITE_CODE`
-, `STATE_CODE`
-, `SYSTEM_INFO_CODE`
-, `USER_CODE`
-, `VERSION_`
-, `WF_ID`
-, `WF_KEY`
-, `WF_VARIABLE_USER_ID`
+*
 </#if>
 FROM c1_wf_variable_user
 <#include "where.ftl">
 <#assign prefixName = 'ORDER BY'>
 <#if (order_by_beginDate??)>
 ${prefixName} `BEGIN_DATE` ${order_by_beginDate_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_content??)>
-${prefixName} `CONTENT` ${order_by_content_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_createdByCode??)>
@@ -133,6 +110,18 @@ ${prefixName} `DEPARTMENT_CODE` ${order_by_departmentCode_value!}
 ${prefixName} `END_DATE` ${order_by_endDate_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_flagCode??)>
+${prefixName} `FLAG_CODE` ${order_by_flagCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_flagObjectCode??)>
+${prefixName} `FLAG_OBJECT_CODE` ${order_by_flagObjectCode_value!}
+<#assign prefixName = ','>
+</#if>
+<#if (order_by_jsonData??)>
+${prefixName} `JSON_DATA` ${order_by_jsonData_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_lastModifiedByCode??)>
 ${prefixName} `LAST_MODIFIED_BY_CODE` ${order_by_lastModifiedByCode_value!}
 <#assign prefixName = ','>
@@ -141,16 +130,12 @@ ${prefixName} `LAST_MODIFIED_BY_CODE` ${order_by_lastModifiedByCode_value!}
 ${prefixName} `LAST_MODIFIED_DATE` ${order_by_lastModifiedDate_value!}
 <#assign prefixName = ','>
 </#if>
+<#if (order_by_order??)>
+${prefixName} `ORDER_` ${order_by_order_value!}
+<#assign prefixName = ','>
+</#if>
 <#if (order_by_orgCode??)>
 ${prefixName} `ORG_CODE` ${order_by_orgCode_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_permissionCodes??)>
-${prefixName} `PERMISSION_CODES` ${order_by_permissionCodes_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_roleCodes??)>
-${prefixName} `ROLE_CODES` ${order_by_roleCodes_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_siteCode??)>
@@ -171,10 +156,6 @@ ${prefixName} `USER_CODE` ${order_by_userCode_value!}
 </#if>
 <#if (order_by_version??)>
 ${prefixName} `VERSION_` ${order_by_version_value!}
-<#assign prefixName = ','>
-</#if>
-<#if (order_by_wfId??)>
-${prefixName} `WF_ID` ${order_by_wfId_value!}
 <#assign prefixName = ','>
 </#if>
 <#if (order_by_wfKey??)>
