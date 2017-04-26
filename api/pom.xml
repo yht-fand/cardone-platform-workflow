@@ -27,11 +27,6 @@
             <groupId>top.cardone</groupId>
             <artifactId>cardone-cache-api</artifactId>
         </dependency>
-
-        <dependency>
-            <groupId>org.activiti</groupId>
-            <artifactId>activiti-spring</artifactId>
-        </dependency>
     </dependencies>
 </project>
 

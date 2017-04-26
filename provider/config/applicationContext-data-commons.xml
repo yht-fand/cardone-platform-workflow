@@ -11,11 +11,21 @@
 
     <bean id="readRandomUUIDFunc" class="top.cardone.data.func.ReadRandomUUIDFunc"/>
 
+    <alias name="readRandomUUIDFunc" alias="readOneRandomUUIDFunc"/>
+
     <bean id="readCreatedByCodeFunc" class="top.cardone.security.shiro.func.ReadPrincipalFunc"/>
+
+    <alias name="readCreatedByCodeFunc" alias="readOneCreatedByCodeFunc"/>
 
     <bean id="readCreatedDateFunc" class="top.cardone.data.func.ReadDateFunc"/>
 
+    <alias name="readCreatedDateFunc" alias="readOneCreatedDateFunc"/>
+
     <bean id="readLastModifiedByCodeFunc" class="top.cardone.security.shiro.func.ReadPrincipalFunc"/>
 
+    <alias name="readLastModifiedByCodeFunc" alias="readOneLastModifiedByCodeFunc"/>
+
     <bean id="readLastModifiedDateFunc" class="top.cardone.data.func.ReadDateFunc"/>
+
+    <alias name="readLastModifiedDateFunc" alias="readOneLastModifiedDateFunc"/>
 </beans>

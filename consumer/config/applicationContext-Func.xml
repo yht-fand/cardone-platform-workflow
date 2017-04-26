@@ -2,5 +2,60 @@
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
-    <bean id="escapeSqlFunc" class="top.cardone.context.func.EscapeSqlFunc"/>
+    <bean name="top.cardone.context.convert.support.EscapeSqlConverter"
+          class="top.cardone.context.convert.support.EscapeSqlConverter"/>
+
+    <bean id="escapeSqlFunc" class="top.cardone.context.func.ConversionFunc">
+        <property name="converterBenaId" value="top.cardone.context.convert.support.EscapeSqlConverter"/>
+    </bean>
+
+    <bean name="org.springframework.core.convert.support.StringToNumberConverterFactory"
+          class="org.springframework.core.convert.support.StringToNumberConverterFactory"/>
+
+    <bean id="stringToIntegerConverter"
+          factory-bean="org.springframework.core.convert.support.StringToNumberConverterFactory"
+          factory-method="getConverter">
+        <constructor-arg value="java.lang.Integer"/>
+    </bean>
+
+    <bean id="stringToIntegerFunc" class="top.cardone.context.func.ConversionFunc">
+        <property name="converterBenaId" value="stringToIntegerConverter"/>
+    </bean>
+
+    <bean id="stringToDoubleConverter"
+          factory-bean="org.springframework.core.convert.support.StringToNumberConverterFactory"
+          factory-method="getConverter">
+        <constructor-arg value="java.lang.Double"/>
+    </bean>
+
+    <bean id="stringToDoubleFunc" class="top.cardone.context.func.ConversionFunc">
+        <property name="converterBenaId" value="stringToDoubleConverter"/>
+    </bean>
+
+    <bean id="stringToLongConverter"
+          factory-bean="org.springframework.core.convert.support.StringToNumberConverterFactory"
+          factory-method="getConverter">
+        <constructor-arg value="java.lang.Long"/>
+    </bean>
+
+    <bean id="stringToLongFunc" class="top.cardone.context.func.ConversionFunc">
+        <property name="converterBenaId" value="stringToLongConverter"/>
+    </bean>
+
+    <bean name="org.springframework.core.convert.support.StringToBooleanConverter"
+          class="org.springframework.core.convert.support.StringToBooleanConverter"/>
+
+    <bean id="stringToBooleanFunc" class="top.cardone.context.func.ConversionFunc">
+        <property name="converterBenaId" value="org.springframework.core.convert.support.StringToBooleanConverter"/>
+    </bean>
+
+    <bean name="top.cardone.core.convert.support.StringToDateConverter"
+          class="top.cardone.core.convert.support.StringToDateConverter"/>
+
+    <bean id="stringToDateFunc" class="top.cardone.context.func.ConversionFunc">
+        <property name="converterBenaId" value="top.cardone.core.convert.support.StringToDateConverter"/>
+    </bean>
+
+    <bean name="defaultValueFunc"
+          class="top.cardone.context.func.DefaultValueFunc"/>
 </beans>

@@ -5,14 +5,12 @@ import lombok.extern.log4j.Log4j2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import top.cardone.context.ApplicationContextHolder;
 
 @Log4j2
 @RunWith(SpringJUnit4ClassRunner.class)
-@WebIntegrationTest(value = {"spring.profiles.active=test"})
-@SpringBootTest(classes = ProviderApplication.class)
+@SpringBootTest(classes = ProviderApplication.class, value = {"spring.profiles.active=test"})
 public class WfVariableServiceTest {
     @Test
     public void pageCache() throws Exception {

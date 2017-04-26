@@ -8,4 +8,8 @@
     <bean id="top.cardone.data.support.PageableSupport" class="top.cardone.data.support.impl.PageableSupportImpl"/>
 
     <bean id="top.cardone.data.support.PageSupport" class="top.cardone.data.support.impl.PageSupportImpl"/>
+
+    <bean id="readCreatedByCodeFunc" class="top.cardone.security.shiro.func.ReadPrincipalFunc"/>
+
+    <alias name="readCreatedByCodeFunc" alias="readOneCreatedByCodeFunc"/>
 </beans>
