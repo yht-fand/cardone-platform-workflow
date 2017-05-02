@@ -1,0 +1,17 @@
+{
+  "input": {
+    "wfVariableIds": "wfVariableIds"
+  },
+  "validation": {
+    "rules": {
+      "wfVariableIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "wfVariableIds": {
+        "required": "工作流变量标识集合不能为空值!"
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@
 
 字段名|可为空|类型及范围|说明
 ---|---|---|---
+batch_no|YES|String(255)|批次编号
 begin_date|YES|Date(13)|开始时间
 content|YES|String(4095)|正文
 created_by_code|YES|String(255)|创建人代码
@@ -23,8 +24,9 @@ flag_object_code|YES|String(255)|标识对象代码(工作流：工作流标识�
 json_data|YES|Object(2147483647)|JSON数据
 last_modified_by_code|YES|String(255)|最后修改人代码
 last_modified_date|YES|Date(13)|最后修改时间
-order_|YES|Long(19)|排序
+order_by_|YES|Long(19)|排序
 org_code|YES|String(255)|组织代码
+personal_code|YES|String(255)|个人代码
 site_code|YES|String(255)|站点代码
 state_code|YES|String(255)|状态代码(数据字典)
 system_info_code|YES|String(255)|系统信息代码
@@ -36,6 +38,7 @@ wf_variable_id|NO|String(255)|工作流变量标识
 
 字段名|可为空|类型及范围|说明
 ---|---|---|---
+batch_no|YES|String(255)|批次编号
 begin_date|YES|Date(13)|开始时间
 created_by_code|YES|String(255)|创建人代码
 created_date|YES|Date(13)|创建时间
@@ -47,8 +50,9 @@ flag_object_code|YES|String(255)|标识对象代码(工作流：工作流标识�
 json_data|YES|Object(2147483647)|JSON数据
 last_modified_by_code|YES|String(255)|最后修改人代码
 last_modified_date|YES|Date(13)|最后修改时间
-order_|YES|Long(19)|排序
+order_by_|YES|Long(19)|排序
 org_code|YES|String(255)|组织代码
+personal_code|YES|String(255)|个人代码
 site_code|YES|String(255)|站点代码
 state_code|YES|String(255)|状态代码(数据字典)
 system_info_code|YES|String(255)|系统信息代码

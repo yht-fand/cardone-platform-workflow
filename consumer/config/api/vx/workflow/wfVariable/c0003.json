@@ -1,0 +1,52 @@
+{
+  "input": {
+    "batchNo": "batchNo",
+    "beginDate": "beginDate",
+    "content": "content",
+    "createdByCode": "createdByCode",
+    "createdDate": "createdDate",
+    "dataStateCode": "dataStateCode",
+    "departmentCode": "departmentCode",
+    "endDate": "endDate",
+    "flagCode": "flagCode",
+    "flagObjectCode": "flagObjectCode",
+    "jsonData": "jsonData",
+    "lastModifiedByCode": "lastModifiedByCode",
+    "lastModifiedDate": "lastModifiedDate",
+    "orderBy": "orderBy",
+    "orgCode": "orgCode",
+    "personalCode": "personalCode",
+    "siteCode": "siteCode",
+    "stateCode": "stateCode",
+    "systemInfoCode": "systemInfoCode",
+    "version": "version",
+    "wfKey": "wfKey",
+    "wfVariableId": "wfVariableId"
+  },
+  "validation": {
+    "rules": {
+      "wfVariableCode": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      },
+      "name": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      }
+    },
+    "messages": {
+      "wfVariableCode": {
+        "required": "必填",
+        "minlength": "需3个字符以上",
+        "maxlength": "需小于255个字符"
+      },
+      "name": {
+        "required": "名称不能为空值!",
+        "minlength": "需3个字符以上",
+        "maxlength": "需小于255个字符"
+      }
+    }
+  }
+}
