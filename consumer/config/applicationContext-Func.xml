@@ -49,12 +49,7 @@
         <property name="converterBenaId" value="org.springframework.core.convert.support.StringToBooleanConverter"/>
     </bean>
 
-    <bean name="top.cardone.core.convert.support.StringToDateConverter"
-          class="top.cardone.core.convert.support.StringToDateConverter"/>
-
-    <bean id="stringToDateFunc" class="top.cardone.context.func.ConversionFunc">
-        <property name="converterBenaId" value="top.cardone.core.convert.support.StringToDateConverter"/>
-    </bean>
+    <bean id="stringToDateFunc" class="top.cardone.context.func.StringToDateFunc"/>
 
     <bean name="defaultValueFunc"
           class="top.cardone.context.func.DefaultValueFunc"/>
