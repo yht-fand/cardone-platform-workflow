@@ -10,7 +10,10 @@
     },
     "messages": {
       "wfVariableUserIds": {
-        "required": "工作流变量与用户标识集合不能为空值!"
+        "required": {
+          "code": "wfVariableUserIds required",
+          "defaultMessage": "工作流变量与用户标识集合必填"
+        }
       }
     }
   }

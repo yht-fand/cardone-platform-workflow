@@ -10,7 +10,10 @@
     },
     "messages": {
       "wfVariableIds": {
-        "required": "工作流变量标识集合不能为空值!"
+        "required": {
+          "code": "wfVariableIds required",
+          "defaultMessage": "工作流变量标识集合必填"
+        }
       }
     }
   }

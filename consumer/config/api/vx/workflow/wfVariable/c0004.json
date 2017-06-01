@@ -38,14 +38,32 @@
     },
     "messages": {
       "wfVariableCode": {
-        "required": "必填",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "wfVariableCode required",
+          "defaultMessage": "工作流变量编号必填"
+        },
+        "minlength": {
+          "code": "wfVariableCode minlength",
+          "defaultMessage": "工作流变量编号需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "wfVariableCode maxlength",
+          "defaultMessage": "工作流变量编号需小于{0}个字符"
+        }
       },
       "name": {
-        "required": "名称不能为空值!",
-        "minlength": "需3个字符以上",
-        "maxlength": "需小于255个字符"
+        "required": {
+          "code": "name required",
+          "defaultMessage": "工作流变量名称必填"
+        },
+        "minlength": {
+          "code": "name minlength",
+          "defaultMessage": "工作流变量名称需{0}个字符以上"
+        },
+        "maxlength": {
+          "code": "name maxlength",
+          "defaultMessage": "工作流变量名称需小于{0}个字符"
+        }
       }
     }
   }
