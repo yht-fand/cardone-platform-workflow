@@ -38,32 +38,14 @@
     },
     "messages": {
       "wfVariableUserCode": {
-        "required": {
-          "code": "wfVariableUserCode required",
-          "defaultMessage": "工作流变量与用户编号必填"
-        },
-        "minlength": {
-          "code": "wfVariableUserCode minlength",
-          "defaultMessage": "工作流变量与用户编号需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "wfVariableUserCode maxlength",
-          "defaultMessage": "工作流变量与用户编号需小于{0}个字符"
-        }
+        "required": "工作流变量与用户编号必填",
+        "minlength": "工作流变量与用户编号需{0}个字符以上",
+        "maxlength": "工作流变量与用户编号需小于{0}个字符"
       },
       "name": {
-        "required": {
-          "code": "name required",
-          "defaultMessage": "工作流变量与用户名称必填"
-        },
-        "minlength": {
-          "code": "name minlength",
-          "defaultMessage": "工作流变量与用户名称需{0}个字符以上"
-        },
-        "maxlength": {
-          "code": "name maxlength",
-          "defaultMessage": "工作流变量与用户名称需小于{0}个字符"
-        }
+        "required": "工作流变量与用户名称必填",
+        "minlength": "工作流变量与用户名称需{0}个字符以上",
+        "maxlength": "工作流变量与用户名称需小于{0}个字符"
       }
     }
   }

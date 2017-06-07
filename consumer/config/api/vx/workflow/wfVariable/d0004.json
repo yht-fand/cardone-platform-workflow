@@ -1,6 +1,13 @@
 {
   "input": {
-    "wfVariableIds": "wfVariableIds"
+    "wfVariableIds": {
+      "stringToListFunc": {
+        "idName": "wfVariableId",
+        "map": {
+          "dataStateCode": "0"
+        }
+      }
+    }
   },
   "validation": {
     "rules": {
@@ -10,10 +17,7 @@
     },
     "messages": {
       "wfVariableIds": {
-        "required": {
-          "code": "wfVariableIds required",
-          "defaultMessage": "工作流变量标识集合必填"
-        }
+        "required": "工作流变量标识集合必填"
       }
     }
   }

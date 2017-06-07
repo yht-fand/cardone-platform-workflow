@@ -10,10 +10,7 @@
     },
     "messages": {
       "wfVariableUserId": {
-        "required": {
-          "code": "wfVariableUserId required",
-          "defaultMessage": "工作流变量与用户标识必填"
-        }
+        "required": "工作流变量与用户标识必填"
       }
     }
   },
