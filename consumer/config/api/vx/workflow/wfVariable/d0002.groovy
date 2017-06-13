@@ -26,7 +26,7 @@ class d0001 {
     }
 
     def func(input) {
-        ['data': ApplicationContextHolder.getBean(WfVariableService.class).deleteListCache(input?.wfVariableIds)]
+        ['deleteCounts': ApplicationContextHolder.getBean(WfVariableService.class).deleteListCache(input?.wfVariableIds)]
     }
 
     def output(output) {
