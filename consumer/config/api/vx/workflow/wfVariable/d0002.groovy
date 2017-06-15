@@ -16,7 +16,7 @@ class d0001 implements java.io.Serializable {
         def wfVariableIdList = []
 
         for (def wfVariableId : wfVariableIds) {
-            wfVariableIdList.add(["wfVariableId": wfVariableId, "dataStateCode": "0", "endDate": new Date()])
+            wfVariableIdList.add(["wfVariableId": wfVariableId, "flagCode": "input", "dataStateCode": "0", "endDate": new Date()])
         }
 
         ["wfVariableIds": wfVariableIdList]
