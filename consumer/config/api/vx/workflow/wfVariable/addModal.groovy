@@ -1,4 +1,4 @@
-package api.vx.workflow.wfVariable
+package top.cardone.api.vx.workflow.wfVariable
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.workflow.service.WfVariableService

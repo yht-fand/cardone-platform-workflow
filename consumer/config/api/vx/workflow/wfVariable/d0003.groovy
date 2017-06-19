@@ -1,4 +1,4 @@
-package api.vx.workflow.wfVariable
+package top.cardone.api.vx.workflow.wfVariable
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.workflow.service.WfVariableService
@@ -26,10 +26,10 @@ class d0001 implements java.io.Serializable {
     }
 
     def func(input) {
-        ['deleteCounts': ApplicationContextHolder.getBean(WfVariableService.class).updateListCache(input?.wfVariableIds)]
+        ApplicationContextHolder.getBean(WfVariableService.class).updateListCache(input?.wfVariableIds)
     }
 
     def output(output) {
-        output
+        ['deleteCounts': output]
     }
 }

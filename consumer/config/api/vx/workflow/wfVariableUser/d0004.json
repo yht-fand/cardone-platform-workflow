@@ -1,14 +1,4 @@
 {
-  "input": {
-    "wfVariableUserIds": {
-      "stringToListFunc": {
-        "idName": "wfVariableUserId",
-        "map": {
-          "dataStateCode": "0"
-        }
-      }
-    }
-  },
   "validation": {
     "rules": {
       "wfVariableUserIds": {

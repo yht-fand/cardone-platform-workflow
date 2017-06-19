@@ -1,4 +1,4 @@
-package api.vx.workflow.wfVariableUser
+package top.cardone.api.vx.workflow.wfVariableUser
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.workflow.service.WfVariableUserService

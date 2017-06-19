@@ -1,4 +1,4 @@
-package api.vx.workflow.wfVariable
+package top.cardone.api.vx.workflow.wfVariable
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.workflow.service.WfVariableService
@@ -9,28 +9,30 @@ class c0004 implements java.io.Serializable {
     def input(input) {
         def newInput = [:]
 
-		newInput['batchNo'] = input['batchNo']
-		newInput['beginDate'] = input['beginDate']
-		newInput['content'] = input['content']
-		newInput['createdByCode'] = input['createdByCode']
-		newInput['createdDate'] = input['createdDate']
-		newInput['dataStateCode'] = input['dataStateCode']
-		newInput['departmentCode'] = input['departmentCode']
-		newInput['endDate'] = input['endDate']
-		newInput['flagCode'] = input['flagCode']
-		newInput['flagObjectCode'] = input['flagObjectCode']
-		newInput['jsonData'] = input['jsonData']
-		newInput['lastModifiedByCode'] = input['lastModifiedByCode']
-		newInput['lastModifiedDate'] = input['lastModifiedDate']
-		newInput['orderBy'] = input['orderBy']
-		newInput['orgCode'] = input['orgCode']
-		newInput['personalCode'] = input['personalCode']
-		newInput['siteCode'] = input['siteCode']
-		newInput['stateCode'] = input['stateCode']
-		newInput['systemInfoCode'] = input['systemInfoCode']
-		newInput['version'] = input['version']
-		newInput['wfKey'] = input['wfKey']
-		newInput['wfVariableId'] = input['wfVariableId']
+		newInput?.batchNo = input?.batchNo
+		newInput?.beginDate = input?.beginDate
+		newInput?.content = input?.content
+		newInput?.createdByCode = input?.createdByCode
+		newInput?.createdDate = input?.createdDate
+		newInput?.dataStateCode = input?.dataStateCode
+		newInput?.departmentCode = input?.departmentCode
+		newInput?.endDate = input?.endDate
+		newInput?.flagCode = input?.flagCode
+		newInput?.flagObjectCode = input?.flagObjectCode
+		newInput?.jsonData = input?.jsonData
+		newInput?.lastModifiedByCode = input?.lastModifiedByCode
+		newInput?.lastModifiedDate = input?.lastModifiedDate
+		newInput?.orderBy = input?.orderBy
+		newInput?.orgCode = input?.orgCode
+		newInput?.personalCode = input?.personalCode
+		newInput?.siteCode = input?.siteCode
+		newInput?.stateCode = input?.stateCode
+		newInput?.systemInfoCode = input?.systemInfoCode
+		newInput?.version = input?.version
+		newInput?.wfKey = input?.wfKey
+		newInput?.wfVariableId = input?.wfVariableId
+
+        newInput.flagCode = StringUtils.defaultIfBlank(input.flagCode, "input")
 
         newInput
     }
@@ -60,7 +62,7 @@ class c0004 implements java.io.Serializable {
 //          throw new CodeException("name maxlength", "工作流变量名称需小于{0}个字符", 255)
 //      }
 		
-		def readOne = ['wfVariableCode': input.wfVariableCode]
+		def readOne = ['wfVariableCode': input.wfVariableCode, "dataStateCode": "1"]
 
 		def count = ApplicationContextHolder.getBean(WfVariableService.class).readOne(Integer.class, readOne)
 
@@ -74,6 +76,6 @@ class c0004 implements java.io.Serializable {
     }
 
     def output(output) {
-		['insertCount': output]
+		['insertCount': output]        
     }
 }

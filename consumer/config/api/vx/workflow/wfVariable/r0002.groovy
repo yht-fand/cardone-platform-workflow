@@ -1,4 +1,4 @@
-package api.vx.workflow.wfVariable
+package top.cardone.api.vx.workflow.wfVariable
 
 import org.apache.commons.lang3.StringUtils
 import top.cardone.workflow.service.WfVariableService
@@ -21,7 +21,7 @@ class r0002 implements java.io.Serializable {
         def newOutput = []
 		
         for (def outputItem : output) {
-			newOutput.add(['label': outputItem['name'], 'value': outputItem['wfVariable_code']])
+			newOutput.add(['label': outputItem['name'], 'value': outputItem['c1_wf_variable_code']])
         }
 
         newOutput

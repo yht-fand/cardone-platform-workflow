@@ -1,4 +1,4 @@
-package api.vx.workflow.wfVariable
+package top.cardone.api.vx.workflow.wfVariable
 
 import top.cardone.configuration.service.DictionaryService
 import top.cardone.context.ApplicationContextHolder
