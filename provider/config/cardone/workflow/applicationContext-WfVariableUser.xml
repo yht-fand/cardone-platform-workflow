@@ -12,7 +12,7 @@
                     <map>
                         <entry key="sqlFileRoot" value="/cardone/workflow/wfVariableUser/"/>
                         <entry key="pks" value="wfVariableUserId"/>
-                        <entry key="codes" value="wfVariableUserId,endDate"/>
+                        <entry key="codes" value="orgCode,departmentCode,wfKey,userCode,endDate"/>
                     </map>
                 </entry>
                 <entry key="insert">
@@ -22,12 +22,14 @@
                         <entry key="createdDate" value="readCreatedDateFunc"/>
                         <entry key="beginDate" value="readOneDateFunc"/>
                         <entry key="endDate" value="endDateDefaultValueFunc"/>
+                        <entry key="orgCode" value="orgCodeDefaultValueFunc"/>
                     </map>
                 </entry>
                 <entry key="update">
                     <map>
                         <entry key="lastModifiedByCode" value="readLastModifiedByCodeFunc"/>
                         <entry key="lastModifiedDate" value="readLastModifiedDateFunc"/>
+                        <entry key="orgCode" value="orgCodeDefaultValueFunc"/>
                     </map>
                 </entry>
             </map>
