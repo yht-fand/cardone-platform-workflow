@@ -88,6 +88,7 @@ ${prefixName?string('  ', ', ')}"wf_key"
 ${prefixName?string('  ', ', ')}"wf_variable_user_id"
 <#assign prefixName = false>
 </#if>
+<#if prefixName>
 *
 </#if>
 FROM c1_wf_variable_user
