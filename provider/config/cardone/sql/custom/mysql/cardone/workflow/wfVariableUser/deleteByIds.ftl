@@ -1,1 +1,0 @@
-DELETE FROM c1_wf_variable_user WHERE INSTR(:wfVariableUserIds, WF_VARIABLE_USER_ID) > 0

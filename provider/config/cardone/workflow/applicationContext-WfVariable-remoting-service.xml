@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!-- 工作流变量 -->
-    <bean parent="messageListenerContainerParnet">
-        <property name="messageListener">
-            <bean  parent="remoteInvocationExecutorParnet">
-                <property name="serviceInterface" value="top.cardone.workflow.service.WfVariableService"/>
-                <property name="service" ref="top.cardone.workflow.service.WfVariableService"/>
-            </bean>
-        </property>
-        <property name="destination">
-            <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableService"/>
-            </bean>
-        </property>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
+    <rabbit:direct-exchange
+            name="exchange:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableService">
+        <rabbit:bindings>
+            <rabbit:binding
+                    queue="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableService"
+                    key="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableService"/>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+
+    <rabbit:queue
+            name="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableService"/>
+
+    <bean id="top.cardone.workflow.service.WfVariableServiceExporter"
+          class="org.springframework.amqp.remoting.service.AmqpInvokerServiceExporter">
+        <property name="serviceInterface" value="top.cardone.workflow.service.WfVariableService"/>
+        <property name="service" ref="top.cardone.workflow.service.WfVariableService"/>
+        <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>
     </bean>
+
+    <rabbit:listener-container acknowledge="none" max-concurrency="128" prefetch="10">
+        <rabbit:listener ref="top.cardone.workflow.service.WfVariableServiceExporter"
+                         queue-names="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableService"/>
+    </rabbit:listener-container>
 </beans>

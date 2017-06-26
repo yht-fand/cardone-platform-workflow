@@ -1,1 +1,0 @@
-DELETE FROM c1_wf_variable WHERE INSTR(:wfVariableIds, WF_VARIABLE_ID) > 0

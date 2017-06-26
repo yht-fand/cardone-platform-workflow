@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
     <!-- 工作流变量与用户 -->
-    <bean name="top.cardone.workflow.service.WfVariableUserService" parent="invokerProxyFactoryParnet">
-        <property name="serviceInterface" value="top.cardone.workflow.service.WfVariableUserService"/>
-        <property name="queue">
-            <bean class="org.apache.activemq.command.ActiveMQQueue">
-                <constructor-arg value="cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService"/>
-            </bean>
+    <bean name="top.cardone.workflow.service.WfVariableUserService"
+          p:serviceInterface="top.cardone.workflow.service.WfVariableUserService"
+          p:routingKey="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService"
+          parent="invokerProxyFactoryParnet">
+        <property name="amqpTemplate">
+            <rabbit:template connection-factory="rabbitConnectionFactory"
+                             queue="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService"
+                             exchange="exchange:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService" reply-timeout="${rabbit.template.replyTimeout:60000}"/>
         </property>
     </bean>
 </beans>
