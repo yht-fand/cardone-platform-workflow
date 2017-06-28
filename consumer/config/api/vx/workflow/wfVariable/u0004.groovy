@@ -56,9 +56,9 @@ class u0004 implements java.io.Serializable {
 
 		def readOne = ["wfVariableCode": input.wfVariableCode, "object_id": "wfVariableId", "dataStateCode": "1"]
 
-		String dbWfVariableId = ApplicationContextHolder.getBean(WfVariableService.class).readOne(String.class, readOne)
+		def dbWfVariableId = ApplicationContextHolder.getBean(WfVariableService.class).readOne(String.class, readOne)
 
-		if ((dbWfVariableId != null) && !StringUtils.equals(dbWfVariableId, input.wfVariableId)) {
+		if (!StringUtils.equals(dbWfVariableId, input.wfVariableId)) {
 			throw new CodeException("wfVariableId already exists", "工作流变量编号已经存在")
 		}
     }
