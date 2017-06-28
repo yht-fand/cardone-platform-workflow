@@ -127,7 +127,7 @@ public interface WfVariableService extends PageService {
      * @see top.cardone.workflow.service.WfVariableService#save
      */
     @CacheEvict(value = "top.cardone.workflow.service.WfVariableService", allEntries = true)
-    Integer saveCache(Object save);
+    int saveCache(Object save);
 
 	/**
      * @see top.cardone.workflow.service.WfVariableService#update
