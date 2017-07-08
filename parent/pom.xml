@@ -13,7 +13,7 @@
     <groupId>top.cardone</groupId>
     <artifactId>cardone-workflow-parent</artifactId>
     <version>1.1.1-SNAPSHOT</version>
-    <name>${project.artifactId}</name>
+    <name>top.cardone cardone-workflow-parent</name>
     <description>top.cardone cardone-workflow-parent</description>
     <packaging>pom</packaging>
 
@@ -66,18 +66,6 @@
             <dependency>
                 <groupId>top.cardone</groupId>
 				<artifactId>cardone-workflow-implements-default</artifactId>
-                <version>1.1.1-SNAPSHOT</version>
-            </dependency>
-
-            <dependency>
-                <groupId>top.cardone</groupId>
-				<artifactId>cardone-workflow-provider</artifactId>
-                <version>1.1.1-SNAPSHOT</version>
-            </dependency>
-
-            <dependency>
-                <groupId>top.cardone</groupId>
-				<artifactId>cardone-workflow-consumer</artifactId>
                 <version>1.1.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
