@@ -2,7 +2,6 @@ package top.cardone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ImportResource;
 
 /**
@@ -109,7 +108,6 @@ import org.springframework.context.annotation.ImportResource;
         org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration.class,
         org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration.class
 })
-@EnableDiscoveryClient
 public class ConsumerApplication {
     /**
      * 主方法
