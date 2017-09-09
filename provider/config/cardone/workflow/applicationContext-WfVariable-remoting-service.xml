@@ -16,8 +16,7 @@
     <rabbit:queue
             name="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableService"/>
 
-    <bean id="top.cardone.workflow.service.WfVariableServiceExporter"
-          class="org.springframework.amqp.remoting.service.AmqpInvokerServiceExporter">
+    <bean id="top.cardone.workflow.service.WfVariableServiceExporter" parent="remoteInvocationExecutorParnet">
         <property name="serviceInterface" value="top.cardone.workflow.service.WfVariableService"/>
         <property name="service" ref="top.cardone.workflow.service.WfVariableService"/>
         <property name="amqpTemplate" ref="org.springframework.amqp.core.AmqpTemplate"/>
