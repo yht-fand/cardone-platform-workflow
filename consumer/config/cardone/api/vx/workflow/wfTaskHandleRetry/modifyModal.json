@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "wfTaskHandleRetryId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "wfTaskHandleRetryId": {
+        "required": "工作流任务处理重试标识必填"
+      }
+    }
+  }
+}

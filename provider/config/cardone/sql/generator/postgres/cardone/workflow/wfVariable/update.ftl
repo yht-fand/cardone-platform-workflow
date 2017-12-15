@@ -1,4 +1,4 @@
-UPDATE c1_wf_variable
+UPDATE "c1_wf_variable"
 <#assign prefixName = true>
 <#if (update_batchNo??)>
 ${prefixName?string('SET ', ', ')}"batch_no" = :update_batchNo_value

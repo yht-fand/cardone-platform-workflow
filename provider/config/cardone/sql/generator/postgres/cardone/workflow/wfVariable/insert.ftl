@@ -1,5 +1,5 @@
 INSERT
-INTO c1_wf_variable
+INTO "c1_wf_variable"
 (<#assign prefixName = true>
 <#if (insert_batchNo??) && (insert_batchNo_value??)>
 ${prefixName?string('  ', ', ')}"batch_no"

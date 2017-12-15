@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <!-- 工作流任务处理 -->
+    <bean name="top.cardone.workflow.service.WfTaskHandleService.mq"
+          p:serviceInterface="top.cardone.workflow.service.WfTaskHandleService"
+          p:routingKey="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfTaskHandleService"
+          parent="invokerProxyFactoryParnet">
+        <property name="amqpTemplate">
+            <rabbit:template connection-factory="rabbitConnectionFactory"
+                             message-converter="amqpMessageConverter"
+                             queue="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfTaskHandleService"
+                             exchange="exchange:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfTaskHandleService" reply-timeout="${spring.rabbitmq.template.replyTimeout:60000}"/>
+        </property>
+    </bean>
+</beans>

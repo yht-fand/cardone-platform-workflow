@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+    <!-- 工作流任务处理 -->
+    <bean id="top.cardone.workflow.dao.WfTaskHandleDao"
+          class="top.cardone.workflow.dao.impl.WfTaskHandleDaoImpl">
+        <property name="configTable">
+            <map>
+                <entry key="config">
+                    <map>
+                        <entry key="sqlFileRoot" value="/cardone/workflow/wfTaskHandle/"/>
+                        <entry key="pks" value="wfTaskHandleId"/>
+                        <entry key="codes" value="businessId"/>
+                    </map>
+                </entry>
+                <entry key="insert">
+                    <map>
+                        <entry key="wfTaskHandleId" value="readRandomUUIDFunc"/>
+                        <entry key="createdByCode" value="readPrincipalFunc"/>
+                        <entry key="createdDate" value="readOneDateFunc"/>
+                        <entry key="beginDate" value="readOneDateFunc"/>
+                        <entry key="endDate" value="endDateDefaultValueFunc"/>
+                        <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
+                        <entry key="siteCode" value="siteCodeDefaultValueFunc"/>
+                        <entry key="orgCode" value="orgCodeDefaultValueFunc"/>
+                    </map>
+                </entry>
+                <entry key="update">
+                    <map>
+                        <entry key="lastModifiedByCode" value="readPrincipalFunc"/>
+                        <entry key="lastModifiedDate" value="readOneDateFunc"/>
+                        <entry key="endDate" value="endDateDefaultValueFunc"/>
+                        <entry key="systemInfoCode" value="systemInfoCodeDefaultValueFunc"/>
+                        <entry key="siteCode" value="siteCodeDefaultValueFunc"/>
+                        <entry key="orgCode" value="orgCodeDefaultValueFunc"/>
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+	
+    <bean id="top.cardone.workflow.service.WfTaskHandleService"
+          class="top.cardone.workflow.service.impl.WfTaskHandleServiceImpl">
+		<property name="dao" ref="top.cardone.workflow.dao.WfTaskHandleDao"/>
+	</bean>
+</beans>

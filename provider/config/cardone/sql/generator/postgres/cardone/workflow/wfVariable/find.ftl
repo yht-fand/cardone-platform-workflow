@@ -103,7 +103,7 @@ ${prefixName?string('  ', ', ')}"wf_variable_id"
 <#if prefixName>
 *
 </#if>
-FROM c1_wf_variable
+FROM "c1_wf_variable"
 <#include "where.ftl">
 <#assign prefixName = true>
 <#if (order_by_batchNo??)>

@@ -1,0 +1,24 @@
+{
+  "validation": {
+    "rules": {
+      "wfTaskHandleRetryId": {
+        "required": true
+      },
+      "name": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      }
+    },
+    "messages": {
+      "wfTaskHandleRetryId": {
+        "required": "工作流任务处理重试标识必填"
+      },
+      "name": {
+        "required": "工作流任务处理重试名称必填",
+        "minlength": "工作流任务处理重试名称需{0}个字符以上",
+        "maxlength": "工作流任务处理重试名称需小于{0}个字符"
+      }
+    }
+  }
+}

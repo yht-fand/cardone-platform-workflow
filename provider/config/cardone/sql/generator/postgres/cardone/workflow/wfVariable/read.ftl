@@ -78,5 +78,5 @@ SELECT
 <#default>
 COUNT(*) AS COUNT_
 </#switch>
-FROM c1_wf_variable
+FROM "c1_wf_variable"
 <#include "where.ftl">

@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "wfTaskHandleIds": {
+        "required": true
+      }
+    },
+    "messages": {
+      "wfTaskHandleIds": {
+        "required": "工作流任务处理标识集合必填"
+      }
+    }
+  }
+}
