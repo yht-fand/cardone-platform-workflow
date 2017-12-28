@@ -9,67 +9,67 @@
 --create UNIQUE index IF NOT EXISTS idx_c1_wf_variable_business_code ON c1_wf_variable ("code");
 --批次编号
 --drop index IF EXISTS idx_c1_wf_variable_batch_no;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_batch_no ON c1_wf_variable ("batch_no" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_batch_no ON c1_wf_variable ("batch_no" varchar_pattern_ops);
 --开始日期
 --drop index IF EXISTS idx_c1_wf_variable_begin_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_begin_date ON c1_wf_variable ("begin_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_begin_date ON c1_wf_variable ("begin_date");
 --创建人编号
 --drop index IF EXISTS idx_c1_wf_variable_created_by_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_created_by_code ON c1_wf_variable ("created_by_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_created_by_code ON c1_wf_variable ("created_by_code" varchar_pattern_ops);
 --创建人标识
 --drop index IF EXISTS idx_c1_wf_variable_created_by_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_created_by_id ON c1_wf_variable ("created_by_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_created_by_id ON c1_wf_variable ("created_by_id" varchar_pattern_ops);
 --创建日期
 --drop index IF EXISTS idx_c1_wf_variable_created_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_created_date ON c1_wf_variable ("created_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_created_date ON c1_wf_variable ("created_date");
 --数据状态编号(数据字典)
 --drop index IF EXISTS idx_c1_wf_variable_data_state_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_data_state_code ON c1_wf_variable ("data_state_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_data_state_code ON c1_wf_variable ("data_state_code" varchar_pattern_ops);
 --部门编号
 --drop index IF EXISTS idx_c1_wf_variable_department_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_department_code ON c1_wf_variable ("department_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_department_code ON c1_wf_variable ("department_code" varchar_pattern_ops);
 --结束日期
 --drop index IF EXISTS idx_c1_wf_variable_end_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_end_date ON c1_wf_variable ("end_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_end_date ON c1_wf_variable ("end_date");
 --标记编号(数据字典：工作流、同步、生成、录入、审批)
 --drop index IF EXISTS idx_c1_wf_variable_flag_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_flag_code ON c1_wf_variable ("flag_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_flag_code ON c1_wf_variable ("flag_code" varchar_pattern_ops);
 --最后修改人编号
 --drop index IF EXISTS idx_c1_wf_variable_last_modified_by_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_last_modified_by_code ON c1_wf_variable ("last_modified_by_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_last_modified_by_code ON c1_wf_variable ("last_modified_by_code" varchar_pattern_ops);
 --最后修改人标识
 --drop index IF EXISTS idx_c1_wf_variable_last_modified_by_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_last_modified_by_id ON c1_wf_variable ("last_modified_by_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_last_modified_by_id ON c1_wf_variable ("last_modified_by_id" varchar_pattern_ops);
 --最后修改日期
 --drop index IF EXISTS idx_c1_wf_variable_last_modified_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_last_modified_date ON c1_wf_variable ("last_modified_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_last_modified_date ON c1_wf_variable ("last_modified_date");
 --排序
 --drop index IF EXISTS idx_c1_wf_variable_order_by_;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_order_by_ ON c1_wf_variable ("order_by_");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_order_by_ ON c1_wf_variable ("order_by_");
 --组织编号
 --drop index IF EXISTS idx_c1_wf_variable_org_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_org_code ON c1_wf_variable ("org_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_org_code ON c1_wf_variable ("org_code" varchar_pattern_ops);
 --个人编号
 --drop index IF EXISTS idx_c1_wf_variable_personal_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_personal_code ON c1_wf_variable ("personal_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_personal_code ON c1_wf_variable ("personal_code" varchar_pattern_ops);
 --个人标识
 --drop index IF EXISTS idx_c1_wf_variable_personal_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_personal_id ON c1_wf_variable ("personal_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_personal_id ON c1_wf_variable ("personal_id" varchar_pattern_ops);
 --站点编号
 --drop index IF EXISTS idx_c1_wf_variable_site_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_site_code ON c1_wf_variable ("site_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_site_code ON c1_wf_variable ("site_code" varchar_pattern_ops);
 --状态编号(数据字典)
 --drop index IF EXISTS idx_c1_wf_variable_state_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_state_code ON c1_wf_variable ("state_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_state_code ON c1_wf_variable ("state_code" varchar_pattern_ops);
 --系统信息编号
 --drop index IF EXISTS idx_c1_wf_variable_system_info_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_system_info_code ON c1_wf_variable ("system_info_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_system_info_code ON c1_wf_variable ("system_info_code" varchar_pattern_ops);
 --工作流键
 --drop index IF EXISTS idx_c1_wf_variable_wf_key;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_wf_key ON c1_wf_variable ("wf_key" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_wf_key ON c1_wf_variable ("wf_key" varchar_pattern_ops);
 --工作流变量标识
 --drop index IF EXISTS idx_c1_wf_variable_wf_variable_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_wf_variable_id ON c1_wf_variable ("wf_variable_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_wf_variable_id ON c1_wf_variable ("wf_variable_id" varchar_pattern_ops);
 
 -- 工作流变量与用户（c1_wf_variable_user）
 
@@ -78,73 +78,73 @@
 --create UNIQUE index IF NOT EXISTS idx_c1_wf_variable_user_business_code ON c1_wf_variable_user ("code");
 --批次编号
 --drop index IF EXISTS idx_c1_wf_variable_user_batch_no;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_batch_no ON c1_wf_variable_user ("batch_no" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_batch_no ON c1_wf_variable_user ("batch_no" varchar_pattern_ops);
 --开始日期
 --drop index IF EXISTS idx_c1_wf_variable_user_begin_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_begin_date ON c1_wf_variable_user ("begin_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_begin_date ON c1_wf_variable_user ("begin_date");
 --创建人编号
 --drop index IF EXISTS idx_c1_wf_variable_user_created_by_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_created_by_code ON c1_wf_variable_user ("created_by_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_created_by_code ON c1_wf_variable_user ("created_by_code" varchar_pattern_ops);
 --创建人标识
 --drop index IF EXISTS idx_c1_wf_variable_user_created_by_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_created_by_id ON c1_wf_variable_user ("created_by_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_created_by_id ON c1_wf_variable_user ("created_by_id" varchar_pattern_ops);
 --创建日期
 --drop index IF EXISTS idx_c1_wf_variable_user_created_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_created_date ON c1_wf_variable_user ("created_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_created_date ON c1_wf_variable_user ("created_date");
 --数据状态编号(数据字典)
 --drop index IF EXISTS idx_c1_wf_variable_user_data_state_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_data_state_code ON c1_wf_variable_user ("data_state_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_data_state_code ON c1_wf_variable_user ("data_state_code" varchar_pattern_ops);
 --部门编号
 --drop index IF EXISTS idx_c1_wf_variable_user_department_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_department_code ON c1_wf_variable_user ("department_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_department_code ON c1_wf_variable_user ("department_code" varchar_pattern_ops);
 --结束日期
 --drop index IF EXISTS idx_c1_wf_variable_user_end_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_end_date ON c1_wf_variable_user ("end_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_end_date ON c1_wf_variable_user ("end_date");
 --标记编号(数据字典：工作流、同步、生成、录入、审批)
 --drop index IF EXISTS idx_c1_wf_variable_user_flag_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_flag_code ON c1_wf_variable_user ("flag_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_flag_code ON c1_wf_variable_user ("flag_code" varchar_pattern_ops);
 --最后修改人编号
 --drop index IF EXISTS idx_c1_wf_variable_user_last_modified_by_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_last_modified_by_code ON c1_wf_variable_user ("last_modified_by_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_last_modified_by_code ON c1_wf_variable_user ("last_modified_by_code" varchar_pattern_ops);
 --最后修改人标识
 --drop index IF EXISTS idx_c1_wf_variable_user_last_modified_by_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_last_modified_by_id ON c1_wf_variable_user ("last_modified_by_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_last_modified_by_id ON c1_wf_variable_user ("last_modified_by_id" varchar_pattern_ops);
 --最后修改日期
 --drop index IF EXISTS idx_c1_wf_variable_user_last_modified_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_last_modified_date ON c1_wf_variable_user ("last_modified_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_last_modified_date ON c1_wf_variable_user ("last_modified_date");
 --排序
 --drop index IF EXISTS idx_c1_wf_variable_user_order_by_;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_order_by_ ON c1_wf_variable_user ("order_by_");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_order_by_ ON c1_wf_variable_user ("order_by_");
 --组织编号
 --drop index IF EXISTS idx_c1_wf_variable_user_org_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_org_code ON c1_wf_variable_user ("org_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_org_code ON c1_wf_variable_user ("org_code" varchar_pattern_ops);
 --个人编号
 --drop index IF EXISTS idx_c1_wf_variable_user_personal_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_personal_code ON c1_wf_variable_user ("personal_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_personal_code ON c1_wf_variable_user ("personal_code" varchar_pattern_ops);
 --个人标识
 --drop index IF EXISTS idx_c1_wf_variable_user_personal_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_personal_id ON c1_wf_variable_user ("personal_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_personal_id ON c1_wf_variable_user ("personal_id" varchar_pattern_ops);
 --站点编号
 --drop index IF EXISTS idx_c1_wf_variable_user_site_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_site_code ON c1_wf_variable_user ("site_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_site_code ON c1_wf_variable_user ("site_code" varchar_pattern_ops);
 --状态编号(数据字典)
 --drop index IF EXISTS idx_c1_wf_variable_user_state_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_state_code ON c1_wf_variable_user ("state_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_state_code ON c1_wf_variable_user ("state_code" varchar_pattern_ops);
 --系统信息编号
 --drop index IF EXISTS idx_c1_wf_variable_user_system_info_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_system_info_code ON c1_wf_variable_user ("system_info_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_system_info_code ON c1_wf_variable_user ("system_info_code" varchar_pattern_ops);
 --用户编号
 --drop index IF EXISTS idx_c1_wf_variable_user_user_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_user_code ON c1_wf_variable_user ("user_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_user_code ON c1_wf_variable_user ("user_code" varchar_pattern_ops);
 --用户标识
 --drop index IF EXISTS idx_c1_wf_variable_user_user_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_user_id ON c1_wf_variable_user ("user_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_user_id ON c1_wf_variable_user ("user_id" varchar_pattern_ops);
 --工作流键
 --drop index IF EXISTS idx_c1_wf_variable_user_wf_key;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_wf_key ON c1_wf_variable_user ("wf_key" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_wf_key ON c1_wf_variable_user ("wf_key" varchar_pattern_ops);
 --工作流变量与用户标识
 --drop index IF EXISTS idx_c1_wf_variable_user_wf_variable_user_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_variable_user_wf_variable_user_id ON c1_wf_variable_user ("wf_variable_user_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_variable_user_wf_variable_user_id ON c1_wf_variable_user ("wf_variable_user_id" varchar_pattern_ops);
 
 -- 工作流任务处理（c1_wf_task_handle）
 
@@ -153,73 +153,73 @@
 --create UNIQUE index IF NOT EXISTS idx_c1_wf_task_handle_business_code ON c1_wf_task_handle ("code");
 --批次编号
 --drop index IF EXISTS idx_c1_wf_task_handle_batch_no;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_batch_no ON c1_wf_task_handle ("batch_no" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_batch_no ON c1_wf_task_handle ("batch_no" varchar_pattern_ops);
 --开始日期
 --drop index IF EXISTS idx_c1_wf_task_handle_begin_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_begin_date ON c1_wf_task_handle ("begin_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_begin_date ON c1_wf_task_handle ("begin_date");
 --业务编号
 --drop index IF EXISTS idx_c1_wf_task_handle_business_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_business_code ON c1_wf_task_handle ("business_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_business_code ON c1_wf_task_handle ("business_code" varchar_pattern_ops);
 --业务标识
 --drop index IF EXISTS idx_c1_wf_task_handle_business_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_business_id ON c1_wf_task_handle ("business_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_business_id ON c1_wf_task_handle ("business_id" varchar_pattern_ops);
 --业务类型
 --drop index IF EXISTS idx_c1_wf_task_handle_business_type_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_business_type_code ON c1_wf_task_handle ("business_type_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_business_type_code ON c1_wf_task_handle ("business_type_code" varchar_pattern_ops);
 --创建人编号
 --drop index IF EXISTS idx_c1_wf_task_handle_created_by_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_created_by_code ON c1_wf_task_handle ("created_by_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_created_by_code ON c1_wf_task_handle ("created_by_code" varchar_pattern_ops);
 --创建人标识
 --drop index IF EXISTS idx_c1_wf_task_handle_created_by_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_created_by_id ON c1_wf_task_handle ("created_by_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_created_by_id ON c1_wf_task_handle ("created_by_id" varchar_pattern_ops);
 --创建日期
 --drop index IF EXISTS idx_c1_wf_task_handle_created_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_created_date ON c1_wf_task_handle ("created_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_created_date ON c1_wf_task_handle ("created_date");
 --数据状态编号(数据字典)
 --drop index IF EXISTS idx_c1_wf_task_handle_data_state_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_data_state_code ON c1_wf_task_handle ("data_state_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_data_state_code ON c1_wf_task_handle ("data_state_code" varchar_pattern_ops);
 --部门编号
 --drop index IF EXISTS idx_c1_wf_task_handle_department_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_department_code ON c1_wf_task_handle ("department_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_department_code ON c1_wf_task_handle ("department_code" varchar_pattern_ops);
 --结束日期
 --drop index IF EXISTS idx_c1_wf_task_handle_end_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_end_date ON c1_wf_task_handle ("end_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_end_date ON c1_wf_task_handle ("end_date");
 --标记编号(数据字典：工作流、同步、生成、录入、审批)
 --drop index IF EXISTS idx_c1_wf_task_handle_flag_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_flag_code ON c1_wf_task_handle ("flag_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_flag_code ON c1_wf_task_handle ("flag_code" varchar_pattern_ops);
 --最后修改人编号
 --drop index IF EXISTS idx_c1_wf_task_handle_last_modified_by_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_last_modified_by_code ON c1_wf_task_handle ("last_modified_by_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_last_modified_by_code ON c1_wf_task_handle ("last_modified_by_code" varchar_pattern_ops);
 --最后修改人标识
 --drop index IF EXISTS idx_c1_wf_task_handle_last_modified_by_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_last_modified_by_id ON c1_wf_task_handle ("last_modified_by_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_last_modified_by_id ON c1_wf_task_handle ("last_modified_by_id" varchar_pattern_ops);
 --最后修改日期
 --drop index IF EXISTS idx_c1_wf_task_handle_last_modified_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_last_modified_date ON c1_wf_task_handle ("last_modified_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_last_modified_date ON c1_wf_task_handle ("last_modified_date");
 --排序
 --drop index IF EXISTS idx_c1_wf_task_handle_order_by_;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_order_by_ ON c1_wf_task_handle ("order_by_");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_order_by_ ON c1_wf_task_handle ("order_by_");
 --组织编号
 --drop index IF EXISTS idx_c1_wf_task_handle_org_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_org_code ON c1_wf_task_handle ("org_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_org_code ON c1_wf_task_handle ("org_code" varchar_pattern_ops);
 --个人编号
 --drop index IF EXISTS idx_c1_wf_task_handle_personal_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_personal_code ON c1_wf_task_handle ("personal_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_personal_code ON c1_wf_task_handle ("personal_code" varchar_pattern_ops);
 --个人标识
 --drop index IF EXISTS idx_c1_wf_task_handle_personal_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_personal_id ON c1_wf_task_handle ("personal_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_personal_id ON c1_wf_task_handle ("personal_id" varchar_pattern_ops);
 --站点编号
 --drop index IF EXISTS idx_c1_wf_task_handle_site_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_site_code ON c1_wf_task_handle ("site_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_site_code ON c1_wf_task_handle ("site_code" varchar_pattern_ops);
 --状态编号(数据字典)
 --drop index IF EXISTS idx_c1_wf_task_handle_state_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_state_code ON c1_wf_task_handle ("state_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_state_code ON c1_wf_task_handle ("state_code" varchar_pattern_ops);
 --系统信息编号
 --drop index IF EXISTS idx_c1_wf_task_handle_system_info_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_system_info_code ON c1_wf_task_handle ("system_info_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_system_info_code ON c1_wf_task_handle ("system_info_code" varchar_pattern_ops);
 --工作流任务处理标识
 --drop index IF EXISTS idx_c1_wf_task_handle_wf_task_handle_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_wf_task_handle_id ON c1_wf_task_handle ("wf_task_handle_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_wf_task_handle_id ON c1_wf_task_handle ("wf_task_handle_id" varchar_pattern_ops);
 
 -- 工作流任务处理重试（c1_wf_task_handle_retry）
 
@@ -228,81 +228,81 @@
 --create UNIQUE index IF NOT EXISTS idx_c1_wf_task_handle_retry_business_code ON c1_wf_task_handle_retry ("code");
 --批次编号
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_batch_no;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_batch_no ON c1_wf_task_handle_retry ("batch_no" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_batch_no ON c1_wf_task_handle_retry ("batch_no" varchar_pattern_ops);
 --开始日期
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_begin_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_begin_date ON c1_wf_task_handle_retry ("begin_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_begin_date ON c1_wf_task_handle_retry ("begin_date");
 --创建人编号
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_created_by_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_created_by_code ON c1_wf_task_handle_retry ("created_by_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_created_by_code ON c1_wf_task_handle_retry ("created_by_code" varchar_pattern_ops);
 --创建人标识
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_created_by_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_created_by_id ON c1_wf_task_handle_retry ("created_by_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_created_by_id ON c1_wf_task_handle_retry ("created_by_id" varchar_pattern_ops);
 --创建日期
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_created_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_created_date ON c1_wf_task_handle_retry ("created_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_created_date ON c1_wf_task_handle_retry ("created_date");
 --数据状态编号(数据字典)
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_data_state_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_data_state_code ON c1_wf_task_handle_retry ("data_state_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_data_state_code ON c1_wf_task_handle_retry ("data_state_code" varchar_pattern_ops);
 --部门编号
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_department_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_department_code ON c1_wf_task_handle_retry ("department_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_department_code ON c1_wf_task_handle_retry ("department_code" varchar_pattern_ops);
 --结束日期
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_end_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_end_date ON c1_wf_task_handle_retry ("end_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_end_date ON c1_wf_task_handle_retry ("end_date");
 --错误时间
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_error_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_error_date ON c1_wf_task_handle_retry ("error_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_error_date ON c1_wf_task_handle_retry ("error_date");
 --错误信息
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_error_message;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_error_message ON c1_wf_task_handle_retry ("error_message" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_error_message ON c1_wf_task_handle_retry ("error_message" varchar_pattern_ops);
 --标记编号(数据字典：工作流、同步、生成、录入、审批)
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_flag_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_flag_code ON c1_wf_task_handle_retry ("flag_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_flag_code ON c1_wf_task_handle_retry ("flag_code" varchar_pattern_ops);
 --处理类型编号
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_handle_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_handle_code ON c1_wf_task_handle_retry ("handle_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_handle_code ON c1_wf_task_handle_retry ("handle_code" varchar_pattern_ops);
 --最后修改人编号
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_last_modified_by_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_last_modified_by_code ON c1_wf_task_handle_retry ("last_modified_by_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_last_modified_by_code ON c1_wf_task_handle_retry ("last_modified_by_code" varchar_pattern_ops);
 --最后修改人标识
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_last_modified_by_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_last_modified_by_id ON c1_wf_task_handle_retry ("last_modified_by_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_last_modified_by_id ON c1_wf_task_handle_retry ("last_modified_by_id" varchar_pattern_ops);
 --最后修改日期
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_last_modified_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_last_modified_date ON c1_wf_task_handle_retry ("last_modified_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_last_modified_date ON c1_wf_task_handle_retry ("last_modified_date");
 --最近重试时间
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_last_retry_date;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_last_retry_date ON c1_wf_task_handle_retry ("last_retry_date");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_last_retry_date ON c1_wf_task_handle_retry ("last_retry_date");
 --排序
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_order_by_;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_order_by_ ON c1_wf_task_handle_retry ("order_by_");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_order_by_ ON c1_wf_task_handle_retry ("order_by_");
 --组织编号
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_org_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_org_code ON c1_wf_task_handle_retry ("org_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_org_code ON c1_wf_task_handle_retry ("org_code" varchar_pattern_ops);
 --个人编号
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_personal_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_personal_code ON c1_wf_task_handle_retry ("personal_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_personal_code ON c1_wf_task_handle_retry ("personal_code" varchar_pattern_ops);
 --个人标识
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_personal_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_personal_id ON c1_wf_task_handle_retry ("personal_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_personal_id ON c1_wf_task_handle_retry ("personal_id" varchar_pattern_ops);
 --重试次数
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_retry_count;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_retry_count ON c1_wf_task_handle_retry ("retry_count");
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_retry_count ON c1_wf_task_handle_retry ("retry_count");
 --站点编号
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_site_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_site_code ON c1_wf_task_handle_retry ("site_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_site_code ON c1_wf_task_handle_retry ("site_code" varchar_pattern_ops);
 --状态编号(数据字典)
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_state_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_state_code ON c1_wf_task_handle_retry ("state_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_state_code ON c1_wf_task_handle_retry ("state_code" varchar_pattern_ops);
 --系统信息编号
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_system_info_code;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_system_info_code ON c1_wf_task_handle_retry ("system_info_code" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_system_info_code ON c1_wf_task_handle_retry ("system_info_code" varchar_pattern_ops);
 --工作流任务处理标识
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_wf_task_handle_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_wf_task_handle_id ON c1_wf_task_handle_retry ("wf_task_handle_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_wf_task_handle_id ON c1_wf_task_handle_retry ("wf_task_handle_id" varchar_pattern_ops);
 --工作流任务处理重试标识
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_wf_task_handle_retry_id;
---CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_c1_wf_task_handle_retry_wf_task_handle_retry_id ON c1_wf_task_handle_retry ("wf_task_handle_retry_id" varchar_pattern_ops);
+--CREATE INDEX IF NOT EXISTS idx_c1_wf_task_handle_retry_wf_task_handle_retry_id ON c1_wf_task_handle_retry ("wf_task_handle_retry_id" varchar_pattern_ops);
 
 
