@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.workflow.service.WfTaskHandleRetryService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" concurrency="100" prefetch="10">
+    <rabbit:listener-container acknowledge="none" concurrency="20" prefetch="5">
         <rabbit:listener ref="top.cardone.workflow.service.WfTaskHandleRetryServiceExporter"
                          queue-names="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfTaskHandleRetryService"/>
     </rabbit:listener-container>
