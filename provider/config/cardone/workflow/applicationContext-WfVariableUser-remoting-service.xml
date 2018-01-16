@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.workflow.service.WfVariableUserService"/>
     </bean>
 
-    <rabbit:listener-container acknowledge="none" concurrency="10" prefetch="5">
+    <rabbit:listener-container acknowledge="none" concurrency="5" prefetch="10">
         <rabbit:listener ref="top.cardone.workflow.service.WfVariableUserServiceExporter"
                          queue-names="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService"/>
     </rabbit:listener-container>
