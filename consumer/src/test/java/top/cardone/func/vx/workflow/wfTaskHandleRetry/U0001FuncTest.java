@@ -97,7 +97,7 @@ public class U0001FuncTest {
         }
 
         for (Runnable runnable : runnableList) {
-            ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(runnable, null, true));
+            ApplicationContextHolder.getBean(TaskExecutor.class).execute(TaskUtils.decorateTaskWithErrorHandler(runnable, null, false));
         }
 
         while (true) {

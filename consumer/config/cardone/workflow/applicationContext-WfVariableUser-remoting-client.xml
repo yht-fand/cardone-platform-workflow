@@ -12,10 +12,10 @@
           p:routingKey="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService"
           parent="invokerProxyFactoryParnet">
         <property name="amqpTemplate">
-            <rabbit:template connection-factory="rabbitConnectionFactory"
-                             message-converter="amqpMessageConverter"
-                             queue="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService"
-                             exchange="exchange:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService" reply-timeout="${spring.rabbitmq.template.replyTimeout:60000}"/>
+            <bean parent="rabbitTemplateParnet">
+                <property name="queue" value="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService"/>
+                <property name="exchange" value="exchange:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfVariableUserService"/>
+            </bean>
         </property>
     </bean>
 </beans>

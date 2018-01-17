@@ -27,7 +27,7 @@ class index implements java.io.Serializable {
         output.permission_expData = SecurityUtils.getSubject().hasRole('administrator') || SecurityUtils.getSubject().isPermitted('workflow:wfTaskHandle:expData')
         output.permission_downloadExcelTemplate = SecurityUtils.getSubject().hasRole('administrator') || SecurityUtils.getSubject().isPermitted('workflow:wfTaskHandle:downloadExcelTemplate')
 
-        output.startTime = DateFormatUtils.format(Date.from(LocalDateTime.now().minusMonths(1).atZone(ZoneId.systemDefault()).toInstant()), DateFormatUtils.ISO_8601_EXTENDED_DATE_FORMAT.getPattern())
+        output.startTime = DateFormatUtils.format(Date.from(LocalDateTime.now().minusMonths(2).atZone(ZoneId.systemDefault()).toInstant()), DateFormatUtils.ISO_8601_EXTENDED_DATE_FORMAT.getPattern())
 
         output
     }
