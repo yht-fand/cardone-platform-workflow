@@ -3,7 +3,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true">
     <bean id="top.cardone.web.support.WebSupport" class="top.cardone.web.support.WebSupport">
-        <property name="apiConfigRoot" value="${app.root}/config/api"/>
-        <property name="apiStaticRoot" value="${app.root}/config/api"/>
+        <property name="apiConfigRoot" value="file:config/api"/>
+        <property name="apiStaticRoot" value="file:config/api"/>
     </bean>
 </beans>

@@ -32,10 +32,10 @@ public class AddModalFuncTest {
     @Value("http://localhost:${server.port:8765}${server.context-path:}/vx/workflow/wfVariableUser/addModal.json")
     private String funcUrl;
 
-    @Value("${app.root}/src/test/resources/top/cardone/func/vx/workflow/wfVariableUser/AddModalFuncTest.func.input.json")
+    @Value("file:src/test/resources/top/cardone/func/vx/workflow/wfVariableUser/AddModalFuncTest.func.input.json")
     private Resource funcInputResource;
 
-    @Value("${app.root}/src/test/resources/top/cardone/func/vx/workflow/wfVariableUser/AddModalFuncTest.func.output.json")
+    @Value("file:src/test/resources/top/cardone/func/vx/workflow/wfVariableUser/AddModalFuncTest.func.output.json")
     private Resource funcOutputResource;
 
     private HttpEntity<String> httpEntity;
