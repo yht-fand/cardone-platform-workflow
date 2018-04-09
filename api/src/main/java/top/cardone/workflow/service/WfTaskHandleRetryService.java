@@ -36,7 +36,7 @@ public interface WfTaskHandleRetryService extends PageService {
      * @param findOne 工作流任务处理重试标识
      * @return 工作流任务处理重试对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByWfTaskHandleRetryIdCache(Map<String, Object> findOne) {
         return this.findOneByWfTaskHandleRetryId(findOne);
     }

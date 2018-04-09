@@ -36,7 +36,7 @@ public interface WfVariableService extends PageService {
      * @param findOne 工作流变量标识
      * @return 工作流变量对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByWfVariableIdCache(Map<String, Object> findOne) {
         return this.findOneByWfVariableId(findOne);
     }

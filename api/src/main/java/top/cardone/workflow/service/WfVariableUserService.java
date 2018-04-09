@@ -36,7 +36,7 @@ public interface WfVariableUserService extends PageService {
      * @param findOne 工作流变量与用户标识
      * @return 工作流变量与用户对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByWfVariableUserIdCache(Map<String, Object> findOne) {
         return this.findOneByWfVariableUserId(findOne);
     }

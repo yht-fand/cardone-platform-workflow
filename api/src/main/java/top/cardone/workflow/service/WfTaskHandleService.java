@@ -36,7 +36,7 @@ public interface WfTaskHandleService extends PageService {
      * @param findOne 工作流任务处理标识
      * @return 工作流任务处理对象
      */
-    @Cacheable(key = Caches.KEY_1)
+    @Cacheable
     default Map<String, Object> findOneByWfTaskHandleIdCache(Map<String, Object> findOne) {
         return this.findOneByWfTaskHandleId(findOne);
     }
