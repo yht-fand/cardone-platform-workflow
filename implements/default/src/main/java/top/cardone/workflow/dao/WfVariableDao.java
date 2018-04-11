@@ -10,11 +10,4 @@ import java.util.Map;
  * @author yao hai tao
  */
 public interface WfVariableDao extends PageDao {
-    /**
-     * 查询工作流变量对象
-     *
-     * @param findOne 工作流变量标识
-     * @return 工作流变量对象
-     */
-    Map<String, Object> findOneByWfVariableId(Map<String, Object> findOne);
 }

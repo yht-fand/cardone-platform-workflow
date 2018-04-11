@@ -15,6 +15,6 @@ import java.util.Map;
 public class WfTaskHandleServiceImpl extends PageServiceImpl<WfTaskHandleDao> implements top.cardone.workflow.service.WfTaskHandleService {
     @Override
     public Map<String, Object> findOneByWfTaskHandleId(Map<String, Object> findOne) {
-        return this.dao.findOneByWfTaskHandleId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 }

@@ -10,11 +10,4 @@ import java.util.Map;
  * @author yao hai tao
  */
 public interface WfTaskHandleRetryDao extends PageDao {
-    /**
-     * 查询工作流任务处理重试对象
-     *
-     * @param findOne 工作流任务处理重试标识
-     * @return 工作流任务处理重试对象
-     */
-    Map<String, Object> findOneByWfTaskHandleRetryId(Map<String, Object> findOne);
 }

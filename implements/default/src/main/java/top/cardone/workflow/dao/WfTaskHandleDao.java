@@ -10,11 +10,4 @@ import java.util.Map;
  * @author yao hai tao
  */
 public interface WfTaskHandleDao extends PageDao {
-    /**
-     * 查询工作流任务处理对象
-     *
-     * @param findOne 工作流任务处理标识
-     * @return 工作流任务处理对象
-     */
-    Map<String, Object> findOneByWfTaskHandleId(Map<String, Object> findOne);
 }

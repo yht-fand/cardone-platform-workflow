@@ -10,10 +10,4 @@ import java.util.Map;
  * @author yao hai tao
  */
 public class WfVariableUserDaoImpl extends PageDaoImpl implements top.cardone.workflow.dao.WfVariableUserDao {
-    @Override
-    public Map<String, Object> findOneByWfVariableUserId(Map<String, Object> findOne) {
-        String findOneSqlFilePath = this.getSqlFilePath("page.find");
-
-        return this.findOne(findOneSqlFilePath, findOne);
-    }
 }

@@ -15,6 +15,6 @@ import java.util.Map;
 public class WfTaskHandleRetryServiceImpl extends PageServiceImpl<WfTaskHandleRetryDao> implements top.cardone.workflow.service.WfTaskHandleRetryService {
     @Override
     public Map<String, Object> findOneByWfTaskHandleRetryId(Map<String, Object> findOne) {
-        return this.dao.findOneByWfTaskHandleRetryId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 }

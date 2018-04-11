@@ -15,6 +15,6 @@ import java.util.Map;
 public class WfVariableServiceImpl extends PageServiceImpl<WfVariableDao> implements top.cardone.workflow.service.WfVariableService {
     @Override
     public Map<String, Object> findOneByWfVariableId(Map<String, Object> findOne) {
-        return this.dao.findOneByWfVariableId(findOne);
+        return this.dao.findOneBySqlFileName("page.find", findOne);
     }
 }
