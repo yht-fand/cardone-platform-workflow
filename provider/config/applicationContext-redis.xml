@@ -6,7 +6,8 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/redis
         http://www.springframework.org/schema/redis/spring-redis.xsd">
-    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory" lazy-init="true">
+    <bean id="lettuceConnectionFactory"
+          class="org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory" lazy-init="true">
         <constructor-arg>
             <bean class="org.springframework.data.redis.connection.RedisClusterConfiguration">
                 <property name="maxRedirects" value="${cache.redis.maxRedirects:3}"></property>
@@ -52,23 +53,11 @@
                 </property>
             </bean>
         </constructor-arg>
-        <property name="poolConfig">
-            <bean class="redis.clients.jedis.JedisPoolConfig">
-                <property name="maxIdle" value="${cache.redis.maxIdle:18}"/>
-                <property name="maxTotal" value="${cache.redis.maxTotal:180}"/>
-                <property name="numTestsPerEvictionRun" value="${cache.redis.numTestsPerEvictionRun:36}"/>
-                <property name="maxWaitMillis" value="${cache.redis.maxWaitMillis:3000}"/>
-                <property name="timeBetweenEvictionRunsMillis" value="${cache.redis.timeBetweenEvictionRunsMillis:3000}"/>
-                <property name="testWhileIdle" value="${cache.redis.testWhileIdle:true}"/>
-                <property name="testOnBorrow" value="${cache.redis.testOnBorrow:true}"/>
-                <property name="testOnReturn" value="${cache.redis.testOnReturn:false}"/>
-            </bean>
-        </property>
     </bean>
 
     <bean id="org.springframework.data.redis.core.RedisTemplate"
           class="org.springframework.data.redis.core.RedisTemplate" lazy-init="true">
-        <property name="connectionFactory" ref="jedisConnectionFactory"/>
+        <property name="connectionFactory" ref="lettuceConnectionFactory"/>
     </bean>
 
     <bean id="redisPubAction" class="top.cardone.cache.action.RedisPubAction" lazy-init="true">
@@ -80,7 +69,7 @@
         <property name="redisTemplate" ref="org.springframework.data.redis.core.RedisTemplate"/>
     </bean>
 
-    <redis:listener-container connection-factory="jedisConnectionFactory">
+    <redis:listener-container connection-factory="lettuceConnectionFactory">
         <redis:listener ref="redisTopicMessageListener" topic="topic:cache"/>
     </redis:listener-container>
 </beans>
