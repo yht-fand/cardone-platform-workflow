@@ -24,7 +24,7 @@ import java.io.IOException;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = ConsumerApplication.class, value = {"spring.profiles.active=test"}, webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class AddModalFuncTest {
-    @Value("http://localhost:${server.port:8765}${server.context-path:}/vx/workflow/wfTaskHandleRetry/addModal.json")
+    @Value("http://localhost:${server.port:8765}${server.servlet.context-path:}/vx/workflow/wfTaskHandleRetry/addModal.json")
     private String funcUrl;
 
     @Value("file:src/test/resources/top/cardone/func/vx/workflow/wfTaskHandleRetry/AddModalFuncTest.func.input.json")
