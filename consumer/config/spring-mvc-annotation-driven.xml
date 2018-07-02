@@ -15,17 +15,4 @@
         </mvc:message-converters>
         <mvc:async-support default-timeout="60000"/>
     </mvc:annotation-driven>
-
-    <bean name="top.cardone.core.convert.support.DateToStringConverter"
-          class="top.cardone.core.convert.support.DateToStringConverter"/>
-
-    <!-- 自定义类型转换支持 -->
-    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-        <property name="converters">
-            <set>
-                <ref bean="top.cardone.core.convert.support.DateToStringConverter"/>
-                <ref bean="top.cardone.core.convert.support.StringToDateConverter"/>
-            </set>
-        </property>
-    </bean>
 </beans>
