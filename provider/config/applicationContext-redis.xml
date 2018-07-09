@@ -53,6 +53,7 @@
                 </property>
             </bean>
         </constructor-arg>
+        <property name="timeout" value="5000"/>
     </bean>
 
     <bean id="org.springframework.data.redis.core.RedisTemplate"
