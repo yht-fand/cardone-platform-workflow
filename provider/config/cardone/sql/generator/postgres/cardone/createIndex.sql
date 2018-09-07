@@ -64,6 +64,9 @@
 --系统信息编号
 --drop index IF EXISTS idx_c1_wf_variable_system_info_code;
 --create index IF NOT EXISTS idx_c1_wf_variable_system_info_code ON c1_wf_variable ("system_info_code" varchar_pattern_ops);
+--类别编号
+--drop index IF EXISTS idx_c1_wf_variable_type_code;
+--create index IF NOT EXISTS idx_c1_wf_variable_type_code ON c1_wf_variable ("type_code" varchar_pattern_ops);
 --工作流键
 --drop index IF EXISTS idx_c1_wf_variable_wf_key;
 --create index IF NOT EXISTS idx_c1_wf_variable_wf_key ON c1_wf_variable ("wf_key" varchar_pattern_ops);
@@ -304,5 +307,25 @@
 --工作流任务处理重试标识
 --drop index IF EXISTS idx_c1_wf_task_handle_retry_wf_task_handle_retry_id;
 --create index IF NOT EXISTS idx_c1_wf_task_handle_retry_wf_task_handle_retry_id ON c1_wf_task_handle_retry ("wf_task_handle_retry_id" varchar_pattern_ops);
+
+
+
+
+ALTER TABLE "c1_wf_variable" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_wf_variable_user" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_wf_task_handle" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
+ALTER TABLE "c1_wf_task_handle_retry" ALTER COLUMN "json_data" TYPE jsonb;
+
+--- sql end ---
+
 
 

@@ -89,6 +89,10 @@ ${prefixName?string('  ', ', ')}"state_code"
 ${prefixName?string('  ', ', ')}"system_info_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName?string('  ', ', ')}"type_code"
+<#assign prefixName = false>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName?string('  ', ', ')}"version_"
 <#assign prefixName = false>
@@ -190,6 +194,10 @@ ${prefixName?string('  ', ', ')}:insert_stateCode_value
 </#if>
 <#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
 ${prefixName?string('  ', ', ')}:insert_systemInfoCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName?string('  ', ', ')}:insert_typeCode_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_version??) && (insert_version_value??)>

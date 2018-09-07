@@ -66,6 +66,9 @@ SELECT
 <#case "systemInfoCode">
 "system_info_code"
 <#break>
+<#case "typeCode">
+"type_code"
+<#break>
 <#case "version">
 "version_"
 <#break>

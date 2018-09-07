@@ -175,6 +175,14 @@ ${prefixName?string('WHERE ', 'AND ')}("system_info_code" IS NULL OR "system_inf
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_typeCode??)>
+<#if (where_and_eq_typeCode_value??)>
+${prefixName?string('WHERE ', 'AND ')}"type_code" = :where_and_eq_typeCode_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("type_code" IS NULL OR "type_code" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_version??)>
 <#if (where_and_eq_version_value??)>
 ${prefixName?string('WHERE ', 'AND ')}"version_" = :where_and_eq_version_value

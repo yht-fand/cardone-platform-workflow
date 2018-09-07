@@ -90,6 +90,10 @@ ${prefixName?string('  ', ', ')}"state_code"
 ${prefixName?string('  ', ', ')}"system_info_code"
 <#assign prefixName = false>
 </#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName?string('  ', ', ')}"type_code"
+<#assign prefixName = false>
+</#if>
 <#if (insert_version??) && (insert_version_value??)>
 ${prefixName?string('  ', ', ')}"version_"
 <#assign prefixName = false>
@@ -191,6 +195,10 @@ ${prefixName?string('  ', ', ')}:insert_stateCode_value
 </#if>
 <#if (insert_systemInfoCode??) && (insert_systemInfoCode_value??)>
 ${prefixName?string('  ', ', ')}:insert_systemInfoCode_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_typeCode??) && (insert_typeCode_value??)>
+${prefixName?string('  ', ', ')}:insert_typeCode_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_version??) && (insert_version_value??)>
@@ -380,6 +388,14 @@ ${prefixName?string('WHERE ', 'AND ')}(E."state_code" IS NULL OR E."state_code" 
 ${prefixName?string('WHERE ', 'AND ')}E."system_info_code" = :where_and_eq_systemInfoCode_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}(E."system_info_code" IS NULL OR E."system_info_code" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_typeCode??)>
+<#if (where_and_eq_typeCode_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."type_code" = :where_and_eq_typeCode_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."type_code" IS NULL OR E."type_code" = '')
 </#if>
 <#assign prefixName = false>
 </#if>

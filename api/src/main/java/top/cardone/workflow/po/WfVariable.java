@@ -165,6 +165,13 @@ public class WfVariable implements java.io.Serializable {
     protected String systemInfoCode;
 
     /**
+     * 类别编号
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String typeCode;
+
+    /**
      * 版本
      */
     @lombok.Getter

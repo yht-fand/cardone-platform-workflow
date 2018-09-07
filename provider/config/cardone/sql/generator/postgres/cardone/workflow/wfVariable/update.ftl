@@ -88,6 +88,10 @@ ${prefixName?string('SET ', ', ')}"state_code" = :update_stateCode_value
 ${prefixName?string('SET ', ', ')}"system_info_code" = :update_systemInfoCode_value
 <#assign prefixName = false>
 </#if>
+<#if (update_typeCode??)>
+${prefixName?string('SET ', ', ')}"type_code" = :update_typeCode_value
+<#assign prefixName = false>
+</#if>
 <#if (update_version??)>
 ${prefixName?string('SET ', ', ')}"version_" = :update_version_value
 <#assign prefixName = false>

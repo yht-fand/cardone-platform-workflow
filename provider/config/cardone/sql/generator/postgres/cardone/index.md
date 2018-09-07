@@ -33,6 +33,7 @@ personal_id|YES|String(255)|个人标识
 site_code|YES|String(255)|站点编号
 state_code|YES|String(255)|状态编号(数据字典)
 system_info_code|YES|String(255)|系统信息编号
+type_code|YES|String(255)|类别编号
 version_|YES|Integer(10)|版本
 wf_key|YES|String(255)|工作流键
 wf_variable_id|NO|String(255)|工作流变量标识

@@ -88,6 +88,10 @@ ${prefixName?string('  ', ', ')}"state_code"
 ${prefixName?string('  ', ', ')}"system_info_code"
 <#assign prefixName = false>
 </#if>
+<#if (select_typeCode??)>
+${prefixName?string('  ', ', ')}"type_code"
+<#assign prefixName = false>
+</#if>
 <#if (select_version??)>
 ${prefixName?string('  ', ', ')}"version_"
 <#assign prefixName = false>
@@ -192,6 +196,10 @@ ${prefixName?string('ORDER BY ', ', ')}"state_code" ${order_by_stateCode_value!}
 </#if>
 <#if (order_by_systemInfoCode??)>
 ${prefixName?string('ORDER BY ', ', ')}"system_info_code" ${order_by_systemInfoCode_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_typeCode??)>
+${prefixName?string('ORDER BY ', ', ')}"type_code" ${order_by_typeCode_value!}
 <#assign prefixName = false>
 </#if>
 <#if (order_by_version??)>
