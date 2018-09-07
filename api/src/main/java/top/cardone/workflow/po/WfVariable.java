@@ -116,6 +116,13 @@ public class WfVariable implements java.io.Serializable {
     protected Date lastModifiedDate;
 
     /**
+     * 名称
+     */
+    @lombok.Getter
+    @lombok.Setter
+    protected String name;
+
+    /**
      * 排序
      */
     @lombok.Getter

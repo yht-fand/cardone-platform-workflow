@@ -26,6 +26,7 @@ json_data|YES|Object(2147483647)|json数据
 last_modified_by_code|YES|String(255)|最后修改人编号
 last_modified_by_id|YES|String(255)|最后修改人标识
 last_modified_date|YES|Date(29)|最后修改日期
+name|YES|String(255)|名称
 order_by_|YES|Long(19)|排序
 org_code|YES|String(255)|组织编号
 personal_code|YES|String(255)|个人编号

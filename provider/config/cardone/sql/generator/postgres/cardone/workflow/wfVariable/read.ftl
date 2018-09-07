@@ -45,6 +45,9 @@ SELECT
 <#case "lastModifiedDate">
 "last_modified_date"
 <#break>
+<#case "name">
+"name"
+<#break>
 <#case "orderBy">
 "order_by_"
 <#break>

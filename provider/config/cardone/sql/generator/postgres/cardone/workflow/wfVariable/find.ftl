@@ -60,6 +60,10 @@ ${prefixName?string('  ', ', ')}"last_modified_by_id"
 ${prefixName?string('  ', ', ')}"last_modified_date"
 <#assign prefixName = false>
 </#if>
+<#if (select_name??)>
+${prefixName?string('  ', ', ')}"name"
+<#assign prefixName = false>
+</#if>
 <#if (select_orderBy??)>
 ${prefixName?string('  ', ', ')}"order_by_"
 <#assign prefixName = false>
@@ -168,6 +172,10 @@ ${prefixName?string('ORDER BY ', ', ')}"last_modified_by_id" ${order_by_lastModi
 </#if>
 <#if (order_by_lastModifiedDate??)>
 ${prefixName?string('ORDER BY ', ', ')}"last_modified_date" ${order_by_lastModifiedDate_value!}
+<#assign prefixName = false>
+</#if>
+<#if (order_by_name??)>
+${prefixName?string('ORDER BY ', ', ')}"name" ${order_by_name_value!}
 <#assign prefixName = false>
 </#if>
 <#if (order_by_orderBy??)>

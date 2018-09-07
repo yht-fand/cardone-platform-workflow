@@ -62,6 +62,10 @@ ${prefixName?string('  ', ', ')}"last_modified_by_id"
 ${prefixName?string('  ', ', ')}"last_modified_date"
 <#assign prefixName = false>
 </#if>
+<#if (insert_name??) && (insert_name_value??)>
+${prefixName?string('  ', ', ')}"name"
+<#assign prefixName = false>
+</#if>
 <#if (insert_orderBy??) && (insert_orderBy_value??)>
 ${prefixName?string('  ', ', ')}"order_by_"
 <#assign prefixName = false>
@@ -167,6 +171,10 @@ ${prefixName?string('  ', ', ')}:insert_lastModifiedById_value
 </#if>
 <#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
 ${prefixName?string('  ', ', ')}:insert_lastModifiedDate_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_name??) && (insert_name_value??)>
+${prefixName?string('  ', ', ')}:insert_name_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_orderBy??) && (insert_orderBy_value??)>
@@ -332,6 +340,14 @@ ${prefixName?string('WHERE ', 'AND ')}(E."last_modified_by_id" IS NULL OR E."las
 ${prefixName?string('WHERE ', 'AND ')}E."last_modified_date" = :where_and_eq_lastModifiedDate_value
 <#else>
 ${prefixName?string('WHERE ', 'AND ')}E."last_modified_date" IS NULL
+</#if>
+<#assign prefixName = false>
+</#if>
+<#if (where_and_eq_name??)>
+<#if (where_and_eq_name_value??)>
+${prefixName?string('WHERE ', 'AND ')}E."name" = :where_and_eq_name_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}(E."name" IS NULL OR E."name" = '')
 </#if>
 <#assign prefixName = false>
 </#if>

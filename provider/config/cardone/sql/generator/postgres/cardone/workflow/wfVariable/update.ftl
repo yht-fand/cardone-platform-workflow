@@ -60,6 +60,10 @@ ${prefixName?string('SET ', ', ')}"last_modified_by_id" = :update_lastModifiedBy
 ${prefixName?string('SET ', ', ')}"last_modified_date" = :update_lastModifiedDate_value
 <#assign prefixName = false>
 </#if>
+<#if (update_name??)>
+${prefixName?string('SET ', ', ')}"name" = :update_name_value
+<#assign prefixName = false>
+</#if>
 <#if (update_orderBy??)>
 ${prefixName?string('SET ', ', ')}"order_by_" = :update_orderBy_value
 <#assign prefixName = false>

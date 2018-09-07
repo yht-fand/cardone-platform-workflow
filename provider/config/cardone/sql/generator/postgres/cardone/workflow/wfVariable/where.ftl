@@ -119,6 +119,14 @@ ${prefixName?string('WHERE ', 'AND ')}"last_modified_date" IS NULL
 </#if>
 <#assign prefixName = false>
 </#if>
+<#if (where_and_eq_name??)>
+<#if (where_and_eq_name_value??)>
+${prefixName?string('WHERE ', 'AND ')}"name" = :where_and_eq_name_value
+<#else>
+${prefixName?string('WHERE ', 'AND ')}("name" IS NULL OR "name" = '')
+</#if>
+<#assign prefixName = false>
+</#if>
 <#if (where_and_eq_orderBy??)>
 <#if (where_and_eq_orderBy_value??)>
 ${prefixName?string('WHERE ', 'AND ')}"order_by_" = :where_and_eq_orderBy_value

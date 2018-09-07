@@ -43,6 +43,9 @@
 --最后修改日期
 --drop index IF EXISTS idx_c1_wf_variable_last_modified_date;
 --create index IF NOT EXISTS idx_c1_wf_variable_last_modified_date ON c1_wf_variable ("last_modified_date");
+--名称
+--drop index IF EXISTS idx_c1_wf_variable_name;
+--create index IF NOT EXISTS idx_c1_wf_variable_name ON c1_wf_variable ("name" varchar_pattern_ops);
 --排序
 --drop index IF EXISTS idx_c1_wf_variable_order_by_;
 --create index IF NOT EXISTS idx_c1_wf_variable_order_by_ ON c1_wf_variable ("order_by_");

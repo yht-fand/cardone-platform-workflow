@@ -61,6 +61,10 @@ ${prefixName?string('  ', ', ')}"last_modified_by_id"
 ${prefixName?string('  ', ', ')}"last_modified_date"
 <#assign prefixName = false>
 </#if>
+<#if (insert_name??) && (insert_name_value??)>
+${prefixName?string('  ', ', ')}"name"
+<#assign prefixName = false>
+</#if>
 <#if (insert_orderBy??) && (insert_orderBy_value??)>
 ${prefixName?string('  ', ', ')}"order_by_"
 <#assign prefixName = false>
@@ -166,6 +170,10 @@ ${prefixName?string('  ', ', ')}:insert_lastModifiedById_value
 </#if>
 <#if (insert_lastModifiedDate??) && (insert_lastModifiedDate_value??)>
 ${prefixName?string('  ', ', ')}:insert_lastModifiedDate_value
+<#assign prefixName = false>
+</#if>
+<#if (insert_name??) && (insert_name_value??)>
+${prefixName?string('  ', ', ')}:insert_name_value
 <#assign prefixName = false>
 </#if>
 <#if (insert_orderBy??) && (insert_orderBy_value??)>
