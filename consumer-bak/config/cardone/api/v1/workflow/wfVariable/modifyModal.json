@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "rules": {
+      "wfVariableId": {
+        "required": true
+      }
+    },
+    "messages": {
+      "wfVariableId": {
+        "required": "工作流变量标识必填"
+      }
+    }
+  }
+}

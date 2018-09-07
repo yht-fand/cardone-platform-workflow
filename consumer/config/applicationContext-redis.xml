@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:redis="http://www.springframework.org/schema/redis"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/redis
+        http://www.springframework.org/schema/redis/spring-redis.xsd">
+    <bean id="lettuceConnectionFactory"
+          class="org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory" lazy-init="true">
+        <constructor-arg>
+            <bean class="org.springframework.data.redis.connection.RedisClusterConfiguration">
+                <property name="maxRedirects" value="${cache.redis.maxRedirects:3}"></property>
+                <property name="clusterNodes">
+                    <set>
+                        <bean class="org.springframework.data.redis.connection.RedisClusterNode">
+                            <constructor-arg name="host"
+                                             value="${cache.redis.clusterNode1.host:127.0.0.1}"></constructor-arg>
+                            <constructor-arg name="port"
+                                             value="${cache.redis.clusterNode1.port:7000}"></constructor-arg>
+                        </bean>
+                        <bean class="org.springframework.data.redis.connection.RedisClusterNode">
+                            <constructor-arg name="host"
+                                             value="${cache.redis.clusterNode2.host:127.0.0.1}"></constructor-arg>
+                            <constructor-arg name="port"
+                                             value="${cache.redis.clusterNode2.port:7001}"></constructor-arg>
+                        </bean>
+                        <bean class="org.springframework.data.redis.connection.RedisClusterNode">
+                            <constructor-arg name="host"
+                                             value="${cache.redis.clusterNode3.host:127.0.0.1}"></constructor-arg>
+                            <constructor-arg name="port"
+                                             value="${cache.redis.clusterNode3.port:7002}"></constructor-arg>
+                        </bean>
+                        <bean class="org.springframework.data.redis.connection.RedisClusterNode">
+                            <constructor-arg name="host"
+                                             value="${cache.redis.clusterNode4.host:127.0.0.1}"></constructor-arg>
+                            <constructor-arg name="port"
+                                             value="${cache.redis.clusterNode4.port:7003}"></constructor-arg>
+                        </bean>
+                        <bean class="org.springframework.data.redis.connection.RedisClusterNode">
+                            <constructor-arg name="host"
+                                             value="${cache.redis.clusterNode5.host:127.0.0.1}"></constructor-arg>
+                            <constructor-arg name="port"
+                                             value="${cache.redis.clusterNode5.port:7004}"></constructor-arg>
+                        </bean>
+                        <bean class="org.springframework.data.redis.connection.RedisClusterNode">
+                            <constructor-arg name="host"
+                                             value="${cache.redis.clusterNode6.host:127.0.0.1}"></constructor-arg>
+                            <constructor-arg name="port"
+                                             value="${cache.redis.clusterNode6.port:7005}"></constructor-arg>
+                        </bean>
+                    </set>
+                </property>
+            </bean>
+        </constructor-arg>
+        <property name="timeout" value="5000"/>
+    </bean>
+
+    <bean id="org.springframework.data.redis.core.RedisTemplate"
+          class="org.springframework.data.redis.core.RedisTemplate" lazy-init="true">
+        <property name="connectionFactory" ref="lettuceConnectionFactory"/>
+    </bean>
+
+    <bean id="redisPubAction" class="top.cardone.cache.action.RedisPubAction" lazy-init="true">
+        <property name="redisTemplate" ref="org.springframework.data.redis.core.RedisTemplate"/>
+        <property name="channel" value="topic:cache"/>
+    </bean>
+
+    <bean id="redisTopicMessageListener" class="top.cardone.cache.listener.RedisTopicMessageListener">
+        <property name="redisTemplate" ref="org.springframework.data.redis.core.RedisTemplate"/>
+    </bean>
+
+    <redis:listener-container connection-factory="lettuceConnectionFactory">
+        <redis:listener ref="redisTopicMessageListener" topic="topic:cache"/>
+    </redis:listener-container>
+</beans>

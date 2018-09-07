@@ -1,0 +1,28 @@
+{
+  "validation": {
+    "rules": {
+      "wfVariableCode": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      },
+      "name": {
+        "required": true,
+        "minlength": 4,
+        "maxlength": 255
+      }
+    },
+    "messages": {
+      "wfVariableCode": {
+        "required": "工作流变量编号必填",
+        "minlength": "工作流变量编号需{0}个字符以上",
+        "maxlength": "工作流变量编号需小于{0}个字符"
+      },
+      "name": {
+        "required": "工作流变量名称必填",
+        "minlength": "工作流变量名称需{0}个字符以上",
+        "maxlength": "工作流变量名称需小于{0}个字符"
+      }
+    }
+  }
+}
