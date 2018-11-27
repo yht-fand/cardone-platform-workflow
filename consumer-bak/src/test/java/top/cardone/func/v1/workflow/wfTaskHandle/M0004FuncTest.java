@@ -1,29 +1,26 @@
 package top.cardone.func.v1.workflow.wfTaskHandle;
 
 import com.google.common.base.Charsets;
+import com.google.common.collect.Maps;
+import com.google.gson.Gson;
 import top.cardone.ConsumerApplication;
 import lombok.extern.log4j.Log4j2;
 import lombok.val;
 import org.apache.commons.io.FileUtils;
-import org.assertj.core.util.Lists;
-import org.junit.Before;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.Resource;
-import org.springframework.core.task.TaskExecutor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.scheduling.support.TaskUtils;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.StopWatch;
+import org.springframework.util.CollectionUtils;
 import top.cardone.context.ApplicationContextHolder;
-import top.cardone.core.util.func.Func1;
 
-import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
 @Log4j2
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,56 +35,39 @@ public class M0004FuncTest {
     @Value("file:src/test/resources/top/cardone/func/v1/workflow/wfTaskHandle/M0004FuncTest.func.output.json")
     private Resource funcOutputResource;
 
-    private HttpEntity<String> httpEntity;
-
-    private int pressure = 10000;
-
-    @Before
-    public void setup() throws Exception {
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
-        headers.set("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
-        headers.set("username", "admin");
-        headers.set("token", ApplicationContextHolder.getBean(org.apache.shiro.authc.credential.PasswordService.class).encryptPassword(headers.get("username").get(0)));
-
+    @Test
+    public void func() throws Exception {
         if (!funcInputResource.exists()) {
             FileUtils.write(funcInputResource.getFile(), "{}", Charsets.UTF_8);
         }
 
-        String input = FileUtils.readFileToString(funcInputResource.getFile(), Charsets.UTF_8);
+        val input = FileUtils.readFileToString(funcInputResource.getFile(), Charsets.UTF_8);
 
-        httpEntity = new HttpEntity<>(input, headers);
-    }
+        Map<String, Object> parametersMap = ApplicationContextHolder.getBean(Gson.class).fromJson(input, Map.class);
 
-    @Test
-    public void func() throws RuntimeException {
-        String output = new org.springframework.boot.test.web.client.TestRestTemplate().postForObject(funcUrl, httpEntity, String.class);
+        Assert.assertFalse("输入未配置", CollectionUtils.isEmpty(parametersMap));
 
-        try {
-            FileUtils.write(funcOutputResource.getFile(), output, Charsets.UTF_8);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        Map<String, Object> output = Maps.newLinkedHashMap();
+
+        for (val parametersEntry : parametersMap.entrySet()) {
+            val body = ApplicationContextHolder.getBean(Gson.class).toJson(parametersEntry.getValue());
+
+            val headers = new HttpHeaders();
+
+            headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+            headers.set("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
+            headers.set("collectionStationCodeForToken", "XATAC29");
+            headers.set("token", ApplicationContextHolder.getBean(org.apache.shiro.authc.credential.PasswordService.class).encryptPassword(headers.get("collectionStationCodeForToken").get(0)));
+
+            val httpEntity = new HttpEntity<>(body, headers);
+
+            val json = new org.springframework.boot.test.web.client.TestRestTemplate().postForObject(funcUrl, httpEntity, String.class);
+
+            val value = ApplicationContextHolder.getBean(Gson.class).fromJson(json, Map.class);
+
+            output.put(parametersEntry.getKey(), value);
         }
-    }
 
-    @Test
-    public void pressureFunc() throws Exception {
-        for (int i = 0; i < pressure; i++) {
-            val sw = new StopWatch();
-
-            sw.start(funcUrl);
-
-            new org.springframework.boot.test.web.client.TestRestTemplate().postForObject(funcUrl, httpEntity, String.class);
-
-            sw.stop();
-
-            if (sw.getTotalTimeMillis() > 500) {
-                log.error(sw.prettyPrint());
-            } else if (log.isDebugEnabled()) {
-                log.debug(sw.prettyPrint());
-            }
-
-            log.debug("pressured:" + (i + 1));
-        }
+        FileUtils.write(funcOutputResource.getFile(), ApplicationContextHolder.getBean(Gson.class).toJson(output), Charsets.UTF_8);
     }
 }
