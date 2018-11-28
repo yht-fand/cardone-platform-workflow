@@ -21,7 +21,7 @@
         <property name="service" ref="top.cardone.workflow.service.WfTaskHandleService"/>
     </bean>
 
-    <rabbit:listener-container connection-factory="rabbitConnectionFactory" concurrency="2">
+    <rabbit:listener-container message-converter="amqpMessageConverter" concurrency="2">
         <rabbit:listener ref="top.cardone.workflow.service.WfTaskHandleServiceExporter"
                          queue-names="queue:cardone-workflow-${cardone-workflow-version}:top.cardone.workflow.service.WfTaskHandleService"/>
     </rabbit:listener-container>
